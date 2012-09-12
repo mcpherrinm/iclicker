@@ -1,0 +1,102 @@
+# ATmega Pinout
+
+This document contains the pinout of the ATmega8 microcontroller used in the
+iClicker.
+
+* PD3 (INT1), Pin 1
+	* Pin 37 on Transceiver, SWITCH -> Y's off to the RF Switch
+
+* PD4, Pin 2
+	* 270 Ohm -> Low Battery LED (Color?)
+
+* GND, Pin 3
+	* Direct Connection
+
+* VCC, Pin 4
+	* L0RB, LP2985 Low Dropout Regulator with Enable Pin
+
+* GND, Pin 5
+	* Direct Connection
+
+* VCC, Pin 6
+	* Same as Pin 4
+
+* PB6, Pin 7
+	* Crystal
+
+* PB7, Pin 8
+	* Crystal
+
+* PD5, Pin 9
+	* 270 Ohm -> Vote Status LED (Color?)
+
+* PD6, Pin 10
+	* 270 Ohm -> Vote Status LED (Color?)
+
+* PD7, Pin 11
+	* 300 Ohm -> Power LED (Blue)
+
+* PB0, Pin 12
+	* Q6 -> Q4, Battery Voltage Divider Power (Verification Needed!!), Pin ADC7
+
+* PB1, Pin 13
+	* Q7 -> Q5, more investigation required (PSU?)
+
+* PB2, Pin 14
+	* Not Connected! \o/
+
+* PB3 (MOSI), Pin 15
+	* Pin 39 on Transceiver, Serial input to RF Chip
+
+* PB4 (MISO), Pin 16
+	* Pin 38 on Transceiver, Serial output from RF Chip
+
+* PB5 (SCK), Pin 17
+	* Pin 40 on Transceiver, SPI Clock
+
+* AVCC, Pin 18
+	* VCC
+
+* ADC6, Pin 19
+	* Probably not used
+
+* AREF, Pin 20
+	* Capacitor -> GND
+
+* GND, Pin 21
+	* GND
+
+* ADC7, Pin 22
+	* Suspected Battery Voltage Read, enable Q4 to measure
+
+* Buttons -- Pull Up
+	* PC0, Pin 23
+		* Diode -> Power Switch -> BVcc with Diode, prevents BVcc > Vcc and allows
+		  line to be pulled down while still letting the AVR read it as an input
+	
+	* PC1, Pin 24
+		* S2, Vote Button A -- circuit same as S3
+
+	* PC2, Pin 25
+		* S3, Vote Button B -- 2kOhm net resistance 2-1k in series, to GND
+
+	* PC3, Pin 26
+		* S4, Vote Button C -- circuit same as S3
+	
+	* PC4, Pin 27
+		* S5, Vote Button E -- no resistors to GND
+	
+	* PC5, Pin 28
+		* S6, Vote Button D, no resistors, to GND
+
+* PC6, Pin 29
+	* Reset line, to ISP header and else just pulled up
+
+* PD0 (RXD), Pin 30
+	* Pin 43 DClk, Transceiver Clock
+
+* PD1 (TXD), Pin 31
+	* Pin 44 Data In/Out on the Transceiver
+
+* PD2 (INT0), Pin 32
+	* Pin 46 Pattern Block of the Transceiver
