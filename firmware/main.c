@@ -15,8 +15,8 @@
 
 #define LEDPORT PORTD
 #define LEDBATTERY 4
-#define LEDVOTE1 5
-#define LEDVOTE2 6
+#define LEDVOTEGREEN 5
+#define LEDVOTERED 6
 #define LEDPOWER 7
 #define change_led(led,val) (change_bit(LEDPORT,led,!val))
 
@@ -25,11 +25,12 @@
 
 void ioinit(void) {
 	//Buttons - PINC
-	DDRB=0; //Set everything input
-	PORTB=(1<<BPOWER)|(1<<BA)|(1<<BB)|(1<<BC)|(1<<BD)|(1<<BE); //pullups
+	DDRC=0; //Set everything input
+	PORTC=(1<<BPOWER)|(1<<BA)|(1<<BB)|(1<<BC)|(1<<BD)|(1<<BE); //pullups
 	
 	//LEDS - LEDPORT
-	DDRB=(1<<LEDBATTERY)|(1<<LEDVOTE1)|(1<<LEDVOTE2)|(1<<LEDPOWER);
+	DDRD=(1<<LEDBATTERY)|(1<<LEDVOTEGREEN)|(1<<LEDVOTERED)|(1<<LEDPOWER);
+	PORTD = DDRD;
 	
 	//PORTB
 	DDRB=(1<<VCCLATCH);
@@ -52,13 +53,13 @@ unsigned char checkbutton(unsigned char button) {
 
 int main() {
 	ioinit();
-	change_bit(LEDPORT,LEDPOWER,1);
+	change_led(LEDPOWER,1);
 	
 	while(1) {
 		if(checkbutton(BPOWER)) {
 			clear_bit(PORTB,VCCLATCH);
 		}
 		
-		change_led(LEDVOTE1,switchpressed(BA));
+		change_led(LEDVOTERED,switchpressed(BA));
 	}
 }
