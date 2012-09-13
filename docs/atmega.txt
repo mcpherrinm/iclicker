@@ -7,7 +7,10 @@ iClicker.
 	* Pin 37 on Transceiver, SWITCH -> Y's off to the RF Switch
 
 * PD4, Pin 2
-	* 270 Ohm -> Low Battery LED (Color?)
+	* Low Battery LED
+	* 270 Ohm
+	* Color: Red
+	* Active low
 
 * GND, Pin 3
 	* Direct Connection
@@ -28,19 +31,32 @@ iClicker.
 	* Crystal
 
 * PD5, Pin 9
-	* 270 Ohm -> Vote Status LED (Color?)
+	* Successful Vote Status LED
+	* 270 Ohm
+	* Color: Gren
+	* Active low
 
 * PD6, Pin 10
-	* 270 Ohm -> Vote Status LED (Color?)
+	* Failed Vote Status LED
+	* 270 Ohm
+	* Color: Red
+	* Active low
 
 * PD7, Pin 11
-	* 300 Ohm -> Power LED (Blue)
+	* Power LED
+	* 300 Ohm
+	* Color: Blue
+	* Active Low
 
 * PB0, Pin 12
 	* Q6 -> Q4, Battery Voltage Divider Power (Verification Needed!!), Pin ADC7
 
 * PB1, Pin 13
-	* Q7 -> Q5, more investigation required (PSU?)
+	* Writing a 1 to this pin maintains Vcc to the device. Writing a 0 removes
+	  Vcc from the device. It can only be turned back on by the user pressing
+	  the ON/OFF button.
+	* This is implemented through a couple of transistors such as Q7 and Q5.
+	  More investigation is required to understand exactly what is going on.
 
 * PB2, Pin 14
 	* Not Connected! \o/
@@ -98,5 +114,5 @@ iClicker.
 * PD1 (TXD), Pin 31
 	* Pin 44 Data In/Out on the Transceiver
 
-* PD2 (INT0), Pin 32
+ PD2 (INT0), Pin 32
 	* Pin 46 Pattern Block of the Transceiver
