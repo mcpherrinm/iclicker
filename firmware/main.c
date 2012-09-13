@@ -23,6 +23,28 @@
 //PORTB
 #define VCCLATCH 1
 
+void display_byte(unsigned char data) {
+	for(unsigned char i = 0; i < 8; i++) {
+		unsigned char tmp = (data & 0x80);
+		data <<= 1;
+		change_led(LEDBATTERY,1);
+		if(tmp) {
+			_delay_ms(1000);
+		} else {
+			_delay_ms(250);
+		}
+				
+		change_led(LEDBATTERY, 0);
+		
+		if(i == 7) {
+			change_led(LEDVOTEGREEN, 1);
+		}
+
+		_delay_ms(250);
+		change_led(LEDVOTEGREEN, 0);
+	}
+}
+
 void ioinit(void) {
 	//Buttons - PINC
 	DDRC=0; //Set everything input
@@ -61,5 +83,7 @@ int main() {
 		}
 		
 		change_led(LEDVOTERED,switchpressed(BA));
+
+		display_byte(0x01);
 	}
 }
