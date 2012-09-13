@@ -3,7 +3,6 @@
 
 #include "bitop.h"
 
-
 #define BUTTONPIN PINC
 #define BPOWER 0
 #define BA     1
@@ -23,6 +22,15 @@
 //PORTB
 #define VCCLATCH 1
 
+#define SPIPORT PORTB
+#define SPIPIN PINB
+#define SPICS 2
+#define SPIDOUT 3
+#define SPIDIN 4
+#define SPICLOCK 5
+
+#include "spi.h"
+
 void ioinit(void) {
 	//Buttons - PINC
 	DDRC=0; //Set everything input
@@ -33,8 +41,9 @@ void ioinit(void) {
 	PORTD = DDRD;
 	
 	//PORTB
-	DDRB=(1<<VCCLATCH);
+	DDRB=(1<<VCCLATCH)|(1<<SPICS)|(1<<SPIDOUT)|(1<<SPICLOCK);
 	PORTB=(1<<VCCLATCH);
+	spi_enable(0);
 	
 	//Wait till power button is depressed
 	while(switchpressed(BPOWER));

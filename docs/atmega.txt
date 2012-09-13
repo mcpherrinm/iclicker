@@ -59,7 +59,7 @@ iClicker.
 	  More investigation is required to understand exactly what is going on.
 
 * PB2, Pin 14
-	* Not Connected! \o/
+	* Pin 35 on Transceiver, Chip select on the RF Chip
 
 * PB3 (MOSI), Pin 15
 	* Pin 39 on Transceiver, Serial input to RF Chip
