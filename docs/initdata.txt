@@ -1,0 +1,101 @@
+This is the data sent over SPI to the transceiver during iClicker boot.
+
+1000 0001
+1000 0101
+- Enable bit synchronizer
+- 600kHz filter width
+- Clockout is enabled
+1111 1111 
+
+1000 0010
+0001 1111
+- Enable I&Q Amplifiers
+- Configuration set defined by the pin switch (switch is an input)
+- Pattern recognition enabled
+- 902 - 928MHz
+1111 1111
+
+1000 0011
+1111 0000
+- Deviation Frequency = F0kHz
+1111 1111
+
+1000 0100
+0000 0000
+- Default bit rate defined by the following register
+- 152.35kbit/s
+1111 1111
+
+1000 0101
+0000 0000
+- FSParam_OSR, not sure yet
+1111 1111
+
+1000 1110
+1100 0001
+- RSSI Output, Highest Level
+- Someting about errors, not sure yet
+1111 1111
+
+1000 1111
+0000 0000
+- Filter is calibrated at startup
+- Calibration is on bandwidth change
+- 15pF Xosc load
+- 3.8kOhm TKA and TKB shunt resistors
+1111 1111
+
+1001 0000
+0000 0000
+- sync loss counter is 50 bits, ????
+- Barker mode threshold
+1111 1111
+
+1001 0001
+0000 0000
+- data port is bidirectional \o/
+- bob barker threshold, 0
+1111 1111
+
+1001 0010
+0000 0000
+- No changes to the default, boring
+1111 1111
+
+## Receive mode
+1000 1001
+1000 1000
+- Rx Mode
+- 0dBm
+- ENHANCED LINEARITY
+1111 1111
+
+## Transmit Mode
+1000 0110
+0011 0000
+- Sleep Mode
+- 15dBm
+- ENHANCED SENSITIVITY
+1111 1111
+
+PAUSE!
+
+- Frequency for register 1, MSByte
+1000 0111
+0000 1111
+1111 1111
+
+- Frequency for register 1, LSByte
+1000 1000
+1010 0000
+1111 1111
+
+- Frequency for register 2, MSByte
+1000 1010
+1010 0111
+1111 1111
+
+- Frequency for register 2, LSByte
+1000 1011
+0010 1000
+1111 1111

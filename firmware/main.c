@@ -91,8 +91,39 @@ int main() {
 			clear_bit(PORTB,VCCLATCH);
 		}
 		
-		change_led(LEDVOTERED,switchpressed(BA));
+		//Init
+		spi_write(0b00000001, 0b10000101);
+		spi_write(0b00000010, 0b00011111);
+		spi_write(0b00000011, 0b11110000);
+		spi_write(0b00000100, 0b00000000);
+		spi_write(0b00000101, 0b00000000);
+		spi_write(0b00001110, 0b11000001);
+		spi_write(0b00001111, 0b00000000);
+		spi_write(0b00010000, 0b00000000);
+		spi_write(0b00010001, 0b00000000);
+		spi_write(0b00010010, 0b00000000);
+		spi_write(0b00001001, 0b10001000);
+		spi_write(0b00000110, 0b00110000);
+		
+		//Frequency Registers
+		spi_write(0b00000111, 0b00001111);
+		spi_write(0b00001000, 0b10100000);
+		spi_write(0b00001010, 0b10100111);
+		spi_write(0b00001011, 0b00101000);
 
-		display_byte(0x01);
+		//Pattern Registers
+		spi_write(0b00010011, 0b11111101);
+		spi_write(0b00010100, 0b11111101);
+		spi_write(0b00010101, 0b11111101);
+		spi_write(0b00010110, 0b11110001);
+		
+		//Wake the chip
+		spi_write(0b00000110, 0b11110000);
+
+		spi_write(0b00000001, 0b10000000);
+		_delay_ms(1);		
+		spi_read(0b00000001);
+		_delay_ms(10);
+//		display_byte(spi_read(0b00001101));
 	}
 }

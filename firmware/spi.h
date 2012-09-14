@@ -11,10 +11,11 @@ void spi_enable(unsigned char enable) {
 
 void clockpulse(unsigned char rising) {
 	change_bit(SPIPORT,SPICLOCK,!rising);
-	
+	_delay_us(100);
 	//Switch here!
 	
 	change_bit(SPIPORT,SPICLOCK,rising);
+	_delay_us(100);
 }
 
 void spi_send(unsigned char data) {
