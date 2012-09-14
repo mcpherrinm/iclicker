@@ -1,0 +1,177 @@
+
+obj\main.o:     file format elf32-c816
+obj\main.o
+
+Disassembly of section .text:
+
+00000000 <OnMaster>:
+OnMaster():
+   0:	00 03 74 ff 		MOVE	-(i3,1),i2l
+   4:	00 03 75 ff 		MOVE	-(i3,1),i2h
+   8:	00 03 78 ff 		MOVE	-(i3,1),ipl
+   c:	00 03 79 ff 		MOVE	-(i3,1),iph
+  10:	00 16 af fd 		MOVE	a,-(i3,3)
+  14:	00 0c af 75 		MOVE	i2h,i3h
+  18:	00 0c af 64 		MOVE	i2l,i3l
+  1c:	00 0e af 00 		MOVE	a,#0xff
+  20:	00 02 ef 02 		MOVE	(i2,2),a
+  24:	00 04 ab 00 		MOVE	r3,0xff	; ff <OnMaster+0xff>
+  28:	00 36 ff df 		JZS	0x0020		; 100080 <main+0xffe40>
+  2c:	00 0e ab 00 		MOVE	r3,#0xff
+  30:	00 0e ac 00 		MOVE	r2,#0xff
+  34:	00 0e ad 00 		MOVE	r1,#0xff
+  38:	00 0e ae 00 		MOVE	r0,#0xff
+  3c:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+  40:	00 0e ab 00 		MOVE	r3,#0xff
+  44:	00 0e ac 00 		MOVE	r2,#0xff
+  48:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+  4c:	00 0c af ce 		MOVE	r0,r2
+  50:	00 0c af bd 		MOVE	r1,r3
+  54:	00 0c af 4f 		MOVE	a,i2l
+  58:	00 0e cf fd 		ADD	a,#0x2
+  5c:	00 02 ff 01 		MOVE	(i3,1),a
+  60:	00 0d 5f 5f 		INCC	a,i2h
+  64:	00 02 ff 00 		MOVE	(i3,0),a
+  68:	00 0e ab 00 		MOVE	r3,#0xff
+  6c:	00 0e ac 00 		MOVE	r2,#0xff
+  70:	00 0c af ed 		MOVE	r1,r0
+  74:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+  78:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <OnMaster+0xff>
+  7c:	00 33 ff b8 		JUMP	0x0047		; 10011c <main+0xffedc>
+  80:	00 0c af 4f 		MOVE	a,i2l
+  84:	00 0e cf fd 		ADD	a,#0x2
+  88:	00 02 ff 01 		MOVE	(i3,1),a
+  8c:	00 0d 5f 5f 		INCC	a,i2h
+  90:	00 02 ff 00 		MOVE	(i3,0),a
+  94:	00 0e ab 00 		MOVE	r3,#0xff
+  98:	00 0e ac 00 		MOVE	r2,#0xff
+  9c:	00 0e ad 00 		MOVE	r1,#0xff
+  a0:	00 0e ae 00 		MOVE	r0,#0xff
+  a4:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+  a8:	00 1c af 02 		MOVE	a,(i2,2)
+  ac:	00 32 ff bc 		JZC	0x0043		; 10010c <main+0xffecc>
+  b0:	00 0e ad 00 		MOVE	r1,#0xff
+  b4:	00 0e ae 00 		MOVE	r0,#0xff
+  b8:	00 04 ab 00 		MOVE	r3,0xff	; ff <OnMaster+0xff>
+  bc:	00 0c af bc 		MOVE	r2,r3
+  c0:	00 0e ab ff 		MOVE	r3,#0x0
+  c4:	00 0c cc e0 		ADD	i0l,r0,r2
+  c8:	00 0c db d1 		ADDC	i0h,r1,r3
+  cc:	00 0e af ff 		MOVE	a,#0x0
+  d0:	00 02 cf 00 		MOVE	(i0,0),a
+  d4:	00 04 ab 00 		MOVE	r3,0xff	; ff <OnMaster+0xff>
+  d8:	00 36 ff be 		JZS	0x0041		; 100104 <main+0xffec4>
+  dc:	00 0e ab 00 		MOVE	r3,#0xff
+  e0:	00 0e ac 00 		MOVE	r2,#0xff
+  e4:	00 0e ad 00 		MOVE	r1,#0xff
+  e8:	00 0e ae 00 		MOVE	r0,#0xff
+  ec:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+  f0:	00 0c bc bf 		OR	a,r3,r2
+  f4:	00 32 ff be 		JZC	0x0041		; 100104 <main+0xffec4>
+  f8:	00 04 ab 00 		MOVE	r3,0xff	; ff <OnMaster+0xff>
+  fc:	00 0e 8b fe 		XOR	r3,#0x1
+ 100:	00 01 bb 00 		MOVE	0xff,r3	; ff <OnMaster+0xff>
+ 104:	00 00 fe 00 		MOVE	0xff,#0x01	; ff <OnMaster+0xff>
+ 108:	00 33 ff b8 		JUMP	0x0047		; 10011c <main+0xffedc>
+ 10c:	00 1c af 02 		MOVE	a,(i2,2)
+ 110:	00 0e 1f fd 		CMP	a,#0x2
+ 114:	00 32 ff b8 		JNE	0x0047		; 10011c <main+0xffedc>
+ 118:	00 00 fe 00 		MOVE	0xff,#0x01	; ff <OnMaster+0xff>
+ 11c:	00 16 af 03 		MOVE	a,(i3,3)+
+ 120:	00 16 a9 01 		MOVE	iph,(i3,1)+
+ 124:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+ 128:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ 12c:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ 130:	00 23 ff ff 		JUMP	ip
+
+00000134 <OnSlave>:
+OnSlave():
+ 134:	00 03 74 ff 		MOVE	-(i3,1),i2l
+ 138:	00 03 75 ff 		MOVE	-(i3,1),i2h
+ 13c:	00 03 78 ff 		MOVE	-(i3,1),ipl
+ 140:	00 03 79 ff 		MOVE	-(i3,1),iph
+ 144:	00 16 af fd 		MOVE	a,-(i3,3)
+ 148:	00 0c af 75 		MOVE	i2h,i3h
+ 14c:	00 0c af 64 		MOVE	i2l,i3l
+ 150:	00 0e af 00 		MOVE	a,#0xff
+ 154:	00 02 ef 02 		MOVE	(i2,2),a
+ 158:	00 0c af 4f 		MOVE	a,i2l
+ 15c:	00 0e cf fd 		ADD	a,#0x2
+ 160:	00 02 ff 01 		MOVE	(i3,1),a
+ 164:	00 0d 5f 5f 		INCC	a,i2h
+ 168:	00 02 ff 00 		MOVE	(i3,0),a
+ 16c:	00 0e ab 00 		MOVE	r3,#0xff
+ 170:	00 0e ac 00 		MOVE	r2,#0xff
+ 174:	00 0e ad 00 		MOVE	r1,#0xff
+ 178:	00 0e ae 00 		MOVE	r0,#0xff
+ 17c:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+ 180:	00 1c af 02 		MOVE	a,(i2,2)
+ 184:	00 32 ff 75 		JZC	0x008a		; 100228 <main+0xfffe8>
+ 188:	00 04 ab 00 		MOVE	r3,0xff	; ff <OnMaster+0xff>
+ 18c:	00 36 ff 75 		JZS	0x008a		; 100228 <main+0xfffe8>
+ 190:	00 0e ad 00 		MOVE	r1,#0xff
+ 194:	00 0e ae 00 		MOVE	r0,#0xff
+ 198:	00 04 ab 00 		MOVE	r3,0xff	; ff <OnMaster+0xff>
+ 19c:	00 0c af bc 		MOVE	r2,r3
+ 1a0:	00 0e ab ff 		MOVE	r3,#0x0
+ 1a4:	00 0c cc e0 		ADD	i0l,r0,r2
+ 1a8:	00 0c db d1 		ADDC	i0h,r1,r3
+ 1ac:	00 0e af ff 		MOVE	a,#0x0
+ 1b0:	00 02 cf 00 		MOVE	(i0,0),a
+ 1b4:	00 0e ab 00 		MOVE	r3,#0xff
+ 1b8:	00 0e ac 00 		MOVE	r2,#0xff
+ 1bc:	00 0e ad 00 		MOVE	r1,#0xff
+ 1c0:	00 0e ae 00 		MOVE	r0,#0xff
+ 1c4:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+ 1c8:	00 0c bc bf 		OR	a,r3,r2
+ 1cc:	00 32 ff 75 		JZC	0x008a		; 100228 <main+0xfffe8>
+ 1d0:	00 04 ab 00 		MOVE	r3,0xff	; ff <OnMaster+0xff>
+ 1d4:	00 0e 8b fe 		XOR	r3,#0x1
+ 1d8:	00 01 bb 00 		MOVE	0xff,r3	; ff <OnMaster+0xff>
+ 1dc:	00 0e ab 00 		MOVE	r3,#0xff
+ 1e0:	00 0e ac 00 		MOVE	r2,#0xff
+ 1e4:	00 0e ad 00 		MOVE	r1,#0xff
+ 1e8:	00 0e ae 00 		MOVE	r0,#0xff
+ 1ec:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+ 1f0:	00 0e ab 00 		MOVE	r3,#0xff
+ 1f4:	00 0e ac 00 		MOVE	r2,#0xff
+ 1f8:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+ 1fc:	00 0c af ce 		MOVE	r0,r2
+ 200:	00 0c af bd 		MOVE	r1,r3
+ 204:	00 0c af 4f 		MOVE	a,i2l
+ 208:	00 0e cf fd 		ADD	a,#0x2
+ 20c:	00 02 ff 01 		MOVE	(i3,1),a
+ 210:	00 0d 5f 5f 		INCC	a,i2h
+ 214:	00 02 ff 00 		MOVE	(i3,0),a
+ 218:	00 0e ab 00 		MOVE	r3,#0xff
+ 21c:	00 0e ac 00 		MOVE	r2,#0xff
+ 220:	00 0c af ed 		MOVE	r1,r0
+ 224:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+ 228:	00 16 af 03 		MOVE	a,(i3,3)+
+ 22c:	00 16 a9 01 		MOVE	iph,(i3,1)+
+ 230:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+ 234:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ 238:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ 23c:	00 23 ff ff 		JUMP	ip
+
+00000240 <main>:
+main():
+ 240:	00 03 74 ff 		MOVE	-(i3,1),i2l
+ 244:	00 03 75 ff 		MOVE	-(i3,1),i2h
+ 248:	00 03 78 ff 		MOVE	-(i3,1),ipl
+ 24c:	00 03 79 ff 		MOVE	-(i3,1),iph
+ 250:	00 0c af 75 		MOVE	i2h,i3h
+ 254:	00 0c af 64 		MOVE	i2l,i3l
+ 258:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+ 25c:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+ 260:	00 04 ab 00 		MOVE	r3,0xff	; ff <OnMaster+0xff>
+ 264:	00 36 ff 63 		JZS	0x009c		; 100270 <main+0x100030>
+ 268:	00 3a ff ff 		CALLS	0x0000		; 100000 <main+0xffdc0>
+ 26c:	00 33 ff 67 		JUMP	0x0098		; 100260 <main+0x100020>
+ 270:	00 3a ff b2 		CALLS	0x004d		; 100134 <main+0xffef4>
+ 274:	00 33 ff 67 		JUMP	0x0098		; 100260 <main+0x100020>
+ 278:	00 16 a9 01 		MOVE	iph,(i3,1)+
+ 27c:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+ 280:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ 284:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ 288:	00 23 ff ff 		JUMP	ip

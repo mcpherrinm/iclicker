@@ -1,0 +1,2239 @@
+
+v:\cro\1211\api\full_release\tutorial\obj\sx1211driver.o:     file format elf32-c816
+
+Disassembly of section .text:
+
+00000000 <InitRFChip>:
+********************************************************************
+** In  : -                                                        **
+** Out : -                                                        **
+*******************************************************************/
+void InitRFChip (void){
+       0:	00 03 74 ff 		MOVE	-(i3,1),i2l
+       4:	00 03 75 ff 		MOVE	-(i3,1),i2h
+       8:	00 03 78 ff 		MOVE	-(i3,1),ipl
+       c:	00 03 79 ff 		MOVE	-(i3,1),iph
+      10:	00 16 af fe 		MOVE	a,-(i3,2)
+      14:	00 0c af 75 		MOVE	i2h,i3h
+      18:	00 0c af 64 		MOVE	i2l,i3l
+        _U16 i;
+    // Initializes SX1211
+    SPIInit();
+      1c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+      20:	00 0e bb f0 		OR	r3,#0xf
+      24:	00 0e 2b 10 		AND	r3,#0xef
+      28:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    set_bit(PORTO, (SCK + NSS_DATA + NSS_CONFIG + MOSI));
+      2c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+      30:	00 0e bb f0 		OR	r3,#0xf
+      34:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    set_bit(PORTP, (SCK + NSS_DATA + NSS_CONFIG + MOSI));
+      38:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+      3c:	00 0e bb f0 		OR	r3,#0xf
+      40:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+    for(i = 0; (i + 1) <= REG_PKTPARAM4; i++){
+      44:	00 0e af ff 		MOVE	a,#0x0
+      48:	00 02 ef 00 		MOVE	(i2,0),a
+      4c:	00 02 ef 01 		MOVE	(i2,1),a
+      50:	00 1d 1c 01 		INC	r2,(i2,1)
+      54:	00 1d 5b 00 		INCC	r3,(i2,0)
+      58:	00 0e 1b ff 		CMP	r3,#0x0
+      5c:	00 32 ff e6 		JNE	0x0019		; 100064 <Handle_Irq_CntA+0xfe8cc>
+      60:	00 0e 1c e0 		CMP	r2,#0x1f
+      64:	00 34 ff e4 		JLE	0x001b		; 10006c <Handle_Irq_CntA+0xfe8d4>
+      68:	00 33 ff ba 		JUMP	0x0045		; 100114 <Handle_Irq_CntA+0xfe97c>
+        if(i < REG_RSSIVALUE){
+      6c:	00 1c ac 01 		MOVE	r2,(i2,1)
+      70:	00 1c ab 00 		MOVE	r3,(i2,0)
+      74:	00 0e 1b ff 		CMP	r3,#0x0
+      78:	00 32 ff df 		JNE	0x0020		; 100080 <Handle_Irq_CntA+0xfe8e8>
+      7c:	00 0e 1c ec 		CMP	r2,#0x13
+      80:	00 30 ff ce 		JGT	0x0031		; 1000c4 <Handle_Irq_CntA+0xfe92c>
+            WriteRegister(i, RegistersCfg[i]);
+      84:	00 1c a3 01 		MOVE	i1h,(i2,1)
+      88:	00 0e a9 00 		MOVE	iph,#0xff
+      8c:	00 0e a8 00 		MOVE	ipl,#0xff
+      90:	00 1c ae 01 		MOVE	r0,(i2,1)
+      94:	00 1c ad 00 		MOVE	r1,(i2,0)
+      98:	00 0c af db 		MOVE	r3,r1
+      9c:	00 0c af ec 		MOVE	r2,r0
+      a0:	00 0c ce cc 		ADD	r2,r2,r0
+      a4:	00 0c dd bb 		ADDC	r3,r3,r1
+      a8:	00 0c c8 c0 		ADD	i0l,r2,ipl
+      ac:	00 0c d9 b1 		ADDC	i0h,r3,iph
+      b0:	00 0c af 3b 		MOVE	r3,i1h
+      b4:	00 18 ad 01 		MOVE	r1,(i0,1)
+      b8:	00 18 ac 00 		MOVE	r2,(i0,0)
+      bc:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+      c0:	00 33 ff bf 		JUMP	0x0040		; 100100 <Handle_Irq_CntA+0xfe968>
+        }
+        else{
+            WriteRegister(i + 1, RegistersCfg[i]);
+      c4:	00 1d 13 01 		INC	i1h,(i2,1)
+      c8:	00 0e a9 00 		MOVE	iph,#0xff
+      cc:	00 0e a8 00 		MOVE	ipl,#0xff
+      d0:	00 1c ae 01 		MOVE	r0,(i2,1)
+      d4:	00 1c ad 00 		MOVE	r1,(i2,0)
+      d8:	00 0c af db 		MOVE	r3,r1
+      dc:	00 0c af ec 		MOVE	r2,r0
+      e0:	00 0c ce cc 		ADD	r2,r2,r0
+      e4:	00 0c dd bb 		ADDC	r3,r3,r1
+      e8:	00 0c c8 c0 		ADD	i0l,r2,ipl
+      ec:	00 0c d9 b1 		ADDC	i0h,r3,iph
+      f0:	00 0c af 3b 		MOVE	r3,i1h
+      f4:	00 18 ad 01 		MOVE	r1,(i0,1)
+      f8:	00 18 ac 00 		MOVE	r2,(i0,0)
+      fc:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+     100:	00 1d 1f 01 		INC	a,(i2,1)
+     104:	00 02 ef 01 		MOVE	(i2,1),a
+     108:	00 1d 5f 00 		INCC	a,(i2,0)
+     10c:	00 02 ef 00 		MOVE	(i2,0),a
+     110:	00 33 ff eb 		JUMP	0x0014		; 100050 <Handle_Irq_CntA+0xfe8b8>
+        }
+    }
+
+    SyncSize = ((RegistersCfg[REG_RXPARAM3] >> 3) & 0x03) + 1;
+     114:	00 0e a1 00 		MOVE	i0h,#0xff
+     118:	00 0e a0 00 		MOVE	i0l,#0xff
+     11c:	00 19 6b 24 		SHR	r3,(i0,36)
+     120:	00 19 4c 25 		SHRC	r2,(i0,37)
+     124:	00 0e ec bf 		MUL	r2,#0x40
+     128:	00 0e eb bf 		MUL	r3,#0x40
+     12c:	00 0c bc fc 		OR	r2,a,r2
+     130:	00 0c af cb 		MOVE	r3,r2
+     134:	00 0e 2b fc 		AND	r3,#0x3
+     138:	00 0d 1f bf 		INC	a,r3
+     13c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    for(i = 0; i < SyncSize; i++){
+     140:	00 0e af ff 		MOVE	a,#0x0
+     144:	00 02 ef 00 		MOVE	(i2,0),a
+     148:	00 02 ef 01 		MOVE	(i2,1),a
+     14c:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+     150:	00 0e ab ff 		MOVE	r3,#0x0
+     154:	00 1c ae 01 		MOVE	r0,(i2,1)
+     158:	00 1c ad 00 		MOVE	r1,(i2,0)
+     15c:	00 0c 1d bf 		CMP	r1,r3
+     160:	00 32 ff a5 		JNE	0x005a		; 100168 <Handle_Irq_CntA+0xfe9d0>
+     164:	00 0c 1e cf 		CMP	r0,r2
+     168:	00 35 ff a3 		JLT	0x005c		; 100170 <Handle_Irq_CntA+0xfe9d8>
+     16c:	00 33 ff 8b 		JUMP	0x0074		; 1001d0 <Handle_Irq_CntA+0xfea38>
+        SyncValue[i] = RegistersCfg[REG_SYNCBYTE1 - 1 + i];
+     170:	00 1c a2 01 		MOVE	i1l,(i2,1)
+     174:	00 0e c2 00 		ADD	i1l,#0xff
+     178:	00 1c a3 00 		MOVE	i1h,(i2,0)
+     17c:	00 0e d3 00 		ADDC	i1h,#0xff
+     180:	00 0e a9 00 		MOVE	iph,#0xff
+     184:	00 0e a8 00 		MOVE	ipl,#0xff
+     188:	00 1c ae 01 		MOVE	r0,(i2,1)
+     18c:	00 1c ad 00 		MOVE	r1,(i2,0)
+     190:	00 0c af db 		MOVE	r3,r1
+     194:	00 0c af ec 		MOVE	r2,r0
+     198:	00 0c ce cc 		ADD	r2,r2,r0
+     19c:	00 0c dd bb 		ADDC	r3,r3,r1
+     1a0:	00 0c c8 cc 		ADD	r2,r2,ipl
+     1a4:	00 0c d9 bb 		ADDC	r3,r3,iph
+     1a8:	00 0c af c0 		MOVE	i0l,r2
+     1ac:	00 0e c0 d5 		ADD	i0l,#0x2a
+     1b0:	00 0d 5f b1 		INCC	i0h,r3
+     1b4:	00 18 af 01 		MOVE	a,(i0,1)
+     1b8:	00 02 df 00 		MOVE	(i1,0),a
+     1bc:	00 1d 1f 01 		INC	a,(i2,1)
+     1c0:	00 02 ef 01 		MOVE	(i2,1),a
+     1c4:	00 1d 5f 00 		INCC	a,(i2,0)
+     1c8:	00 02 ef 00 		MOVE	(i2,0),a
+     1cc:	00 33 ff ac 		JUMP	0x0053		; 10014c <Handle_Irq_CntA+0xfe9b4>
+    }
+
+    if(RegistersCfg[REG_BITRATE] == RF_BITRATE_1600){
+     1d0:	00 0e a1 00 		MOVE	i0h,#0xff
+     1d4:	00 0e a0 00 		MOVE	i0l,#0xff
+     1d8:	00 18 ac 07 		MOVE	r2,(i0,7)
+     1dc:	00 18 ab 06 		MOVE	r3,(i0,6)
+     1e0:	00 0e 1b ff 		CMP	r3,#0x0
+     1e4:	00 32 ff 7e 		JNE	0x0081		; 100204 <Handle_Irq_CntA+0xfea6c>
+     1e8:	00 0e 1c 83 		CMP	r2,#0x7c
+     1ec:	00 32 ff 7e 		JNE	0x0081		; 100204 <Handle_Irq_CntA+0xfea6c>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(1600);
+     1f0:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     1f4:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     1f8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     1fc:	00 00 cb 00 		MOVE	0xff,#0x34	; ff <InitRFChip+0xff>
+     200:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_2000){
+     204:	00 0e a1 00 		MOVE	i0h,#0xff
+     208:	00 0e a0 00 		MOVE	i0l,#0xff
+     20c:	00 18 ae 07 		MOVE	r0,(i0,7)
+     210:	00 18 ad 06 		MOVE	r1,(i0,6)
+     214:	00 0e 1d ff 		CMP	r1,#0x0
+     218:	00 32 ff 71 		JNE	0x008e		; 100238 <Handle_Irq_CntA+0xfeaa0>
+     21c:	00 0e 1e 9c 		CMP	r0,#0x63
+     220:	00 32 ff 71 		JNE	0x008e		; 100238 <Handle_Irq_CntA+0xfeaa0>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(2000);
+     224:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     228:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     22c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     230:	00 00 d6 00 		MOVE	0xff,#0x29	; ff <InitRFChip+0xff>
+     234:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_2500){
+     238:	00 0e a1 00 		MOVE	i0h,#0xff
+     23c:	00 0e a0 00 		MOVE	i0l,#0xff
+     240:	00 18 ac 07 		MOVE	r2,(i0,7)
+     244:	00 18 ab 06 		MOVE	r3,(i0,6)
+     248:	00 0e 1b ff 		CMP	r3,#0x0
+     24c:	00 32 ff 64 		JNE	0x009b		; 10026c <Handle_Irq_CntA+0xfead4>
+     250:	00 0e 1c b0 		CMP	r2,#0x4f
+     254:	00 32 ff 64 		JNE	0x009b		; 10026c <Handle_Irq_CntA+0xfead4>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(2500);
+     258:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     25c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     260:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     264:	00 00 de 00 		MOVE	0xff,#0x21	; ff <InitRFChip+0xff>
+     268:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_5000){
+     26c:	00 0e a1 00 		MOVE	i0h,#0xff
+     270:	00 0e a0 00 		MOVE	i0l,#0xff
+     274:	00 18 ae 07 		MOVE	r0,(i0,7)
+     278:	00 18 ad 06 		MOVE	r1,(i0,6)
+     27c:	00 0e 1d ff 		CMP	r1,#0x0
+     280:	00 32 ff 57 		JNE	0x00a8		; 1002a0 <Handle_Irq_CntA+0xfeb08>
+     284:	00 0e 1e d8 		CMP	r0,#0x27
+     288:	00 32 ff 57 		JNE	0x00a8		; 1002a0 <Handle_Irq_CntA+0xfeb08>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(5000);
+     28c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     290:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     294:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     298:	00 00 ee 00 		MOVE	0xff,#0x11	; ff <InitRFChip+0xff>
+     29c:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_8000){
+     2a0:	00 0e a1 00 		MOVE	i0h,#0xff
+     2a4:	00 0e a0 00 		MOVE	i0l,#0xff
+     2a8:	00 18 ac 07 		MOVE	r2,(i0,7)
+     2ac:	00 18 ab 06 		MOVE	r3,(i0,6)
+     2b0:	00 0e 1b ff 		CMP	r3,#0x0
+     2b4:	00 32 ff 4a 		JNE	0x00b5		; 1002d4 <Handle_Irq_CntA+0xfeb3c>
+     2b8:	00 0e 1c e7 		CMP	r2,#0x18
+     2bc:	00 32 ff 4a 		JNE	0x00b5		; 1002d4 <Handle_Irq_CntA+0xfeb3c>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(8000);
+     2c0:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     2c4:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     2c8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     2cc:	00 00 f4 00 		MOVE	0xff,#0x0b	; ff <InitRFChip+0xff>
+     2d0:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_10000){
+     2d4:	00 0e a1 00 		MOVE	i0h,#0xff
+     2d8:	00 0e a0 00 		MOVE	i0l,#0xff
+     2dc:	00 18 ae 07 		MOVE	r0,(i0,7)
+     2e0:	00 18 ad 06 		MOVE	r1,(i0,6)
+     2e4:	00 0e 1d ff 		CMP	r1,#0x0
+     2e8:	00 32 ff 3d 		JNE	0x00c2		; 100308 <Handle_Irq_CntA+0xfeb70>
+     2ec:	00 0e 1e ec 		CMP	r0,#0x13
+     2f0:	00 32 ff 3d 		JNE	0x00c2		; 100308 <Handle_Irq_CntA+0xfeb70>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(10000);
+     2f4:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     2f8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     2fc:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     300:	00 00 f6 00 		MOVE	0xff,#0x09	; ff <InitRFChip+0xff>
+     304:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_20000){
+     308:	00 0e a1 00 		MOVE	i0h,#0xff
+     30c:	00 0e a0 00 		MOVE	i0l,#0xff
+     310:	00 18 ac 07 		MOVE	r2,(i0,7)
+     314:	00 18 ab 06 		MOVE	r3,(i0,6)
+     318:	00 0e 1b ff 		CMP	r3,#0x0
+     31c:	00 32 ff 30 		JNE	0x00cf		; 10033c <Handle_Irq_CntA+0xfeba4>
+     320:	00 0e 1c f6 		CMP	r2,#0x9
+     324:	00 32 ff 30 		JNE	0x00cf		; 10033c <Handle_Irq_CntA+0xfeba4>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(20000);
+     328:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     32c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     330:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     334:	00 00 fa 00 		MOVE	0xff,#0x05	; ff <InitRFChip+0xff>
+     338:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_25000){
+     33c:	00 0e a1 00 		MOVE	i0h,#0xff
+     340:	00 0e a0 00 		MOVE	i0l,#0xff
+     344:	00 18 ae 07 		MOVE	r0,(i0,7)
+     348:	00 18 ad 06 		MOVE	r1,(i0,6)
+     34c:	00 0e 1d ff 		CMP	r1,#0x0
+     350:	00 32 ff 23 		JNE	0x00dc		; 100370 <Handle_Irq_CntA+0xfebd8>
+     354:	00 0e 1e f8 		CMP	r0,#0x7
+     358:	00 32 ff 23 		JNE	0x00dc		; 100370 <Handle_Irq_CntA+0xfebd8>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(25000);
+     35c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     360:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     364:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     368:	00 00 fb 00 		MOVE	0xff,#0x04	; ff <InitRFChip+0xff>
+     36c:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_40000){
+     370:	00 0e a1 00 		MOVE	i0h,#0xff
+     374:	00 0e a0 00 		MOVE	i0l,#0xff
+     378:	00 18 ac 07 		MOVE	r2,(i0,7)
+     37c:	00 18 ab 06 		MOVE	r3,(i0,6)
+     380:	00 0e 1b ff 		CMP	r3,#0x0
+     384:	00 32 ff 16 		JNE	0x00e9		; 1003a4 <Handle_Irq_CntA+0xfec0c>
+     388:	00 0e 1c fb 		CMP	r2,#0x4
+     38c:	00 32 ff 16 		JNE	0x00e9		; 1003a4 <Handle_Irq_CntA+0xfec0c>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(40000);
+     390:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     394:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     398:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     39c:	00 00 fc 00 		MOVE	0xff,#0x03	; ff <InitRFChip+0xff>
+     3a0:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_50000){
+     3a4:	00 0e a1 00 		MOVE	i0h,#0xff
+     3a8:	00 0e a0 00 		MOVE	i0l,#0xff
+     3ac:	00 18 ae 07 		MOVE	r0,(i0,7)
+     3b0:	00 18 ad 06 		MOVE	r1,(i0,6)
+     3b4:	00 0e 1d ff 		CMP	r1,#0x0
+     3b8:	00 32 ff 09 		JNE	0x00f6		; 1003d8 <Handle_Irq_CntA+0xfec40>
+     3bc:	00 0e 1e fc 		CMP	r0,#0x3
+     3c0:	00 32 ff 09 		JNE	0x00f6		; 1003d8 <Handle_Irq_CntA+0xfec40>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(50000);
+     3c4:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     3c8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     3cc:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     3d0:	00 00 fd 00 		MOVE	0xff,#0x02	; ff <InitRFChip+0xff>
+     3d4:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else if(RegistersCfg[REG_BITRATE] == RF_BITRATE_100000){
+     3d8:	00 0e a1 00 		MOVE	i0h,#0xff
+     3dc:	00 0e a0 00 		MOVE	i0l,#0xff
+     3e0:	00 18 ac 07 		MOVE	r2,(i0,7)
+     3e4:	00 18 ab 06 		MOVE	r3,(i0,6)
+     3e8:	00 0e 1b ff 		CMP	r3,#0x0
+     3ec:	00 32 fe fc 		JNE	0x0103		; 10040c <Handle_Irq_CntA+0xfec74>
+     3f0:	00 0e 1c fe 		CMP	r2,#0x1
+     3f4:	00 32 fe fc 		JNE	0x0103		; 10040c <Handle_Irq_CntA+0xfec74>
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(100000);
+     3f8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     3fc:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     400:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     404:	00 00 fe 00 		MOVE	0xff,#0x01	; ff <InitRFChip+0xff>
+     408:	00 33 fe f8 		JUMP	0x0107		; 10041c <Handle_Irq_CntA+0xfec84>
+    }
+    else {
+        RFFrameTimeOut = RF_FRAME_TIMEOUT(1600);
+     40c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     410:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     414:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     418:	00 00 cb 00 		MOVE	0xff,#0x34	; ff <InitRFChip+0xff>
+    }
+
+    SetRFMode(RF_SLEEP);
+     41c:	00 0e ab ff 		MOVE	r3,#0x0
+     420:	00 3a fe f0 		CALLS	0x010f		; 10043c <Handle_Irq_CntA+0xfeca4>
+}
+     424:	00 16 af 02 		MOVE	a,(i3,2)+
+     428:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     42c:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     430:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     434:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     438:	00 23 ff ff 		JUMP	ip
+
+0000043c <SetRFMode>:
+
+/*******************************************************************
+** SetRFMode : Sets the SX1211 operating mode                     **
+********************************************************************
+** In  : mode                                                     **
+** Out : -                                                        **
+*******************************************************************/
+void SetRFMode(_U8 mode){
+     43c:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     440:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     444:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     448:	00 03 79 ff 		MOVE	-(i3,1),iph
+     44c:	00 16 af ff 		MOVE	a,-(i3,1)
+     450:	00 0c af 75 		MOVE	i2h,i3h
+     454:	00 0c af 64 		MOVE	i2l,i3l
+     458:	00 02 eb 00 		MOVE	(i2,0),r3
+    if(mode != PreMode){
+     45c:	00 1c af 00 		MOVE	a,(i2,0)
+     460:	00 04 1f 00 		CMP	a,0xff	; ff <InitRFChip+0xff>
+     464:	00 36 fd 7b 		JEQ	0x0284		; 100a10 <Handle_Irq_CntA+0xff278>
+        if(mode == RF_TRANSMITTER){
+     468:	00 1c af 00 		MOVE	a,(i2,0)
+     46c:	00 0e 1f 7f 		CMP	a,#0x80
+     470:	00 32 fe 69 		JNE	0x0196		; 100658 <Handle_Irq_CntA+0xfeec0>
+        
+        		if (PreMode == RF_SLEEP){
+     474:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     478:	00 32 fe b2 		JZC	0x014d		; 100534 <Handle_Irq_CntA+0xfed9c>
+	               WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_STANDBY);        		
+     47c:	00 0e a1 00 		MOVE	i0h,#0xff
+     480:	00 0e a0 00 		MOVE	i0l,#0xff
+     484:	00 18 ac 01 		MOVE	r2,(i0,1)
+     488:	00 0e 2c e0 		AND	r2,#0x1f
+     48c:	00 0e ab ff 		MOVE	r3,#0x0
+     490:	00 0c af bd 		MOVE	r1,r3
+     494:	00 0c af ce 		MOVE	r0,r2
+     498:	00 0e be df 		OR	r0,#0x20
+     49c:	00 0e ab ff 		MOVE	r3,#0x0
+     4a0:	00 0c af dc 		MOVE	r2,r1
+     4a4:	00 0c af ed 		MOVE	r1,r0
+     4a8:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_OS);        		
+     4ac:	00 0e ac ff 		MOVE	r2,#0x0
+     4b0:	00 0e ab cf 		MOVE	r3,#0x30
+     4b4:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+	               WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_SYNTHESIZER);        		
+     4b8:	00 0e a1 00 		MOVE	i0h,#0xff
+     4bc:	00 0e a0 00 		MOVE	i0l,#0xff
+     4c0:	00 18 ac 01 		MOVE	r2,(i0,1)
+     4c4:	00 0e 2c e0 		AND	r2,#0x1f
+     4c8:	00 0e ab ff 		MOVE	r3,#0x0
+     4cc:	00 0c af bd 		MOVE	r1,r3
+     4d0:	00 0c af ce 		MOVE	r0,r2
+     4d4:	00 0e be bf 		OR	r0,#0x40
+     4d8:	00 0e ab ff 		MOVE	r3,#0x0
+     4dc:	00 0c af dc 		MOVE	r2,r1
+     4e0:	00 0c af ed 		MOVE	r1,r0
+     4e4:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_FS);         		
+     4e8:	00 0e ac 51 		MOVE	r2,#0xae
+     4ec:	00 0e ab f8 		MOVE	r3,#0x7
+     4f0:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_TRANSMITTER);
+     4f4:	00 0e a1 00 		MOVE	i0h,#0xff
+     4f8:	00 0e a0 00 		MOVE	i0l,#0xff
+     4fc:	00 18 ac 01 		MOVE	r2,(i0,1)
+     500:	00 0e 2c e0 		AND	r2,#0x1f
+     504:	00 0e ab ff 		MOVE	r3,#0x0
+     508:	00 0c af bd 		MOVE	r1,r3
+     50c:	00 0c af ce 		MOVE	r0,r2
+     510:	00 0e be 7f 		OR	r0,#0x80
+     514:	00 0e ab ff 		MOVE	r3,#0x0
+     518:	00 0c af dc 		MOVE	r2,r1
+     51c:	00 0c af ed 		MOVE	r1,r0
+     520:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_TR);
+     524:	00 0e ac 32 		MOVE	r2,#0xcd
+     528:	00 0e ab fb 		MOVE	r3,#0x4
+     52c:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+     530:	00 33 fe 6b 		JUMP	0x0194		; 100650 <Handle_Irq_CntA+0xfeeb8>
+        		}
+
+        		else if (PreMode == RF_STANDBY){
+     534:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     538:	00 0e 1f df 		CMP	a,#0x20
+     53c:	00 32 fe 90 		JNE	0x016f		; 1005bc <Handle_Irq_CntA+0xfee24>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_SYNTHESIZER);        		
+     540:	00 0e a1 00 		MOVE	i0h,#0xff
+     544:	00 0e a0 00 		MOVE	i0l,#0xff
+     548:	00 18 ac 01 		MOVE	r2,(i0,1)
+     54c:	00 0e 2c e0 		AND	r2,#0x1f
+     550:	00 0e ab ff 		MOVE	r3,#0x0
+     554:	00 0c af bd 		MOVE	r1,r3
+     558:	00 0c af ce 		MOVE	r0,r2
+     55c:	00 0e be bf 		OR	r0,#0x40
+     560:	00 0e ab ff 		MOVE	r3,#0x0
+     564:	00 0c af dc 		MOVE	r2,r1
+     568:	00 0c af ed 		MOVE	r1,r0
+     56c:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_FS);         		
+     570:	00 0e ac 51 		MOVE	r2,#0xae
+     574:	00 0e ab f8 		MOVE	r3,#0x7
+     578:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_TRANSMITTER);
+     57c:	00 0e a1 00 		MOVE	i0h,#0xff
+     580:	00 0e a0 00 		MOVE	i0l,#0xff
+     584:	00 18 ac 01 		MOVE	r2,(i0,1)
+     588:	00 0e 2c e0 		AND	r2,#0x1f
+     58c:	00 0e ab ff 		MOVE	r3,#0x0
+     590:	00 0c af bd 		MOVE	r1,r3
+     594:	00 0c af ce 		MOVE	r0,r2
+     598:	00 0e be 7f 		OR	r0,#0x80
+     59c:	00 0e ab ff 		MOVE	r3,#0x0
+     5a0:	00 0c af dc 		MOVE	r2,r1
+     5a4:	00 0c af ed 		MOVE	r1,r0
+     5a8:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_TR);
+     5ac:	00 0e ac 32 		MOVE	r2,#0xcd
+     5b0:	00 0e ab fb 		MOVE	r3,#0x4
+     5b4:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+     5b8:	00 33 fe 6b 		JUMP	0x0194		; 100650 <Handle_Irq_CntA+0xfeeb8>
+        		}
+
+        		else if (PreMode == RF_SYNTHESIZER){
+     5bc:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     5c0:	00 0e 1f bf 		CMP	a,#0x40
+     5c4:	00 32 fe 7d 		JNE	0x0182		; 100608 <Handle_Irq_CntA+0xfee70>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_TRANSMITTER);
+     5c8:	00 0e a1 00 		MOVE	i0h,#0xff
+     5cc:	00 0e a0 00 		MOVE	i0l,#0xff
+     5d0:	00 18 ac 01 		MOVE	r2,(i0,1)
+     5d4:	00 0e 2c e0 		AND	r2,#0x1f
+     5d8:	00 0e ab ff 		MOVE	r3,#0x0
+     5dc:	00 0c af bd 		MOVE	r1,r3
+     5e0:	00 0c af ce 		MOVE	r0,r2
+     5e4:	00 0e be 7f 		OR	r0,#0x80
+     5e8:	00 0e ab ff 		MOVE	r3,#0x0
+     5ec:	00 0c af dc 		MOVE	r2,r1
+     5f0:	00 0c af ed 		MOVE	r1,r0
+     5f4:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_TR);
+     5f8:	00 0e ac 32 		MOVE	r2,#0xcd
+     5fc:	00 0e ab fb 		MOVE	r3,#0x4
+     600:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+     604:	00 33 fe 6b 		JUMP	0x0194		; 100650 <Handle_Irq_CntA+0xfeeb8>
+        		}
+
+        		else if (PreMode == RF_RECEIVER){
+     608:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     60c:	00 0e 1f 9f 		CMP	a,#0x60
+     610:	00 32 fe 6b 		JNE	0x0194		; 100650 <Handle_Irq_CntA+0xfeeb8>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_TRANSMITTER);
+     614:	00 0e a1 00 		MOVE	i0h,#0xff
+     618:	00 0e a0 00 		MOVE	i0l,#0xff
+     61c:	00 18 ac 01 		MOVE	r2,(i0,1)
+     620:	00 0e 2c e0 		AND	r2,#0x1f
+     624:	00 0e ab ff 		MOVE	r3,#0x0
+     628:	00 0c af bd 		MOVE	r1,r3
+     62c:	00 0c af ce 		MOVE	r0,r2
+     630:	00 0e be 7f 		OR	r0,#0x80
+     634:	00 0e ab ff 		MOVE	r3,#0x0
+     638:	00 0c af dc 		MOVE	r2,r1
+     63c:	00 0c af ed 		MOVE	r1,r0
+     640:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_TR);
+     644:	00 0e ac 32 		MOVE	r2,#0xcd
+     648:	00 0e ab fb 		MOVE	r3,#0x4
+     64c:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+        		}		        
+        		PreMode = RF_TRANSMITTER;
+     650:	00 00 7f 00 		MOVE	0xff,#0x80	; ff <InitRFChip+0xff>
+     654:	00 33 fd 7b 		JUMP	0x0284		; 100a10 <Handle_Irq_CntA+0xff278>
+        }
+        
+        else if(mode == RF_RECEIVER){
+     658:	00 1c af 00 		MOVE	a,(i2,0)
+     65c:	00 0e 1f 9f 		CMP	a,#0x60
+     660:	00 32 fd ed 		JNE	0x0212		; 100848 <Handle_Irq_CntA+0xff0b0>
+        
+            if (PreMode == RF_SLEEP){
+     664:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     668:	00 32 fe 36 		JZC	0x01c9		; 100724 <Handle_Irq_CntA+0xfef8c>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_STANDBY);        		
+     66c:	00 0e a1 00 		MOVE	i0h,#0xff
+     670:	00 0e a0 00 		MOVE	i0l,#0xff
+     674:	00 18 ac 01 		MOVE	r2,(i0,1)
+     678:	00 0e 2c e0 		AND	r2,#0x1f
+     67c:	00 0e ab ff 		MOVE	r3,#0x0
+     680:	00 0c af bd 		MOVE	r1,r3
+     684:	00 0c af ce 		MOVE	r0,r2
+     688:	00 0e be df 		OR	r0,#0x20
+     68c:	00 0e ab ff 		MOVE	r3,#0x0
+     690:	00 0c af dc 		MOVE	r2,r1
+     694:	00 0c af ed 		MOVE	r1,r0
+     698:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_OS);        		
+     69c:	00 0e ac ff 		MOVE	r2,#0x0
+     6a0:	00 0e ab cf 		MOVE	r3,#0x30
+     6a4:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+	               WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_SYNTHESIZER);        		
+     6a8:	00 0e a1 00 		MOVE	i0h,#0xff
+     6ac:	00 0e a0 00 		MOVE	i0l,#0xff
+     6b0:	00 18 ac 01 		MOVE	r2,(i0,1)
+     6b4:	00 0e 2c e0 		AND	r2,#0x1f
+     6b8:	00 0e ab ff 		MOVE	r3,#0x0
+     6bc:	00 0c af bd 		MOVE	r1,r3
+     6c0:	00 0c af ce 		MOVE	r0,r2
+     6c4:	00 0e be bf 		OR	r0,#0x40
+     6c8:	00 0e ab ff 		MOVE	r3,#0x0
+     6cc:	00 0c af dc 		MOVE	r2,r1
+     6d0:	00 0c af ed 		MOVE	r1,r0
+     6d4:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_FS); 
+     6d8:	00 0e ac 51 		MOVE	r2,#0xae
+     6dc:	00 0e ab f8 		MOVE	r3,#0x7
+     6e0:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_RECEIVER);
+     6e4:	00 0e a1 00 		MOVE	i0h,#0xff
+     6e8:	00 0e a0 00 		MOVE	i0l,#0xff
+     6ec:	00 18 ac 01 		MOVE	r2,(i0,1)
+     6f0:	00 0e 2c e0 		AND	r2,#0x1f
+     6f4:	00 0e ab ff 		MOVE	r3,#0x0
+     6f8:	00 0c af bd 		MOVE	r1,r3
+     6fc:	00 0c af ce 		MOVE	r0,r2
+     700:	00 0e be 9f 		OR	r0,#0x60
+     704:	00 0e ab ff 		MOVE	r3,#0x0
+     708:	00 0c af dc 		MOVE	r2,r1
+     70c:	00 0c af ed 		MOVE	r1,r0
+     710:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_RE);
+     714:	00 0e ac 32 		MOVE	r2,#0xcd
+     718:	00 0e ab fb 		MOVE	r3,#0x4
+     71c:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+     720:	00 33 fd ef 		JUMP	0x0210		; 100840 <Handle_Irq_CntA+0xff0a8>
+        		}
+
+        		else if (PreMode == RF_STANDBY){
+     724:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     728:	00 0e 1f df 		CMP	a,#0x20
+     72c:	00 32 fe 14 		JNE	0x01eb		; 1007ac <Handle_Irq_CntA+0xff014>
+	               WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_SYNTHESIZER);        		
+     730:	00 0e a1 00 		MOVE	i0h,#0xff
+     734:	00 0e a0 00 		MOVE	i0l,#0xff
+     738:	00 18 ac 01 		MOVE	r2,(i0,1)
+     73c:	00 0e 2c e0 		AND	r2,#0x1f
+     740:	00 0e ab ff 		MOVE	r3,#0x0
+     744:	00 0c af bd 		MOVE	r1,r3
+     748:	00 0c af ce 		MOVE	r0,r2
+     74c:	00 0e be bf 		OR	r0,#0x40
+     750:	00 0e ab ff 		MOVE	r3,#0x0
+     754:	00 0c af dc 		MOVE	r2,r1
+     758:	00 0c af ed 		MOVE	r1,r0
+     75c:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_FS); 
+     760:	00 0e ac 51 		MOVE	r2,#0xae
+     764:	00 0e ab f8 		MOVE	r3,#0x7
+     768:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_RECEIVER);
+     76c:	00 0e a1 00 		MOVE	i0h,#0xff
+     770:	00 0e a0 00 		MOVE	i0l,#0xff
+     774:	00 18 ac 01 		MOVE	r2,(i0,1)
+     778:	00 0e 2c e0 		AND	r2,#0x1f
+     77c:	00 0e ab ff 		MOVE	r3,#0x0
+     780:	00 0c af bd 		MOVE	r1,r3
+     784:	00 0c af ce 		MOVE	r0,r2
+     788:	00 0e be 9f 		OR	r0,#0x60
+     78c:	00 0e ab ff 		MOVE	r3,#0x0
+     790:	00 0c af dc 		MOVE	r2,r1
+     794:	00 0c af ed 		MOVE	r1,r0
+     798:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_RE);
+     79c:	00 0e ac 32 		MOVE	r2,#0xcd
+     7a0:	00 0e ab fb 		MOVE	r3,#0x4
+     7a4:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+     7a8:	00 33 fd ef 		JUMP	0x0210		; 100840 <Handle_Irq_CntA+0xff0a8>
+        		}
+
+        		else if (PreMode == RF_SYNTHESIZER){
+     7ac:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     7b0:	00 0e 1f bf 		CMP	a,#0x40
+     7b4:	00 32 fe 01 		JNE	0x01fe		; 1007f8 <Handle_Irq_CntA+0xff060>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_RECEIVER);
+     7b8:	00 0e a1 00 		MOVE	i0h,#0xff
+     7bc:	00 0e a0 00 		MOVE	i0l,#0xff
+     7c0:	00 18 ac 01 		MOVE	r2,(i0,1)
+     7c4:	00 0e 2c e0 		AND	r2,#0x1f
+     7c8:	00 0e ab ff 		MOVE	r3,#0x0
+     7cc:	00 0c af bd 		MOVE	r1,r3
+     7d0:	00 0c af ce 		MOVE	r0,r2
+     7d4:	00 0e be 9f 		OR	r0,#0x60
+     7d8:	00 0e ab ff 		MOVE	r3,#0x0
+     7dc:	00 0c af dc 		MOVE	r2,r1
+     7e0:	00 0c af ed 		MOVE	r1,r0
+     7e4:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_RE);     		
+     7e8:	00 0e ac 32 		MOVE	r2,#0xcd
+     7ec:	00 0e ab fb 		MOVE	r3,#0x4
+     7f0:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+     7f4:	00 33 fd ef 		JUMP	0x0210		; 100840 <Handle_Irq_CntA+0xff0a8>
+        		}
+
+        		else if (PreMode == RF_TRANSMITTER){	
+     7f8:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     7fc:	00 0e 1f 7f 		CMP	a,#0x80
+     800:	00 32 fd ef 		JNE	0x0210		; 100840 <Handle_Irq_CntA+0xff0a8>
+        		   WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_RECEIVER);
+     804:	00 0e a1 00 		MOVE	i0h,#0xff
+     808:	00 0e a0 00 		MOVE	i0l,#0xff
+     80c:	00 18 ac 01 		MOVE	r2,(i0,1)
+     810:	00 0e 2c e0 		AND	r2,#0x1f
+     814:	00 0e ab ff 		MOVE	r3,#0x0
+     818:	00 0c af bd 		MOVE	r1,r3
+     81c:	00 0c af ce 		MOVE	r0,r2
+     820:	00 0e be 9f 		OR	r0,#0x60
+     824:	00 0e ab ff 		MOVE	r3,#0x0
+     828:	00 0c af dc 		MOVE	r2,r1
+     82c:	00 0c af ed 		MOVE	r1,r0
+     830:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_RE);
+     834:	00 0e ac 32 		MOVE	r2,#0xcd
+     838:	00 0e ab fb 		MOVE	r3,#0x4
+     83c:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+        		}
+        		PreMode = RF_RECEIVER;
+     840:	00 00 9f 00 		MOVE	0xff,#0x60	; ff <InitRFChip+0xff>
+     844:	00 33 fd 7b 		JUMP	0x0284		; 100a10 <Handle_Irq_CntA+0xff278>
+        }
+        
+        else if(mode == RF_SYNTHESIZER){
+     848:	00 1c af 00 		MOVE	a,(i2,0)
+     84c:	00 0e 1f bf 		CMP	a,#0x40
+     850:	00 32 fd a8 		JNE	0x0257		; 10095c <Handle_Irq_CntA+0xff1c4>
+        
+            if (PreMode == RF_SLEEP){
+     854:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     858:	00 32 fd c9 		JZC	0x0236		; 1008d8 <Handle_Irq_CntA+0xff140>
+	            WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_STANDBY);        		
+     85c:	00 0e a1 00 		MOVE	i0h,#0xff
+     860:	00 0e a0 00 		MOVE	i0l,#0xff
+     864:	00 18 ac 01 		MOVE	r2,(i0,1)
+     868:	00 0e 2c e0 		AND	r2,#0x1f
+     86c:	00 0e ab ff 		MOVE	r3,#0x0
+     870:	00 0c af bd 		MOVE	r1,r3
+     874:	00 0c af ce 		MOVE	r0,r2
+     878:	00 0e be df 		OR	r0,#0x20
+     87c:	00 0e ab ff 		MOVE	r3,#0x0
+     880:	00 0c af dc 		MOVE	r2,r1
+     884:	00 0c af ed 		MOVE	r1,r0
+     888:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_OS);        		
+     88c:	00 0e ac ff 		MOVE	r2,#0x0
+     890:	00 0e ab cf 		MOVE	r3,#0x30
+     894:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+	            WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_SYNTHESIZER);        		
+     898:	00 0e a1 00 		MOVE	i0h,#0xff
+     89c:	00 0e a0 00 		MOVE	i0l,#0xff
+     8a0:	00 18 ac 01 		MOVE	r2,(i0,1)
+     8a4:	00 0e 2c e0 		AND	r2,#0x1f
+     8a8:	00 0e ab ff 		MOVE	r3,#0x0
+     8ac:	00 0c af bd 		MOVE	r1,r3
+     8b0:	00 0c af ce 		MOVE	r0,r2
+     8b4:	00 0e be bf 		OR	r0,#0x40
+     8b8:	00 0e ab ff 		MOVE	r3,#0x0
+     8bc:	00 0c af dc 		MOVE	r2,r1
+     8c0:	00 0c af ed 		MOVE	r1,r0
+     8c4:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		   Wait(TS_FS); 
+     8c8:	00 0e ac 51 		MOVE	r2,#0xae
+     8cc:	00 0e ab f8 		MOVE	r3,#0x7
+     8d0:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+     8d4:	00 33 fd aa 		JUMP	0x0255		; 100954 <Handle_Irq_CntA+0xff1bc>
+        		}
+
+        		else if (PreMode == RF_STANDBY){
+     8d8:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     8dc:	00 0e 1f df 		CMP	a,#0x20
+     8e0:	00 32 fd b6 		JNE	0x0249		; 100924 <Handle_Irq_CntA+0xff18c>
+        	    WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_SYNTHESIZER);        		
+     8e4:	00 0e a1 00 		MOVE	i0h,#0xff
+     8e8:	00 0e a0 00 		MOVE	i0l,#0xff
+     8ec:	00 18 ac 01 		MOVE	r2,(i0,1)
+     8f0:	00 0e 2c e0 		AND	r2,#0x1f
+     8f4:	00 0e ab ff 		MOVE	r3,#0x0
+     8f8:	00 0c af bd 		MOVE	r1,r3
+     8fc:	00 0c af ce 		MOVE	r0,r2
+     900:	00 0e be bf 		OR	r0,#0x40
+     904:	00 0e ab ff 		MOVE	r3,#0x0
+     908:	00 0c af dc 		MOVE	r2,r1
+     90c:	00 0c af ed 		MOVE	r1,r0
+     910:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		Wait(TS_FS); 
+     914:	00 0e ac 51 		MOVE	r2,#0xae
+     918:	00 0e ab f8 		MOVE	r3,#0x7
+     91c:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+     920:	00 33 fd aa 		JUMP	0x0255		; 100954 <Handle_Irq_CntA+0xff1bc>
+        		}
+
+        		else {
+        	    WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_SYNTHESIZER);        		
+     924:	00 0e a1 00 		MOVE	i0h,#0xff
+     928:	00 0e a0 00 		MOVE	i0l,#0xff
+     92c:	00 18 ac 01 		MOVE	r2,(i0,1)
+     930:	00 0e 2c e0 		AND	r2,#0x1f
+     934:	00 0e ab ff 		MOVE	r3,#0x0
+     938:	00 0c af bd 		MOVE	r1,r3
+     93c:	00 0c af ce 		MOVE	r0,r2
+     940:	00 0e be bf 		OR	r0,#0x40
+     944:	00 0e ab ff 		MOVE	r3,#0x0
+     948:	00 0c af dc 		MOVE	r2,r1
+     94c:	00 0c af ed 		MOVE	r1,r0
+     950:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		}
+            
+            PreMode = RF_SYNTHESIZER;
+     954:	00 00 bf 00 		MOVE	0xff,#0x40	; ff <InitRFChip+0xff>
+     958:	00 33 fd 7b 		JUMP	0x0284		; 100a10 <Handle_Irq_CntA+0xff278>
+        }
+        
+        else if(mode == RF_STANDBY){
+     95c:	00 1c af 00 		MOVE	a,(i2,0)
+     960:	00 0e 1f df 		CMP	a,#0x20
+     964:	00 32 fd 85 		JNE	0x027a		; 1009e8 <Handle_Irq_CntA+0xff250>
+        
+            if (PreMode == RF_SLEEP){
+     968:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     96c:	00 32 fd 93 		JZC	0x026c		; 1009b0 <Handle_Irq_CntA+0xff218>
+	            WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_STANDBY);        		
+     970:	00 0e a1 00 		MOVE	i0h,#0xff
+     974:	00 0e a0 00 		MOVE	i0l,#0xff
+     978:	00 18 ac 01 		MOVE	r2,(i0,1)
+     97c:	00 0e 2c e0 		AND	r2,#0x1f
+     980:	00 0e ab ff 		MOVE	r3,#0x0
+     984:	00 0c af bd 		MOVE	r1,r3
+     988:	00 0c af ce 		MOVE	r0,r2
+     98c:	00 0e be df 		OR	r0,#0x20
+     990:	00 0e ab ff 		MOVE	r3,#0x0
+     994:	00 0c af dc 		MOVE	r2,r1
+     998:	00 0c af ed 		MOVE	r1,r0
+     99c:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		Wait(TS_OS);
+     9a0:	00 0e ac ff 		MOVE	r2,#0x0
+     9a4:	00 0e ab cf 		MOVE	r3,#0x30
+     9a8:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+     9ac:	00 33 fd 87 		JUMP	0x0278		; 1009e0 <Handle_Irq_CntA+0xff248>
+        		}
+
+        		else {
+	            WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_STANDBY);       		
+     9b0:	00 0e a1 00 		MOVE	i0h,#0xff
+     9b4:	00 0e a0 00 		MOVE	i0l,#0xff
+     9b8:	00 18 ac 01 		MOVE	r2,(i0,1)
+     9bc:	00 0e 2c e0 		AND	r2,#0x1f
+     9c0:	00 0e ab ff 		MOVE	r3,#0x0
+     9c4:	00 0c af bd 		MOVE	r1,r3
+     9c8:	00 0c af ce 		MOVE	r0,r2
+     9cc:	00 0e be df 		OR	r0,#0x20
+     9d0:	00 0e ab ff 		MOVE	r3,#0x0
+     9d4:	00 0c af dc 		MOVE	r2,r1
+     9d8:	00 0c af ed 		MOVE	r1,r0
+     9dc:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        		}
+        		
+        		PreMode = RF_STANDBY;
+     9e0:	00 00 df 00 		MOVE	0xff,#0x20	; ff <InitRFChip+0xff>
+     9e4:	00 33 fd 7b 		JUMP	0x0284		; 100a10 <Handle_Irq_CntA+0xff278>
+        }
+        
+        else {// mode == RF_SLEEP
+        WriteRegister(REG_MCPARAM1, (RegistersCfg[REG_MCPARAM1] & 0x1F) | RF_SLEEP);
+     9e8:	00 0e a1 00 		MOVE	i0h,#0xff
+     9ec:	00 0e a0 00 		MOVE	i0l,#0xff
+     9f0:	00 18 ae 01 		MOVE	r0,(i0,1)
+     9f4:	00 0e 2e e0 		AND	r0,#0x1f
+     9f8:	00 0e ad ff 		MOVE	r1,#0x0
+     9fc:	00 0e ab ff 		MOVE	r3,#0x0
+     a00:	00 0c af dc 		MOVE	r2,r1
+     a04:	00 0c af ed 		MOVE	r1,r0
+     a08:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+        PreMode = RF_SLEEP;
+     a0c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+        }
+    }
+}
+     a10:	00 16 af 01 		MOVE	a,(i3,1)+
+     a14:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     a18:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     a1c:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     a20:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     a24:	00 23 ff ff 		JUMP	ip
+
+00000a28 <WriteRegister>:
+
+/*******************************************************************
+** WriteRegister : Writes the register value at the given address **
+**                  on the SX1211                                 **
+********************************************************************
+** In  : address, value                                           **
+** Out : -                                                        **
+*******************************************************************/
+void WriteRegister(_U8 address, _U16 value){
+     a28:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     a2c:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     a30:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     a34:	00 03 79 ff 		MOVE	-(i3,1),iph
+     a38:	00 16 af fd 		MOVE	a,-(i3,3)
+     a3c:	00 0c af 75 		MOVE	i2h,i3h
+     a40:	00 0c af 64 		MOVE	i2l,i3l
+     a44:	00 02 eb 00 		MOVE	(i2,0),r3
+     a48:	00 02 ec 01 		MOVE	(i2,1),r2
+     a4c:	00 02 ed 02 		MOVE	(i2,2),r1
+    
+    SPIInit();
+     a50:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     a54:	00 0e bb f0 		OR	r3,#0xf
+     a58:	00 0e 2b 10 		AND	r3,#0xef
+     a5c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    address = (address << 1) & 0x3E ;
+     a60:	00 1c ac 00 		MOVE	r2,(i2,0)
+     a64:	00 0e ab ff 		MOVE	r3,#0x0
+     a68:	00 0d af cc 		SHL	r2,r2
+     a6c:	00 0c af cf 		MOVE	a,r2
+     a70:	00 0e 2f c1 		AND	a,#0x3e
+     a74:	00 02 ef 00 		MOVE	(i2,0),a
+    SPINssData(1);
+     a78:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     a7c:	00 0e bb fe 		OR	r3,#0x1
+     a80:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPINssConfig(0);
+     a84:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     a88:	00 0e 2b 02 		AND	r3,#0xfd
+     a8c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SpiInOut(address);
+     a90:	00 1c ab 00 		MOVE	r3,(i2,0)
+     a94:	00 3a fa 60 		CALLS	0x059f		; 10167c <Handle_Irq_CntA+0xffee4>
+    SpiInOut(value);
+     a98:	00 1c ab 02 		MOVE	r3,(i2,2)
+     a9c:	00 3a fa 60 		CALLS	0x059f		; 10167c <Handle_Irq_CntA+0xffee4>
+    SPINssConfig(1);
+     aa0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     aa4:	00 0e bb fd 		OR	r3,#0x2
+     aa8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+}
+     aac:	00 16 af 03 		MOVE	a,(i3,3)+
+     ab0:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     ab4:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     ab8:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     abc:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     ac0:	00 23 ff ff 		JUMP	ip
+
+00000ac4 <ReadRegister>:
+
+/*******************************************************************
+** ReadRegister : Reads the register value at the given address on**
+**                the SX1211                                      **
+********************************************************************
+** In  : address                                                  **
+** Out : value                                                    **
+*******************************************************************/
+_U16 ReadRegister(_U8 address){
+     ac4:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     ac8:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     acc:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     ad0:	00 03 79 ff 		MOVE	-(i3,1),iph
+     ad4:	00 16 af fe 		MOVE	a,-(i3,2)
+     ad8:	00 0c af 75 		MOVE	i2h,i3h
+     adc:	00 0c af 64 		MOVE	i2l,i3l
+     ae0:	00 02 eb 00 		MOVE	(i2,0),r3
+    _U8 value = 0;
+     ae4:	00 0e af ff 		MOVE	a,#0x0
+     ae8:	00 02 ef 01 		MOVE	(i2,1),a
+
+    SPIInit();
+     aec:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     af0:	00 0e bb f0 		OR	r3,#0xf
+     af4:	00 0e 2b 10 		AND	r3,#0xef
+     af8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPINssData(1);
+     afc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     b00:	00 0e bb fe 		OR	r3,#0x1
+     b04:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    address = ((address << 1) & 0x7E) | 0x40;
+     b08:	00 1c ac 00 		MOVE	r2,(i2,0)
+     b0c:	00 0e ab ff 		MOVE	r3,#0x0
+     b10:	00 0d af cc 		SHL	r2,r2
+     b14:	00 0c af cb 		MOVE	r3,r2
+     b18:	00 0e 2b 81 		AND	r3,#0x7e
+     b1c:	00 0e bf bf 		OR	a,#0x40
+     b20:	00 02 ef 00 		MOVE	(i2,0),a
+    SPINssConfig(0);
+     b24:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     b28:	00 0e 2b 02 		AND	r3,#0xfd
+     b2c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SpiInOut(address);
+     b30:	00 1c ab 00 		MOVE	r3,(i2,0)
+     b34:	00 3a fa 60 		CALLS	0x059f		; 10167c <Handle_Irq_CntA+0xffee4>
+    value = SpiInOut(0);
+     b38:	00 0e ab ff 		MOVE	r3,#0x0
+     b3c:	00 3a fa 60 		CALLS	0x059f		; 10167c <Handle_Irq_CntA+0xffee4>
+     b40:	00 02 ec 01 		MOVE	(i2,1),r2
+    SPINssConfig(1);
+     b44:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     b48:	00 0e bb fd 		OR	r3,#0x2
+     b4c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+    return value;
+     b50:	00 1c ac 01 		MOVE	r2,(i2,1)
+     b54:	00 0e ab ff 		MOVE	r3,#0x0
+}
+     b58:	00 16 af 02 		MOVE	a,(i3,2)+
+     b5c:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     b60:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     b64:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     b68:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     b6c:	00 23 ff ff 		JUMP	ip
+
+00000b70 <SendRfFrame>:
+
+/*******************************************************************
+** Communication functions                                        **
+*******************************************************************/
+
+/*******************************************************************
+** SendRfFrame : Sends a RF frame                                 **
+********************************************************************
+** In  : *buffer, size                                            **
+** Out : *pReturnCode                                             **
+*******************************************************************/
+void SendRfFrame(_U8 *buffer, _U8 size, _U8 *pReturnCode){
+     b70:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     b74:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     b78:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     b7c:	00 03 79 ff 		MOVE	-(i3,1),iph
+     b80:	00 16 af fd 		MOVE	a,-(i3,3)
+     b84:	00 0c af 75 		MOVE	i2h,i3h
+     b88:	00 0c af 64 		MOVE	i2l,i3l
+     b8c:	00 02 eb 00 		MOVE	(i2,0),r3
+     b90:	00 02 ec 01 		MOVE	(i2,1),r2
+     b94:	00 02 ed 02 		MOVE	(i2,2),r1
+    if(size > (((RegistersCfg[REG_MCPARAM6])>>6)+1)*16){  // If size > FIFO size
+     b98:	00 1c a8 02 		MOVE	ipl,(i2,2)
+     b9c:	00 0e a9 ff 		MOVE	iph,#0x0
+     ba0:	00 0e a1 00 		MOVE	i0h,#0xff
+     ba4:	00 0e a0 00 		MOVE	i0l,#0xff
+     ba8:	00 19 6d 0a 		SHR	r1,(i0,10)
+     bac:	00 19 4e 0b 		SHRC	r0,(i0,11)
+     bb0:	00 0e ee f7 		MUL	r0,#0x8
+     bb4:	00 0e ed f7 		MUL	r1,#0x8
+     bb8:	00 0c be fe 		OR	r0,a,r0
+     bbc:	00 0e ee ef 		MUL	r0,#0x10
+     bc0:	00 03 7f ff 		MOVE	-(i3,1),a
+     bc4:	00 0e ed ef 		MUL	r1,#0x10
+     bc8:	00 0c bf ed 		OR	r1,r0,a
+     bcc:	00 16 ae 01 		MOVE	r0,(i3,1)+
+     bd0:	00 0c af ec 		MOVE	r2,r0
+     bd4:	00 0e cc ef 		ADD	r2,#0x10
+     bd8:	00 0d 5f db 		INCC	r3,r1
+     bdc:	00 0c 19 bf 		CMP	iph,r3
+     be0:	00 32 fd 05 		JNE	0x02fa		; 100be8 <Handle_Irq_CntA+0xff450>
+     be4:	00 0c 18 cf 		CMP	ipl,r2
+     be8:	00 34 fc fc 		JLE	0x0303		; 100c0c <Handle_Irq_CntA+0xff474>
+        RFState |= RF_STOP;
+     bec:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     bf0:	00 0e bf fe 		OR	a,#0x1
+     bf4:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        *pReturnCode = ERROR;
+     bf8:	00 1c a0 08 		MOVE	i0l,(i2,8)
+     bfc:	00 1c a1 07 		MOVE	i0h,(i2,7)
+     c00:	00 0e af fe 		MOVE	a,#0x1
+     c04:	00 02 cf 00 		MOVE	(i0,0),a
+        return;
+     c08:	00 33 fc b4 		JUMP	0x034b		; 100d2c <Handle_Irq_CntA+0xff594>
+    }
+
+    RFState |= RF_BUSY;
+     c0c:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     c10:	00 0e bf fd 		OR	a,#0x2
+     c14:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    RFState &= ~RF_STOP;
+     c18:	00 0e 2f 01 		AND	a,#0xfe
+     c1c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    RFFrameSize = size;
+     c20:	00 1c af 02 		MOVE	a,(i2,2)
+     c24:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    pRFFrame = buffer;
+     c28:	00 1c af 00 		MOVE	a,(i2,0)
+     c2c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     c30:	00 1c af 01 		MOVE	a,(i2,1)
+     c34:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    
+    SetRFMode(RF_STANDBY);
+     c38:	00 0e ab df 		MOVE	r3,#0x20
+     c3c:	00 3a fe f0 		CALLS	0x010f		; 10043c <Handle_Irq_CntA+0xfeca4>
+    WriteRegister(REG_PKTPARAM4, (RegistersCfg[REG_PKTPARAM4-1] & 0xBF) | RF_PKT4_FIFO_STANDBY_WRITE);
+     c40:	00 0e a1 00 		MOVE	i0h,#0xff
+     c44:	00 0e a0 00 		MOVE	i0l,#0xff
+     c48:	00 18 ae 3d 		MOVE	r0,(i0,61)
+     c4c:	00 0e 2e 40 		AND	r0,#0xbf
+     c50:	00 0e ad ff 		MOVE	r1,#0x0
+     c54:	00 0e ab e0 		MOVE	r3,#0x1f
+     c58:	00 0c af dc 		MOVE	r2,r1
+     c5c:	00 0c af ed 		MOVE	r1,r0
+     c60:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+    
+    SendByte(RFFrameSize);
+     c64:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     c68:	00 3a fc 0d 		CALLS	0x03f2		; 100fc8 <Handle_Irq_CntA+0xff830>
+    for(ByteCounter = 0, RFFramePos = 0; ByteCounter < RFFrameSize;){
+     c6c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     c70:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     c74:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     c78:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+     c7c:	00 0e ab ff 		MOVE	r3,#0x0
+     c80:	00 04 ae 00 		MOVE	r0,0xff	; ff <InitRFChip+0xff>
+     c84:	00 04 ad 00 		MOVE	r1,0xff	; ff <InitRFChip+0xff>
+     c88:	00 0c 1d bf 		CMP	r1,r3
+     c8c:	00 32 fc da 		JNE	0x0325		; 100c94 <Handle_Irq_CntA+0xff4fc>
+     c90:	00 0c 1e cf 		CMP	r0,r2
+     c94:	00 35 fc d8 		JLT	0x0327		; 100c9c <Handle_Irq_CntA+0xff504>
+     c98:	00 33 fc c8 		JUMP	0x0337		; 100cdc <Handle_Irq_CntA+0xff544>
+            SendByte(pRFFrame[RFFramePos++]); 
+     c9c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     ca0:	00 0c af bc 		MOVE	r2,r3
+     ca4:	00 0e ab ff 		MOVE	r3,#0x0
+     ca8:	00 0c af c0 		MOVE	i0l,r2
+     cac:	00 0c af b1 		MOVE	i0h,r3
+     cb0:	00 04 c0 00 		ADD	i0l,0xff	; ff <InitRFChip+0xff>
+     cb4:	00 04 d1 00 		ADDC	i0h,0xff	; ff <InitRFChip+0xff>
+     cb8:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+     cbc:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     cc0:	00 18 ab 00 		MOVE	r3,(i0,0)
+     cc4:	00 3a fc 0d 		CALLS	0x03f2		; 100fc8 <Handle_Irq_CntA+0xff830>
+            ByteCounter++; 
+     cc8:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+     ccc:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     cd0:	00 05 5f 00 		INCC	a,0xff	; ff <InitRFChip+0xff>
+     cd4:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     cd8:	00 33 fc e1 		JUMP	0x031e		; 100c78 <Handle_Irq_CntA+0xff4e0>
+    }
+
+    SetRFMode(RF_TRANSMITTER); // Cf RF_IRQ0_TX_FIFOEMPTY_START_FIFONOTEMPTY 
+     cdc:	00 0e ab 7f 		MOVE	r3,#0x80
+     ce0:	00 3a fe f0 		CALLS	0x010f		; 10043c <Handle_Irq_CntA+0xfeca4>
+    
+    do{
+     ce4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     ce8:	00 0e 2b fd 		AND	r3,#0x2
+     cec:	00 0e 1b ff 		CMP	r3,#0x0
+     cf0:	00 36 fc c6 		JEQ	0x0339		; 100ce4 <Handle_Irq_CntA+0xff54c>
+    }while(!(RegPAIn & IRQ_1)); // Wait for TX done
+    Wait(1000); // Wait for last bit to be sent (worst case bitrate)
+     cf4:	00 0e ac 17 		MOVE	r2,#0xe8
+     cf8:	00 0e ab fc 		MOVE	r3,#0x3
+     cfc:	00 3a fa cd 		CALLS	0x0532		; 1014c8 <Handle_Irq_CntA+0xffd30>
+
+    //SetRFMode(RF_SLEEP);
+    SetRFMode(RF_STANDBY);
+     d00:	00 0e ab df 		MOVE	r3,#0x20
+     d04:	00 3a fe f0 		CALLS	0x010f		; 10043c <Handle_Irq_CntA+0xfeca4>
+
+
+    RFState |= RF_STOP;
+     d08:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     d0c:	00 0e bf fe 		OR	a,#0x1
+     d10:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    RFState &= ~RF_TX_DONE;
+     d14:	00 0e 2f 08 		AND	a,#0xf7
+     d18:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    *pReturnCode = OK;
+     d1c:	00 1c a0 08 		MOVE	i0l,(i2,8)
+     d20:	00 1c a1 07 		MOVE	i0h,(i2,7)
+     d24:	00 0e af ff 		MOVE	a,#0x0
+     d28:	00 02 cf 00 		MOVE	(i0,0),a
+} // void SendRfFrame(_U8 *buffer, _U8 size, _U8 *pReturnCode)
+     d2c:	00 16 af 03 		MOVE	a,(i3,3)+
+     d30:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     d34:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     d38:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     d3c:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     d40:	00 23 ff ff 		JUMP	ip
+
+00000d44 <ReceiveRfFrame>:
+
+/*******************************************************************
+** ReceiveRfFrame : Receives a RF frame                           **
+********************************************************************
+** In  : -                                                        **
+** Out : *buffer, size, *pReturnCode                              **
+*******************************************************************/
+void ReceiveRfFrame(_U8 *buffer, _U8 *size, _U8 *pReturnCode){
+     d44:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     d48:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     d4c:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     d50:	00 03 79 ff 		MOVE	-(i3,1),iph
+     d54:	00 16 af fb 		MOVE	a,-(i3,5)
+     d58:	00 0c af 75 		MOVE	i2h,i3h
+     d5c:	00 0c af 64 		MOVE	i2l,i3l
+     d60:	00 02 eb 00 		MOVE	(i2,0),r3
+     d64:	00 02 ec 01 		MOVE	(i2,1),r2
+     d68:	00 02 ed 02 		MOVE	(i2,2),r1
+     d6c:	00 02 ee 03 		MOVE	(i2,3),r0
+    
+       _U8 TempRFState;
+       
+       *pReturnCode = RX_RUNNING;
+     d70:	00 1c a0 0a 		MOVE	i0l,(i2,10)
+     d74:	00 1c a1 09 		MOVE	i0h,(i2,9)
+     d78:	00 0e af fc 		MOVE	a,#0x3
+     d7c:	00 02 cf 00 		MOVE	(i0,0),a
+
+       TempRFState = RFState; 
+     d80:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     d84:	00 02 ef 04 		MOVE	(i2,4),a
+
+    if(TempRFState & RF_STOP){
+     d88:	00 0e 2f fe 		AND	a,#0x1
+     d8c:	00 0c af fb 		MOVE	r3,a
+     d90:	00 0e 1b ff 		CMP	r3,#0x0
+     d94:	00 36 fc 84 		JEQ	0x037b		; 100dec <Handle_Irq_CntA+0xff654>
+        pRFFrame = buffer;
+     d98:	00 1c af 00 		MOVE	a,(i2,0)
+     d9c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     da0:	00 1c af 01 		MOVE	a,(i2,1)
+     da4:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        RFFramePos = 0;
+     da8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+        RFFrameSize = 2;
+     dac:	00 00 fd 00 		MOVE	0xff,#0x02	; ff <InitRFChip+0xff>
+                
+        RegIrqEnMid |= 0x02; // Enables Port A pin 1 interrupt IRQ_1 (CRCOK)
+     db0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     db4:	00 0e bb fd 		OR	r3,#0x2
+     db8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+        SetRFMode(RF_RECEIVER);
+     dbc:	00 0e ab 9f 		MOVE	r3,#0x60
+     dc0:	00 3a fe f0 		CALLS	0x010f		; 10043c <Handle_Irq_CntA+0xfeca4>
+        EnableTimeOut(true);
+     dc4:	00 0e ab fe 		MOVE	r3,#0x1
+     dc8:	00 3a fa 96 		CALLS	0x0569		; 1015a4 <Handle_Irq_CntA+0xffe0c>
+        RFState |= RF_BUSY;
+     dcc:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     dd0:	00 0e bf fd 		OR	a,#0x2
+     dd4:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        RFState &= ~RF_STOP;
+     dd8:	00 0e 2f 01 		AND	a,#0xfe
+     ddc:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        RFState &= ~RF_TIMEOUT;
+     de0:	00 0e 2f 20 		AND	a,#0xdf
+     de4:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        return;
+     de8:	00 33 fc 13 		JUMP	0x03ec		; 100fb0 <Handle_Irq_CntA+0xff818>
+    }
+    else if(TempRFState & RF_RX_DONE){
+     dec:	00 1c ab 04 		MOVE	r3,(i2,4)
+     df0:	00 0e 2b fb 		AND	r3,#0x4
+     df4:	00 0e 1b ff 		CMP	r3,#0x0
+     df8:	00 36 fc 3c 		JEQ	0x03c3		; 100f0c <Handle_Irq_CntA+0xff774>
+
+        SetRFMode(RF_STANDBY);        
+     dfc:	00 0e ab df 		MOVE	r3,#0x20
+     e00:	00 3a fe f0 		CALLS	0x010f		; 10043c <Handle_Irq_CntA+0xfeca4>
+        WriteRegister(REG_PKTPARAM4, (RegistersCfg[REG_PKTPARAM4-1] & 0xBF) | RF_PKT4_FIFO_STANDBY_READ);
+     e04:	00 0e a1 00 		MOVE	i0h,#0xff
+     e08:	00 0e a0 00 		MOVE	i0l,#0xff
+     e0c:	00 18 ac 3d 		MOVE	r2,(i0,61)
+     e10:	00 0e 2c 40 		AND	r2,#0xbf
+     e14:	00 0e ab ff 		MOVE	r3,#0x0
+     e18:	00 0c af bd 		MOVE	r1,r3
+     e1c:	00 0c af ce 		MOVE	r0,r2
+     e20:	00 0e be bf 		OR	r0,#0x40
+     e24:	00 0e ab e0 		MOVE	r3,#0x1f
+     e28:	00 0c af dc 		MOVE	r2,r1
+     e2c:	00 0c af ed 		MOVE	r1,r0
+     e30:	00 3a fd 75 		CALLS	0x028a		; 100a28 <Handle_Irq_CntA+0xff290>
+            
+        RFFrameSize = ReceiveByte();
+     e34:	00 3a fb 68 		CALLS	0x0497		; 10125c <Handle_Irq_CntA+0xffac4>
+     e38:	00 01 bc 00 		MOVE	0xff,r2	; ff <InitRFChip+0xff>
+        for(ByteCounter = 0, RFFramePos = 0; ByteCounter < RFFrameSize; ){
+     e3c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     e40:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     e44:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     e48:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+     e4c:	00 0e ab ff 		MOVE	r3,#0x0
+     e50:	00 04 ae 00 		MOVE	r0,0xff	; ff <InitRFChip+0xff>
+     e54:	00 04 ad 00 		MOVE	r1,0xff	; ff <InitRFChip+0xff>
+     e58:	00 0c 1d bf 		CMP	r1,r3
+     e5c:	00 32 fc 66 		JNE	0x0399		; 100e64 <Handle_Irq_CntA+0xff6cc>
+     e60:	00 0c 1e cf 		CMP	r0,r2
+     e64:	00 35 fc 64 		JLT	0x039b		; 100e6c <Handle_Irq_CntA+0xff6d4>
+     e68:	00 33 fc 53 		JUMP	0x03ac		; 100eb0 <Handle_Irq_CntA+0xff718>
+        		pRFFrame[RFFramePos++] = ReceiveByte();
+     e6c:	00 3a fb 68 		CALLS	0x0497		; 10125c <Handle_Irq_CntA+0xffac4>
+     e70:	00 0c af cd 		MOVE	r1,r2
+     e74:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     e78:	00 0c af bc 		MOVE	r2,r3
+     e7c:	00 0e ab ff 		MOVE	r3,#0x0
+     e80:	00 0c af c0 		MOVE	i0l,r2
+     e84:	00 0c af b1 		MOVE	i0h,r3
+     e88:	00 04 c0 00 		ADD	i0l,0xff	; ff <InitRFChip+0xff>
+     e8c:	00 04 d1 00 		ADDC	i0h,0xff	; ff <InitRFChip+0xff>
+     e90:	00 02 cd 00 		MOVE	(i0,0),r1
+     e94:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+     e98:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+            ByteCounter++; 
+     e9c:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+     ea0:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     ea4:	00 05 5f 00 		INCC	a,0xff	; ff <InitRFChip+0xff>
+     ea8:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     eac:	00 33 fc 6d 		JUMP	0x0392		; 100e48 <Handle_Irq_CntA+0xff6b0>
+        }
+        //SetRFMode(RF_SLEEP);
+        
+        *size = RFFrameSize;
+     eb0:	00 1c a0 03 		MOVE	i0l,(i2,3)
+     eb4:	00 1c a1 02 		MOVE	i0h,(i2,2)
+     eb8:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     ebc:	00 02 cf 00 		MOVE	(i0,0),a
+        *pReturnCode = OK;
+     ec0:	00 1c a0 0a 		MOVE	i0l,(i2,10)
+     ec4:	00 1c a1 09 		MOVE	i0h,(i2,9)
+     ec8:	00 0e af ff 		MOVE	a,#0x0
+     ecc:	00 02 cf 00 		MOVE	(i0,0),a
+        RFState |= RF_STOP;
+     ed0:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     ed4:	00 0e bf fe 		OR	a,#0x1
+     ed8:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        EnableTimeOut(false);
+     edc:	00 0e ab ff 		MOVE	r3,#0x0
+     ee0:	00 3a fa 96 		CALLS	0x0569		; 1015a4 <Handle_Irq_CntA+0xffe0c>
+        RFState &= ~RF_RX_DONE;
+     ee4:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     ee8:	00 0e 2f 04 		AND	a,#0xfb
+     eec:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        RegIrqEnMid &= ~0x02; // Disables Port A pin 1 interrupt IRQ_1 (CRCOK)
+     ef0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     ef4:	00 0e 2b 02 		AND	r3,#0xfd
+     ef8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        SPINssData(1);
+     efc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f00:	00 0e bb fe 		OR	r3,#0x1
+     f04:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        return;
+     f08:	00 33 fc 13 		JUMP	0x03ec		; 100fb0 <Handle_Irq_CntA+0xff818>
+    }
+    else if(TempRFState & RF_ERROR){
+     f0c:	00 1c ab 04 		MOVE	r3,(i2,4)
+     f10:	00 0e 2b ef 		AND	r3,#0x10
+     f14:	00 0e 1b ff 		CMP	r3,#0x0
+     f18:	00 36 fc 28 		JEQ	0x03d7		; 100f5c <Handle_Irq_CntA+0xff7c4>
+        RFState |= RF_STOP;
+     f1c:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     f20:	00 0e bf fe 		OR	a,#0x1
+     f24:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        RFState &= ~RF_ERROR;
+     f28:	00 0e 2f 10 		AND	a,#0xef
+     f2c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        *pReturnCode = ERROR;
+     f30:	00 1c a0 0a 		MOVE	i0l,(i2,10)
+     f34:	00 1c a1 09 		MOVE	i0h,(i2,9)
+     f38:	00 0e af fe 		MOVE	a,#0x1
+     f3c:	00 02 cf 00 		MOVE	(i0,0),a
+        RegIrqEnMid &= ~0x02; // Disables Port A pin 1 interrupt IRQ_1 (CRCOK)
+     f40:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f44:	00 0e 2b 02 		AND	r3,#0xfd
+     f48:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        SPINssData(1);
+     f4c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f50:	00 0e bb fe 		OR	r3,#0x1
+     f54:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        return;
+     f58:	00 33 fc 13 		JUMP	0x03ec		; 100fb0 <Handle_Irq_CntA+0xff818>
+    }
+    else if(TempRFState & RF_TIMEOUT){
+     f5c:	00 1c ab 04 		MOVE	r3,(i2,4)
+     f60:	00 0e 2b df 		AND	r3,#0x20
+     f64:	00 0e 1b ff 		CMP	r3,#0x0
+     f68:	00 36 fc 13 		JEQ	0x03ec		; 100fb0 <Handle_Irq_CntA+0xff818>
+        RFState |= RF_STOP;
+     f6c:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     f70:	00 0e bf fe 		OR	a,#0x1
+     f74:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        RFState &= ~RF_TIMEOUT;
+     f78:	00 0e 2f 20 		AND	a,#0xdf
+     f7c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        EnableTimeOut(false);
+     f80:	00 0e ab ff 		MOVE	r3,#0x0
+     f84:	00 3a fa 96 		CALLS	0x0569		; 1015a4 <Handle_Irq_CntA+0xffe0c>
+        *pReturnCode = RX_TIMEOUT;
+     f88:	00 1c a0 0a 		MOVE	i0l,(i2,10)
+     f8c:	00 1c a1 09 		MOVE	i0h,(i2,9)
+     f90:	00 0e af fd 		MOVE	a,#0x2
+     f94:	00 02 cf 00 		MOVE	(i0,0),a
+        RegIrqEnMid &= ~0x02; // Disables Port A pin 1 interrupt IRQ_1 (CRCOK)
+     f98:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f9c:	00 0e 2b 02 		AND	r3,#0xfd
+     fa0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        SPINssData(1);
+     fa4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     fa8:	00 0e bb fe 		OR	r3,#0x1
+     fac:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        return;
+    }
+} // void ReceiveRfFrame(_U8 *buffer, _U8 size, _U8 *pReturnCode)
+     fb0:	00 16 af 05 		MOVE	a,(i3,5)+
+     fb4:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     fb8:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     fbc:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     fc0:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     fc4:	00 23 ff ff 		JUMP	ip
+
+00000fc8 <SendByte>:
+
+/*******************************************************************
+** SendByte : Sends a data to the transceiver trough the SPI      **
+**            interface                                           **
+********************************************************************
+** In  : b                                                        **
+** Out : -                                                        **
+*******************************************************************/
+/*******************************************************************
+**  Information                                                   **
+********************************************************************
+** This function has been optimized to send a byte to the         **
+** transceiver SPI interface as quick as possible by using        **
+** IO ports.                                                      **
+** If the microcontroller has an  SPI hardware interface there is **
+** no need to optimize the function                               **
+*******************************************************************/
+void SendByte(_U8 b){
+     fc8:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     fcc:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     fd0:	00 16 af ff 		MOVE	a,-(i3,1)
+     fd4:	00 0c af 75 		MOVE	i2h,i3h
+     fd8:	00 0c af 64 		MOVE	i2l,i3l
+     fdc:	00 02 eb 00 		MOVE	(i2,0),r3
+    SPIInit();
+     fe0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     fe4:	00 0e bb f0 		OR	r3,#0xf
+     fe8:	00 0e 2b 10 		AND	r3,#0xef
+     fec:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPINssConfig(1);
+     ff0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     ff4:	00 0e bb fd 		OR	r3,#0x2
+     ff8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPINssData(0);
+     ffc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1000:	00 0e 2b 01 		AND	r3,#0xfe
+    1004:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+    SPIClock(0);
+    1008:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    100c:	00 0e 2b 04 		AND	r3,#0xfb
+    1010:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (b & 0x80){
+    1014:	00 1c ab 00 		MOVE	r3,(i2,0)
+    1018:	00 0e 2b 7f 		AND	r3,#0x80
+    101c:	00 0e 1b ff 		CMP	r3,#0x0
+    1020:	00 36 fb f2 		JEQ	0x040d		; 101034 <Handle_Irq_CntA+0xff89c>
+        SPIMosi(1);
+    1024:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1028:	00 0e bb f7 		OR	r3,#0x8
+    102c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1030:	00 33 fb ef 		JUMP	0x0410		; 101040 <Handle_Irq_CntA+0xff8a8>
+    }
+    else{
+        SPIMosi(0);
+    1034:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1038:	00 0e 2b 08 		AND	r3,#0xf7
+    103c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    }
+    SPIClock(1);
+    1040:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1044:	00 0e bb fb 		OR	r3,#0x4
+    1048:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(0);
+    104c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1050:	00 0e 2b 04 		AND	r3,#0xfb
+    1054:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (b & 0x40){
+    1058:	00 1c ab 00 		MOVE	r3,(i2,0)
+    105c:	00 0e 2b bf 		AND	r3,#0x40
+    1060:	00 0e 1b ff 		CMP	r3,#0x0
+    1064:	00 36 fb e1 		JEQ	0x041e		; 101078 <Handle_Irq_CntA+0xff8e0>
+        SPIMosi(1);
+    1068:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    106c:	00 0e bb f7 		OR	r3,#0x8
+    1070:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1074:	00 33 fb de 		JUMP	0x0421		; 101084 <Handle_Irq_CntA+0xff8ec>
+    }
+    else{
+        SPIMosi(0);
+    1078:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    107c:	00 0e 2b 08 		AND	r3,#0xf7
+    1080:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    }
+    SPIClock(1);
+    1084:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1088:	00 0e bb fb 		OR	r3,#0x4
+    108c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(0);
+    1090:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1094:	00 0e 2b 04 		AND	r3,#0xfb
+    1098:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (b & 0x20){
+    109c:	00 1c ab 00 		MOVE	r3,(i2,0)
+    10a0:	00 0e 2b df 		AND	r3,#0x20
+    10a4:	00 0e 1b ff 		CMP	r3,#0x0
+    10a8:	00 36 fb d0 		JEQ	0x042f		; 1010bc <Handle_Irq_CntA+0xff924>
+        SPIMosi(1);
+    10ac:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    10b0:	00 0e bb f7 		OR	r3,#0x8
+    10b4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    10b8:	00 33 fb cd 		JUMP	0x0432		; 1010c8 <Handle_Irq_CntA+0xff930>
+    }
+    else{
+        SPIMosi(0);
+    10bc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    10c0:	00 0e 2b 08 		AND	r3,#0xf7
+    10c4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    }
+    SPIClock(1);
+    10c8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    10cc:	00 0e bb fb 		OR	r3,#0x4
+    10d0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(0);
+    10d4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    10d8:	00 0e 2b 04 		AND	r3,#0xfb
+    10dc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (b & 0x10){
+    10e0:	00 1c ab 00 		MOVE	r3,(i2,0)
+    10e4:	00 0e 2b ef 		AND	r3,#0x10
+    10e8:	00 0e 1b ff 		CMP	r3,#0x0
+    10ec:	00 36 fb bf 		JEQ	0x0440		; 101100 <Handle_Irq_CntA+0xff968>
+        SPIMosi(1);
+    10f0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    10f4:	00 0e bb f7 		OR	r3,#0x8
+    10f8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    10fc:	00 33 fb bc 		JUMP	0x0443		; 10110c <Handle_Irq_CntA+0xff974>
+    }
+    else{
+        SPIMosi(0);
+    1100:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1104:	00 0e 2b 08 		AND	r3,#0xf7
+    1108:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    }
+    SPIClock(1);
+    110c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1110:	00 0e bb fb 		OR	r3,#0x4
+    1114:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(0);
+    1118:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    111c:	00 0e 2b 04 		AND	r3,#0xfb
+    1120:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (b & 0x08){
+    1124:	00 1c ab 00 		MOVE	r3,(i2,0)
+    1128:	00 0e 2b f7 		AND	r3,#0x8
+    112c:	00 0e 1b ff 		CMP	r3,#0x0
+    1130:	00 36 fb ae 		JEQ	0x0451		; 101144 <Handle_Irq_CntA+0xff9ac>
+        SPIMosi(1);
+    1134:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1138:	00 0e bb f7 		OR	r3,#0x8
+    113c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1140:	00 33 fb ab 		JUMP	0x0454		; 101150 <Handle_Irq_CntA+0xff9b8>
+    }
+    else{
+        SPIMosi(0);
+    1144:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1148:	00 0e 2b 08 		AND	r3,#0xf7
+    114c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    }
+    SPIClock(1);
+    1150:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1154:	00 0e bb fb 		OR	r3,#0x4
+    1158:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(0);
+    115c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1160:	00 0e 2b 04 		AND	r3,#0xfb
+    1164:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (b & 0x04){
+    1168:	00 1c ab 00 		MOVE	r3,(i2,0)
+    116c:	00 0e 2b fb 		AND	r3,#0x4
+    1170:	00 0e 1b ff 		CMP	r3,#0x0
+    1174:	00 36 fb 9d 		JEQ	0x0462		; 101188 <Handle_Irq_CntA+0xff9f0>
+        SPIMosi(1);
+    1178:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    117c:	00 0e bb f7 		OR	r3,#0x8
+    1180:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1184:	00 33 fb 9a 		JUMP	0x0465		; 101194 <Handle_Irq_CntA+0xff9fc>
+    }
+    else{
+        SPIMosi(0);
+    1188:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    118c:	00 0e 2b 08 		AND	r3,#0xf7
+    1190:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    }
+    SPIClock(1);
+    1194:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1198:	00 0e bb fb 		OR	r3,#0x4
+    119c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(0);
+    11a0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    11a4:	00 0e 2b 04 		AND	r3,#0xfb
+    11a8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (b & 0x02){
+    11ac:	00 1c ab 00 		MOVE	r3,(i2,0)
+    11b0:	00 0e 2b fd 		AND	r3,#0x2
+    11b4:	00 0e 1b ff 		CMP	r3,#0x0
+    11b8:	00 36 fb 8c 		JEQ	0x0473		; 1011cc <Handle_Irq_CntA+0xffa34>
+        SPIMosi(1);
+    11bc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    11c0:	00 0e bb f7 		OR	r3,#0x8
+    11c4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    11c8:	00 33 fb 89 		JUMP	0x0476		; 1011d8 <Handle_Irq_CntA+0xffa40>
+    }
+    else{
+        SPIMosi(0);
+    11cc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    11d0:	00 0e 2b 08 		AND	r3,#0xf7
+    11d4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    }
+    SPIClock(1);
+    11d8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    11dc:	00 0e bb fb 		OR	r3,#0x4
+    11e0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(0);
+    11e4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    11e8:	00 0e 2b 04 		AND	r3,#0xfb
+    11ec:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (b & 0x01){
+    11f0:	00 1c ab 00 		MOVE	r3,(i2,0)
+    11f4:	00 0e 2b fe 		AND	r3,#0x1
+    11f8:	00 0e 1b ff 		CMP	r3,#0x0
+    11fc:	00 36 fb 7b 		JEQ	0x0484		; 101210 <Handle_Irq_CntA+0xffa78>
+        SPIMosi(1);
+    1200:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1204:	00 0e bb f7 		OR	r3,#0x8
+    1208:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    120c:	00 33 fb 78 		JUMP	0x0487		; 10121c <Handle_Irq_CntA+0xffa84>
+    }
+    else{
+        SPIMosi(0);
+    1210:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1214:	00 0e 2b 08 		AND	r3,#0xf7
+    1218:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    }
+    SPIClock(1);
+    121c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1220:	00 0e bb fb 		OR	r3,#0x4
+    1224:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(0);
+    1228:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    122c:	00 0e 2b 04 		AND	r3,#0xfb
+    1230:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIMosi(0);
+    1234:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1238:	00 0e 2b 08 		AND	r3,#0xf7
+    123c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+    SPINssData(1);
+    1240:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1244:	00 0e bb fe 		OR	r3,#0x1
+    1248:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+} // void SendByte(_U8 b)
+    124c:	00 16 af 01 		MOVE	a,(i3,1)+
+    1250:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1254:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1258:	00 23 ff ff 		JUMP	ip
+
+0000125c <ReceiveByte>:
+
+/*******************************************************************
+** ReceiveByte : Receives a data from the transceiver trough the  **
+**               SPI interface                                    **                                                
+********************************************************************
+** In  : -                                                        **
+** Out : b                                                        **
+*******************************************************************/
+/*******************************************************************
+**  Information                                                   **
+********************************************************************
+** This function has been optimized to receive a byte from the    **
+** transceiver SPI interface as quick as possible by using        **
+** IO ports.                                                      **
+** If the microcontroller has an  SPI hardware interface there is **
+** no need to optimize the function                               **
+*******************************************************************/
+_U8 ReceiveByte(void){
+    125c:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1260:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1264:	00 16 af ff 		MOVE	a,-(i3,1)
+    1268:	00 0c af 75 		MOVE	i2h,i3h
+    126c:	00 0c af 64 		MOVE	i2l,i3l
+    _U8 inputByte = 0;
+    1270:	00 0e af ff 		MOVE	a,#0x0
+    1274:	00 02 ef 00 		MOVE	(i2,0),a
+
+    SPIInit();
+    1278:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    127c:	00 0e bb f0 		OR	r3,#0xf
+    1280:	00 0e 2b 10 		AND	r3,#0xef
+    1284:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPINssConfig(1);
+    1288:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    128c:	00 0e bb fd 		OR	r3,#0x2
+    1290:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPINssData(0);
+    1294:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1298:	00 0e 2b 01 		AND	r3,#0xfe
+    129c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+	 SPIClock(0);
+    12a0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    12a4:	00 0e 2b 04 		AND	r3,#0xfb
+    12a8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(1);
+    12ac:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    12b0:	00 0e bb fb 		OR	r3,#0x4
+    12b4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (SPIMisoTest()){
+    12b8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    12bc:	00 0e 2b ef 		AND	r3,#0x10
+    12c0:	00 0e 1b ff 		CMP	r3,#0x0
+    12c4:	00 36 fb 4a 		JEQ	0x04b5		; 1012d4 <Handle_Irq_CntA+0xffb3c>
+        inputByte |= 0x80;
+    12c8:	00 1c af 00 		MOVE	a,(i2,0)
+    12cc:	00 0e bf 7f 		OR	a,#0x80
+    12d0:	00 02 ef 00 		MOVE	(i2,0),a
+    }
+    SPIClock(0);
+    12d4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    12d8:	00 0e 2b 04 		AND	r3,#0xfb
+    12dc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(1);
+    12e0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    12e4:	00 0e bb fb 		OR	r3,#0x4
+    12e8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (SPIMisoTest()){
+    12ec:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    12f0:	00 0e 2b ef 		AND	r3,#0x10
+    12f4:	00 0e 1b ff 		CMP	r3,#0x0
+    12f8:	00 36 fb 3d 		JEQ	0x04c2		; 101308 <Handle_Irq_CntA+0xffb70>
+        inputByte |= 0x40;
+    12fc:	00 1c af 00 		MOVE	a,(i2,0)
+    1300:	00 0e bf bf 		OR	a,#0x40
+    1304:	00 02 ef 00 		MOVE	(i2,0),a
+    }
+    SPIClock(0);
+    1308:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    130c:	00 0e 2b 04 		AND	r3,#0xfb
+    1310:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(1);
+    1314:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1318:	00 0e bb fb 		OR	r3,#0x4
+    131c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (SPIMisoTest()){
+    1320:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1324:	00 0e 2b ef 		AND	r3,#0x10
+    1328:	00 0e 1b ff 		CMP	r3,#0x0
+    132c:	00 36 fb 30 		JEQ	0x04cf		; 10133c <Handle_Irq_CntA+0xffba4>
+        inputByte |= 0x20;
+    1330:	00 1c af 00 		MOVE	a,(i2,0)
+    1334:	00 0e bf df 		OR	a,#0x20
+    1338:	00 02 ef 00 		MOVE	(i2,0),a
+    }
+    SPIClock(0);
+    133c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1340:	00 0e 2b 04 		AND	r3,#0xfb
+    1344:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(1);
+    1348:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    134c:	00 0e bb fb 		OR	r3,#0x4
+    1350:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (SPIMisoTest()){
+    1354:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1358:	00 0e 2b ef 		AND	r3,#0x10
+    135c:	00 0e 1b ff 		CMP	r3,#0x0
+    1360:	00 36 fb 23 		JEQ	0x04dc		; 101370 <Handle_Irq_CntA+0xffbd8>
+        inputByte |= 0x10;
+    1364:	00 1c af 00 		MOVE	a,(i2,0)
+    1368:	00 0e bf ef 		OR	a,#0x10
+    136c:	00 02 ef 00 		MOVE	(i2,0),a
+    }
+    SPIClock(0);
+    1370:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1374:	00 0e 2b 04 		AND	r3,#0xfb
+    1378:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(1);
+    137c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1380:	00 0e bb fb 		OR	r3,#0x4
+    1384:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (SPIMisoTest()){
+    1388:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    138c:	00 0e 2b ef 		AND	r3,#0x10
+    1390:	00 0e 1b ff 		CMP	r3,#0x0
+    1394:	00 36 fb 16 		JEQ	0x04e9		; 1013a4 <Handle_Irq_CntA+0xffc0c>
+        inputByte |= 0x08;
+    1398:	00 1c af 00 		MOVE	a,(i2,0)
+    139c:	00 0e bf f7 		OR	a,#0x8
+    13a0:	00 02 ef 00 		MOVE	(i2,0),a
+    }
+    SPIClock(0);
+    13a4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13a8:	00 0e 2b 04 		AND	r3,#0xfb
+    13ac:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(1);
+    13b0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13b4:	00 0e bb fb 		OR	r3,#0x4
+    13b8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (SPIMisoTest()){
+    13bc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13c0:	00 0e 2b ef 		AND	r3,#0x10
+    13c4:	00 0e 1b ff 		CMP	r3,#0x0
+    13c8:	00 36 fb 09 		JEQ	0x04f6		; 1013d8 <Handle_Irq_CntA+0xffc40>
+        inputByte |= 0x04;
+    13cc:	00 1c af 00 		MOVE	a,(i2,0)
+    13d0:	00 0e bf fb 		OR	a,#0x4
+    13d4:	00 02 ef 00 		MOVE	(i2,0),a
+    }
+    SPIClock(0);
+    13d8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13dc:	00 0e 2b 04 		AND	r3,#0xfb
+    13e0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(1);
+    13e4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13e8:	00 0e bb fb 		OR	r3,#0x4
+    13ec:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (SPIMisoTest()){
+    13f0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13f4:	00 0e 2b ef 		AND	r3,#0x10
+    13f8:	00 0e 1b ff 		CMP	r3,#0x0
+    13fc:	00 36 fa fc 		JEQ	0x0503		; 10140c <Handle_Irq_CntA+0xffc74>
+        inputByte |= 0x02;
+    1400:	00 1c af 00 		MOVE	a,(i2,0)
+    1404:	00 0e bf fd 		OR	a,#0x2
+    1408:	00 02 ef 00 		MOVE	(i2,0),a
+    }
+    SPIClock(0);
+    140c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1410:	00 0e 2b 04 		AND	r3,#0xfb
+    1414:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    SPIClock(1);
+    1418:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    141c:	00 0e bb fb 		OR	r3,#0x4
+    1420:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    if (SPIMisoTest()){
+    1424:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1428:	00 0e 2b ef 		AND	r3,#0x10
+    142c:	00 0e 1b ff 		CMP	r3,#0x0
+    1430:	00 36 fa ef 		JEQ	0x0510		; 101440 <Handle_Irq_CntA+0xffca8>
+        inputByte |= 0x01;
+    1434:	00 1c af 00 		MOVE	a,(i2,0)
+    1438:	00 0e bf fe 		OR	a,#0x1
+    143c:	00 02 ef 00 		MOVE	(i2,0),a
+    }
+    SPIClock(0);
+    1440:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1444:	00 0e 2b 04 		AND	r3,#0xfb
+    1448:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+	 SPIMosi(0);
+    144c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1450:	00 0e 2b 08 		AND	r3,#0xf7
+    1454:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+    SPINssData(1);
+    1458:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    145c:	00 0e bb fe 		OR	r3,#0x1
+    1460:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+	return inputByte;
+    1464:	00 1c ac 00 		MOVE	r2,(i2,0)
+    1468:	00 0e ab ff 		MOVE	r3,#0x0
+}
+    146c:	00 16 af 01 		MOVE	a,(i3,1)+
+    1470:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1474:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1478:	00 23 ff ff 		JUMP	ip
+
+0000147c <ReadRssi>:
+/*******************************************************************
+** Transceiver specific functions                                 **
+*******************************************************************/
+
+/*******************************************************************
+** ReadRssi : Reads the Rssi value from the SX1211                **
+********************************************************************
+** In  : -                                                        **
+** Out : value                                                    **
+*******************************************************************/
+_U16 ReadRssi(void){
+    147c:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1480:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1484:	00 03 78 ff 		MOVE	-(i3,1),ipl
+    1488:	00 03 79 ff 		MOVE	-(i3,1),iph
+    148c:	00 16 af fe 		MOVE	a,-(i3,2)
+    1490:	00 0c af 75 		MOVE	i2h,i3h
+    1494:	00 0c af 64 		MOVE	i2l,i3l
+	_U16 value;
+	value = ReadRegister(REG_RSSIVALUE);  // Reads the RSSI result
+    1498:	00 0e ab eb 		MOVE	r3,#0x14
+    149c:	00 3a fd 4e 		CALLS	0x02b1		; 100ac4 <Handle_Irq_CntA+0xff32c>
+    14a0:	00 02 eb 00 		MOVE	(i2,0),r3
+    14a4:	00 02 ec 01 		MOVE	(i2,1),r2
+	return value;
+    14a8:	00 1c ac 01 		MOVE	r2,(i2,1)
+    14ac:	00 1c ab 00 		MOVE	r3,(i2,0)
+}
+    14b0:	00 16 af 02 		MOVE	a,(i3,2)+
+    14b4:	00 16 a9 01 		MOVE	iph,(i3,1)+
+    14b8:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+    14bc:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    14c0:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    14c4:	00 23 ff ff 		JUMP	ip
+
+000014c8 <Wait>:
+
+/*******************************************************************
+** Utility functions                                              **
+*******************************************************************/
+
+/*******************************************************************
+** Wait : This routine uses the counter A&B to create a delay     **
+**        using the RC ck source                                  **
+********************************************************************
+** In   : cntVal                                                  **
+** Out  : -                                                       **
+*******************************************************************/
+void Wait(_U16 cntVal){
+    14c8:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    14cc:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    14d0:	00 16 af fe 		MOVE	a,-(i3,2)
+    14d4:	00 0c af 75 		MOVE	i2h,i3h
+    14d8:	00 0c af 64 		MOVE	i2l,i3l
+    14dc:	00 02 eb 00 		MOVE	(i2,0),r3
+    14e0:	00 02 ec 01 		MOVE	(i2,1),r2
+    RegCntOn &= 0xFC;                              // Disables counter A&B
+    14e4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    14e8:	00 0e 2b 03 		AND	r3,#0xfc
+    14ec:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    RegEvnEn &= 0x7F;                              // Disables events from the counter A&B
+    14f0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    14f4:	00 0e 2b 80 		AND	r3,#0x7f
+    14f8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    RegEvn = 0x80;                                 // Clears the event from the CntA on the event register
+    14fc:	00 00 7f 00 		MOVE	0xff,#0x80	; ff <InitRFChip+0xff>
+    RegCntCtrlCk =  (RegCntCtrlCk & 0xFC) | 0x01;  // Selects RC frequency as clock source for counter A&B
+    1500:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1504:	00 0e 2b 03 		AND	r3,#0xfc
+    1508:	00 0e bb fe 		OR	r3,#0x1
+    150c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    RegCntConfig1 |= 0x34;                         // A&B counters count up, counter A&B are in cascade mode
+    1510:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1514:	00 0e bb cb 		OR	r3,#0x34
+    1518:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    RegCntA       = (_U8)(cntVal);                 // LSB of cntVal
+    151c:	00 1c af 01 		MOVE	a,(i2,1)
+    1520:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    RegCntB       = (_U8)(cntVal >> 8);            // MSB of cntVal
+    1524:	00 1c ac 00 		MOVE	r2,(i2,0)
+    1528:	00 0e ab ff 		MOVE	r3,#0x0
+    152c:	00 01 bc 00 		MOVE	0xff,r2	; ff <InitRFChip+0xff>
+    RegEvnEn      |= 0x80;                         // Enables events from CntA
+    1530:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1534:	00 0e bb 7f 		OR	r3,#0x80
+    1538:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    RegEvn        |= 0x80;                         // Clears the event from the CntA on the event register
+    153c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1540:	00 0e bb 7f 		OR	r3,#0x80
+    1544:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    asm("clrb %stat, #0");                         // Clears the event on the CoolRISC status register
+    1548:	00 0e 2a 01 		AND	stat,#0xfe
+    RegCntOn      |= 0x03;                         // Enables counter A&B
+    154c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1550:	00 0e bb fc 		OR	r3,#0x3
+    1554:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    do{
+        asm("halt");
+    1558:	00 0b df ff 		HALT
+    }while ((RegEvn & 0x80) == 0x00);              // Waits the event from counter A
+    155c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1560:	00 0e 2b 7f 		AND	r3,#0x80
+    1564:	00 0e 1b ff 		CMP	r3,#0x0
+    1568:	00 36 fa a9 		JEQ	0x0556		; 101558 <Handle_Irq_CntA+0xffdc0>
+    RegCntOn      &= 0xFE;                         // Disables counter A
+    156c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1570:	00 0e 2b 01 		AND	r3,#0xfe
+    1574:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    RegEvnEn      &= 0x7F;                         // Disables events from the counter A
+    1578:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    157c:	00 0e 2b 80 		AND	r3,#0x7f
+    1580:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    RegEvn        |= 0x80;                         // Clears the event from the CntA on the event register
+    1584:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1588:	00 0e bb 7f 		OR	r3,#0x80
+    158c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    asm("clrb %stat, #0");                         // Clears the event on the CoolRISC status register
+    1590:	00 0e 2a 01 		AND	stat,#0xfe
+} // void Wait(_U16 cntVal)
+    1594:	00 16 af 02 		MOVE	a,(i3,2)+
+    1598:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    159c:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    15a0:	00 23 ff ff 		JUMP	ip
+
+000015a4 <EnableTimeOut>:
+
+/*******************************************************************
+** EnableTimeOut : Enables/Disables the RF frame timeout          **
+********************************************************************
+** In  : enable                                                   **
+** Out : -                                                        **
+*******************************************************************/
+void EnableTimeOut(_U8 enable){
+    15a4:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    15a8:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    15ac:	00 16 af ff 		MOVE	a,-(i3,1)
+    15b0:	00 0c af 75 		MOVE	i2h,i3h
+    15b4:	00 0c af 64 		MOVE	i2l,i3l
+    15b8:	00 02 eb 00 		MOVE	(i2,0),r3
+    RegCntCtrlCk = (RegCntCtrlCk & 0xFC) | 0x03;        // Selects 128 Hz frequency as clock source for counter A&B
+    15bc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    15c0:	00 0e 2b 03 		AND	r3,#0xfc
+    15c4:	00 0e bb fc 		OR	r3,#0x3
+    15c8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    RegCntConfig1 |=  0x34;                             // A&B counters count up, counter A&B  are in cascade mode
+    15cc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    15d0:	00 0e bb cb 		OR	r3,#0x34
+    15d4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+    RegCntA = (_U8)RFFrameTimeOut;                      // LSB of RFFrameTimeOut
+    15d8:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+    15dc:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    RegCntB = (_U8)(RFFrameTimeOut >> 8);               // MSB of RFFrameTimeOut
+    15e0:	00 04 ae 00 		MOVE	r0,0xff	; ff <InitRFChip+0xff>
+    15e4:	00 04 ad 00 		MOVE	r1,0xff	; ff <InitRFChip+0xff>
+    15e8:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+    15ec:	00 0e ab ff 		MOVE	r3,#0x0
+    15f0:	00 01 be 00 		MOVE	0xff,r0	; ff <InitRFChip+0xff>
+
+    if(enable){
+    15f4:	00 1c af 00 		MOVE	a,(i2,0)
+    15f8:	00 36 fa 79 		JZS	0x0586		; 101618 <Handle_Irq_CntA+0xffe80>
+        RegIrqEnHig |= 0x10;                            // Enables IRQ for the counter A&B
+    15fc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1600:	00 0e bb ef 		OR	r3,#0x10
+    1604:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        RegCntOn |= 0x03;                               // Enables counter A&B
+    1608:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    160c:	00 0e bb fc 		OR	r3,#0x3
+    1610:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1614:	00 33 fa 73 		JUMP	0x058c		; 101630 <Handle_Irq_CntA+0xffe98>
+    }
+    else{
+        RegIrqEnHig &= ~0x10;                           // Disables IRQ for the counter A&B
+    1618:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    161c:	00 0e 2b 10 		AND	r3,#0xef
+    1620:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        RegCntOn &= ~0x03;                              // Disables counter A&B
+    1624:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1628:	00 0e 2b 03 		AND	r3,#0xfc
+    162c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    }
+} // void EnableTimeOut(_U8 enable)
+    1630:	00 16 af 01 		MOVE	a,(i3,1)+
+    1634:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1638:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    163c:	00 23 ff ff 		JUMP	ip
+
+00001640 <InvertByte>:
+
+/*******************************************************************
+** InvertByte : Inverts a byte. MSB -> LSB, LSB -> MSB            **
+********************************************************************
+** In  : b                                                        **
+** Out : b                                                        **
+*******************************************************************/
+_U8 InvertByte(_U8 b){
+    1640:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1644:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1648:	00 16 af ff 		MOVE	a,-(i3,1)
+    164c:	00 0c af 75 		MOVE	i2h,i3h
+    1650:	00 0c af 64 		MOVE	i2l,i3l
+    1654:	00 02 eb 00 		MOVE	(i2,0),r3
+    asm("   move %r0, #0x08");
+    1658:	00 0e ae f7 		MOVE	r0,#0x8
+
+0000165c <LoopInvertByte>:
+    asm("LoopInvertByte:");
+    asm("   shl  %r3");
+    165c:	00 0d af bb 		SHL	r3,r3
+    asm("   shrc %r2");
+    1660:	00 0d 4f cc 		SHRC	r2,r2
+    asm("   dec  %r0");
+    1664:	00 0d bf ee 		DEC	r0,r0
+    asm("   jzc  LoopInvertByte");
+    1668:	00 32 fa 68 		JZC	0x0597		; 10165c <Handle_Irq_CntA+0xffec4>
+} // _U8 InvertByte(_U8 b)
+    166c:	00 16 af 01 		MOVE	a,(i3,1)+
+    1670:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1674:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1678:	00 23 ff ff 		JUMP	ip
+
+0000167c <SpiInOut>:
+
+/*******************************************************************
+** SpiInOut : Sends and receives a byte from the SPI bus          **
+********************************************************************
+** In  : outputByte                                               **
+** Out : inputByte                                                **
+*******************************************************************/
+_U8 SpiInOut (_U8 outputByte){
+    167c:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1680:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1684:	00 16 af fd 		MOVE	a,-(i3,3)
+    1688:	00 0c af 75 		MOVE	i2h,i3h
+    168c:	00 0c af 64 		MOVE	i2l,i3l
+    1690:	00 02 eb 00 		MOVE	(i2,0),r3
+    _U8 bitCounter;
+    _U8 inputByte = 0;
+    1694:	00 0e af ff 		MOVE	a,#0x0
+    1698:	00 02 ef 02 		MOVE	(i2,2),a
+
+    SPIClock(0);
+    169c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16a0:	00 0e 2b 04 		AND	r3,#0xfb
+    16a4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    for(bitCounter = 0x80; bitCounter != 0x00; bitCounter >>= 1){
+    16a8:	00 0e af 7f 		MOVE	a,#0x80
+    16ac:	00 02 ef 01 		MOVE	(i2,1),a
+    16b0:	00 1c af 01 		MOVE	a,(i2,1)
+    16b4:	00 32 fa 50 		JZC	0x05af		; 1016bc <Handle_Irq_CntA+0xfff24>
+    16b8:	00 33 fa 35 		JUMP	0x05ca		; 101728 <Handle_Irq_CntA+0xfff90>
+        if (outputByte & bitCounter){
+    16bc:	00 1c ab 00 		MOVE	r3,(i2,0)
+    16c0:	00 1c 2b 01 		AND	r3,(i2,1)
+    16c4:	00 0e 1b ff 		CMP	r3,#0x0
+    16c8:	00 36 fa 48 		JEQ	0x05b7		; 1016dc <Handle_Irq_CntA+0xfff44>
+            SPIMosi(1);
+    16cc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16d0:	00 0e bb f7 		OR	r3,#0x8
+    16d4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    16d8:	00 33 fa 45 		JUMP	0x05ba		; 1016e8 <Handle_Irq_CntA+0xfff50>
+        }
+        else{
+            SPIMosi(0);
+    16dc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16e0:	00 0e 2b 08 		AND	r3,#0xf7
+    16e4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        }
+        SPIClock(1);
+    16e8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16ec:	00 0e bb fb 		OR	r3,#0x4
+    16f0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+        if (SPIMisoTest()){
+    16f4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16f8:	00 0e 2b ef 		AND	r3,#0x10
+    16fc:	00 0e 1b ff 		CMP	r3,#0x0
+    1700:	00 36 fa 3b 		JEQ	0x05c4		; 101710 <Handle_Irq_CntA+0xfff78>
+            inputByte |= bitCounter;
+    1704:	00 1c af 02 		MOVE	a,(i2,2)
+    1708:	00 1c bf 01 		OR	a,(i2,1)
+    170c:	00 02 ef 02 		MOVE	(i2,2),a
+        }
+        SPIClock(0);
+    1710:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1714:	00 0e 2b 04 		AND	r3,#0xfb
+    1718:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    171c:	00 1d 6b 01 		SHR	r3,(i2,1)
+    1720:	00 02 eb 01 		MOVE	(i2,1),r3
+    1724:	00 33 fa 53 		JUMP	0x05ac		; 1016b0 <Handle_Irq_CntA+0xfff18>
+    }  // for(BitCounter = 0x80; BitCounter != 0x00; BitCounter >>= 1)
+    SPIMosi(0);
+    1728:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    172c:	00 0e 2b 08 		AND	r3,#0xf7
+    1730:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+
+    return inputByte;
+    1734:	00 1c ac 02 		MOVE	r2,(i2,2)
+    1738:	00 0e ab ff 		MOVE	r3,#0x0
+} // _U8 SpiInOut (_U8 outputByte)
+    173c:	00 16 af 03 		MOVE	a,(i3,3)+
+    1740:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1744:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1748:	00 23 ff ff 		JUMP	ip
+
+0000174c <Handle_Irq_Pa1>:
+
+/*******************************************************************
+** SX1211 Buffered interrupt handlers                             **
+*******************************************************************/
+
+/*******************************************************************
+** Handle_Irq_Pa1 : Handles the interruption from the Pin 1 of    **
+**                  Port A                                        **
+********************************************************************
+** In  : -                                                        **
+** Out : -                                                        **
+*******************************************************************/
+void Handle_Irq_Pa1 (void){ // IRQ_1 = CRC_OK
+    174c:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1750:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1754:	00 0c af 75 		MOVE	i2h,i3h
+    1758:	00 0c af 64 		MOVE	i2l,i3l
+ 
+     RFState |= RF_RX_DONE;
+    175c:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+    1760:	00 0e bf fb 		OR	a,#0x4
+    1764:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     RFState &= ~RF_BUSY;
+    1768:	00 0e 2f 02 		AND	a,#0xfd
+    176c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+        
+} //End Handle_Irq_Pa1
+    1770:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1774:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1778:	00 23 ff ff 		JUMP	ip
+
+0000177c <Handle_Irq_Pa2>:
+
+/*******************************************************************
+** Handle_Irq_Pa2 : Handles the interruption from the Pin 2 of    **
+**                  Port A                                        **
+********************************************************************
+** In  : -                                                        **
+** Out : -                                                        **
+*******************************************************************/
+void Handle_Irq_Pa2 (void){ // IRQ_0 
+    177c:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1780:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1784:	00 0c af 75 		MOVE	i2h,i3h
+    1788:	00 0c af 64 		MOVE	i2l,i3l
+
+
+} //End Handle_Irq_Pa2
+    178c:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1790:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1794:	00 23 ff ff 		JUMP	ip
+
+00001798 <Handle_Irq_CntA>:
+
+/*******************************************************************
+** Handle_Irq_CntA : Handles the interruption from the Counter A  **
+********************************************************************
+** In              : -                                            **
+** Out             : -                                            **
+*******************************************************************/
+void Handle_Irq_CntA (void){
+    1798:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    179c:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    17a0:	00 0c af 75 		MOVE	i2h,i3h
+    17a4:	00 0c af 64 		MOVE	i2l,i3l
+    RFState |= RF_TIMEOUT;
+    17a8:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+    17ac:	00 0e bf df 		OR	a,#0x20
+    17b0:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    RFState &= ~RF_BUSY;
+    17b4:	00 0e 2f 02 		AND	a,#0xfd
+    17b8:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+} //End Handle_Irq_CntA
+    17bc:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    17c0:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    17c4:	00 23 ff ff 		JUMP	ip
+Disassembly of section .data:
+
+00000000 <RegistersCfg>:
+   0:	00 20 00 8c 		.long 0x20008c
+   4:	00 03 00 07 		.long 0x30007
+   8:	00 0c 00 cf 		CMPA	i0l,r2
+   c:	00 6b 00 5a 		.long 0x6b005a
+  10:	00 00 00 74 		MOVE	0x8b,#0xff	; 8b <RFFrameTimeOut+0x86>
+  14:	00 62 00 32 		.long 0x620032
+  18:	00 38 00 08 		.long 0x380008
+  1c:	00 19 00 00 		SHRA	i0l,(i0,0)
+  20:	00 0b 00 38 		.long 0xb0038
+  24:	00 38 00 07 		.long 0x380007
+  28:	00 00 00 69 		MOVE	0x96,#0xff	; 96 <RFFrameTimeOut+0x91>
+  2c:	00 81 00 7e 		.long 0x81007e
+  30:	00 96 00 72 		CMPA	i0l,(i3,114)+
+  34:	00 bc 00 40 		.long 0xbc0040
+  38:	00 00 00 e8 		MOVE	0x17,#0xff	; 17 <RegistersCfg+0x17>
+	...
+Disassembly of section .page0_data:
+
+00000000 <RFState>:
+   0:	01 00 00 20 		MOVE	0xdf,#0xff	; df <RFFrameTimeOut+0xda>
+
+00000001 <ByteCounter>:
+	...
+
+00000003 <PreMode>:
+   3:	20 04 00 00 		CMPA	i0l,0xff	; ff <RFFrameTimeOut+0xfa>
+
+00000004 <SyncSize>:
+   4:	04 00 00 00 		MOVE	0xff,#0xff	; ff <RFFrameTimeOut+0xfa>
+
+00000005 <RFFrameTimeOut>:
+   5:	00 00 00 34 		MOVE	0xcb,#0xff	; cb <RFFrameTimeOut+0xc6>

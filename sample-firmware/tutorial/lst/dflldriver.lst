@@ -1,0 +1,270 @@
+
+obj\dflldriver.o:     file format elf32-c816
+obj\dflldriver.o
+
+Disassembly of section .text:
+
+00000000 <DFLLRun>:
+DFLLRun():
+   0:	00 03 74 ff 		MOVE	-(i3,1),i2l
+   4:	00 03 75 ff 		MOVE	-(i3,1),i2h
+   8:	00 03 78 ff 		MOVE	-(i3,1),ipl
+   c:	00 03 79 ff 		MOVE	-(i3,1),iph
+  10:	00 16 af f8 		MOVE	a,-(i3,8)
+  14:	00 0c af 75 		MOVE	i2h,i3h
+  18:	00 0c af 64 		MOVE	i2l,i3l
+  1c:	00 02 eb 00 		MOVE	(i2,0),r3
+  20:	00 02 ec 01 		MOVE	(i2,1),r2
+  24:	00 02 ed 02 		MOVE	(i2,2),r1
+  28:	00 02 ee 03 		MOVE	(i2,3),r0
+  2c:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  30:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  34:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <DFLLRun+0xff>
+  38:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  3c:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  40:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  44:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  48:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  4c:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  50:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  54:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  58:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  5c:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  60:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  64:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  68:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  6c:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  70:	00 02 ea 07 		MOVE	(i2,7),stat
+  74:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  78:	00 02 ef 04 		MOVE	(i2,4),a
+  7c:	00 1d 6b 00 		SHR	r3,(i2,0)
+  80:	00 1d 4c 01 		SHRC	r2,(i2,1)
+  84:	00 1d 4d 02 		SHRC	r1,(i2,2)
+  88:	00 1d 4e 03 		SHRC	r0,(i2,3)
+  8c:	00 0e ee f7 		MUL	r0,#0x8
+  90:	00 0e ed f7 		MUL	r1,#0x8
+  94:	00 0c be fe 		OR	r0,a,r0
+  98:	00 0e ec f7 		MUL	r2,#0x8
+  9c:	00 0c bd fd 		OR	r1,a,r1
+  a0:	00 0e eb f7 		MUL	r3,#0x8
+  a4:	00 0c bc fc 		OR	r2,a,r2
+  a8:	00 02 ed 05 		MOVE	(i2,5),r1
+  ac:	00 02 ee 06 		MOVE	(i2,6),r0
+  b0:	00 0e aa ff 		MOVE	stat,#0x0
+  b4:	00 1c ac 06 		MOVE	r2,(i2,6)
+  b8:	00 1c ab 05 		MOVE	r3,(i2,5)
+  bc:	00 3a ff 8b 		CALLS	0x0074		; 1001d0 <CalibrateRC+0x100000>
+  c0:	00 1c aa 07 		MOVE	stat,(i2,7)
+  c4:	00 1c af 04 		MOVE	a,(i2,4)
+  c8:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  cc:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  d0:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  d4:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  d8:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  dc:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  e0:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  e4:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  e8:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  ec:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  f0:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  f4:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+  f8:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+  fc:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+ 100:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+ 104:	00 04 af 00 		MOVE	a,0xff	; ff <DFLLRun+0xff>
+ 108:	00 01 bf 00 		MOVE	0xff,a	; ff <DFLLRun+0xff>
+ 10c:	00 16 af 08 		MOVE	a,(i3,8)+
+ 110:	00 16 a9 01 		MOVE	iph,(i3,1)+
+ 114:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+ 118:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ 11c:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ 120:	00 23 ff ff 		JUMP	ip
+
+00000124 <FrequencyMeasure>:
+FrequencyMeasure():
+ 124:	00 03 74 ff 		MOVE	-(i3,1),i2l
+ 128:	00 03 75 ff 		MOVE	-(i3,1),i2h
+ 12c:	00 0c af 75 		MOVE	i2h,i3h
+ 130:	00 0c af 64 		MOVE	i2l,i3l
+ 134:	00 00 bf 00 		MOVE	0xff,#0x40	; ff <DFLLRun+0xff>
+	...
+ 140:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <DFLLRun+0xff>
+ 144:	00 00 fd 00 		MOVE	0xff,#0x02	; ff <DFLLRun+0xff>
+ 148:	00 00 fb 00 		MOVE	0xff,#0x04	; ff <DFLLRun+0xff>
+ 14c:	00 0b df ff 		HALT
+ 150:	00 00 fa 00 		MOVE	0xff,#0x05	; ff <DFLLRun+0xff>
+ 154:	00 00 bf 00 		MOVE	0xff,#0x40	; ff <DFLLRun+0xff>
+ 158:	00 0e 2a 01 		AND	stat,#0xfe
+ 15c:	00 0b df ff 		HALT
+ 160:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <DFLLRun+0xff>
+ 164:	00 00 bf 00 		MOVE	0xff,#0x40	; ff <DFLLRun+0xff>
+ 168:	00 0e 2a 01 		AND	stat,#0xfe
+ 16c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <DFLLRun+0xff>
+ 170:	00 04 ab 00 		MOVE	r3,0xff	; ff <DFLLRun+0xff>
+ 174:	00 0c af bc 		MOVE	r2,r3
+ 178:	00 0e ab ff 		MOVE	r3,#0x0
+ 17c:	00 0c af cb 		MOVE	r3,r2
+ 180:	00 0e ac ff 		MOVE	r2,#0x0
+ 184:	00 04 ad 00 		MOVE	r1,0xff	; ff <DFLLRun+0xff>
+ 188:	00 0c af de 		MOVE	r0,r1
+ 18c:	00 0e ad ff 		MOVE	r1,#0x0
+ 190:	00 0c bd bb 		OR	r3,r3,r1
+ 194:	00 0c be cc 		OR	r2,r2,r0
+ 198:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ 19c:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ 1a0:	00 23 ff ff 		JUMP	ip
+
+000001a4 <RCSetDelay>:
+RCSetDelay():
+ 1a4:	00 03 74 ff 		MOVE	-(i3,1),i2l
+ 1a8:	00 03 75 ff 		MOVE	-(i3,1),i2h
+ 1ac:	00 0c af 75 		MOVE	i2h,i3h
+ 1b0:	00 0c af 64 		MOVE	i2l,i3l
+ 1b4:	00 3f ff ff 		NOP
+ 1b8:	00 3f ff ff 		NOP
+ 1bc:	00 3f ff ff 		NOP
+ 1c0:	00 3f ff ff 		NOP
+ 1c4:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ 1c8:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ 1cc:	00 23 ff ff 		JUMP	ip
+
+000001d0 <CalibrateRC>:
+CalibrateRC():
+ 1d0:	00 03 74 ff 		MOVE	-(i3,1),i2l
+ 1d4:	00 03 75 ff 		MOVE	-(i3,1),i2h
+ 1d8:	00 03 78 ff 		MOVE	-(i3,1),ipl
+ 1dc:	00 03 79 ff 		MOVE	-(i3,1),iph
+ 1e0:	00 16 af f4 		MOVE	a,-(i3,12)
+ 1e4:	00 0c af 75 		MOVE	i2h,i3h
+ 1e8:	00 0c af 64 		MOVE	i2l,i3l
+ 1ec:	00 02 eb 00 		MOVE	(i2,0),r3
+ 1f0:	00 02 ec 01 		MOVE	(i2,1),r2
+ 1f4:	00 0e af ff 		MOVE	a,#0x0
+ 1f8:	00 02 ef 02 		MOVE	(i2,2),a
+ 1fc:	00 02 ef 03 		MOVE	(i2,3),a
+ 200:	00 0e af ff 		MOVE	a,#0x0
+ 204:	00 02 ef 04 		MOVE	(i2,4),a
+ 208:	00 02 ef 05 		MOVE	(i2,5),a
+ 20c:	00 0b bf f8 		FREQ	div2
+ 210:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <DFLLRun+0xff>
+ 214:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <DFLLRun+0xff>
+ 218:	00 00 ee 00 		MOVE	0xff,#0x11	; ff <DFLLRun+0xff>
+ 21c:	00 00 e3 00 		MOVE	0xff,#0x1c	; ff <DFLLRun+0xff>
+ 220:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <DFLLRun+0xff>
+ 224:	00 0e af ff 		MOVE	a,#0x0
+ 228:	00 02 ef 07 		MOVE	(i2,7),a
+ 22c:	00 0e af fb 		MOVE	a,#0x4
+ 230:	00 02 ef 06 		MOVE	(i2,6),a
+ 234:	00 1c af 06 		MOVE	a,(i2,6)
+ 238:	00 1c bf 07 		OR	a,(i2,7)
+ 23c:	00 32 ff 6e 		JZC	0x0091		; 100244 <CalibrateRC+0x100074>
+ 240:	00 33 ff 44 		JUMP	0x00bb		; 1002ec <CalibrateRC+0x10011c>
+ 244:	00 1d 6b 06 		SHR	r3,(i2,6)
+ 248:	00 1d 4c 07 		SHRC	r2,(i2,7)
+ 24c:	00 0e ec f7 		MUL	r2,#0x8
+ 250:	00 0e eb f7 		MUL	r3,#0x8
+ 254:	00 0c bc fc 		OR	r2,a,r2
+ 258:	00 04 ad 00 		MOVE	r1,0xff	; ff <DFLLRun+0xff>
+ 25c:	00 0c bc fb 		OR	r3,a,r2
+ 260:	00 01 bb 00 		MOVE	0xff,r3	; ff <DFLLRun+0xff>
+ 264:	00 1c ac 07 		MOVE	r2,(i2,7)
+ 268:	00 0e 2c c0 		AND	r2,#0x3f
+ 26c:	00 04 ab 00 		MOVE	r3,0xff	; ff <DFLLRun+0xff>
+ 270:	00 0c bb cb 		OR	r3,r2,r3
+ 274:	00 01 bb 00 		MOVE	0xff,r3	; ff <DFLLRun+0xff>
+ 278:	00 3a ff 96 		CALLS	0x0069		; 1001a4 <CalibrateRC+0xfffd4>
+ 27c:	00 3a ff b6 		CALLS	0x0049		; 100124 <CalibrateRC+0xfff54>
+ 280:	00 02 eb 02 		MOVE	(i2,2),r3
+ 284:	00 02 ec 03 		MOVE	(i2,3),r2
+ 288:	00 1c ac 03 		MOVE	r2,(i2,3)
+ 28c:	00 1c ab 02 		MOVE	r3,(i2,2)
+ 290:	00 1c 1b 00 		CMP	r3,(i2,0)
+ 294:	00 32 ff 58 		JNE	0x00a7		; 10029c <CalibrateRC+0x1000cc>
+ 298:	00 1c 1c 01 		CMP	r2,(i2,1)
+ 29c:	00 34 ff 49 		JLE	0x00b6		; 1002d8 <CalibrateRC+0x100108>
+ 2a0:	00 1d 8c 07 		CPL1	r2,(i2,7)
+ 2a4:	00 1d 8b 06 		CPL1	r3,(i2,6)
+ 2a8:	00 0e ec fb 		MUL	r2,#0x4
+ 2ac:	00 0e eb fb 		MUL	r3,#0x4
+ 2b0:	00 0c bc fc 		OR	r2,a,r2
+ 2b4:	00 04 ad 00 		MOVE	r1,0xff	; ff <DFLLRun+0xff>
+ 2b8:	00 0c 2c fb 		AND	r3,a,r2
+ 2bc:	00 01 bb 00 		MOVE	0xff,r3	; ff <DFLLRun+0xff>
+ 2c0:	00 1c ab 07 		MOVE	r3,(i2,7)
+ 2c4:	00 0e 2b c0 		AND	r3,#0x3f
+ 2c8:	00 0d 8f bc 		CPL1	r2,r3
+ 2cc:	00 04 ab 00 		MOVE	r3,0xff	; ff <DFLLRun+0xff>
+ 2d0:	00 0c 2b cb 		AND	r3,r2,r3
+ 2d4:	00 01 bb 00 		MOVE	0xff,r3	; ff <DFLLRun+0xff>
+ 2d8:	00 1d 6b 06 		SHR	r3,(i2,6)
+ 2dc:	00 1d 4c 07 		SHRC	r2,(i2,7)
+ 2e0:	00 02 eb 06 		MOVE	(i2,6),r3
+ 2e4:	00 02 ec 07 		MOVE	(i2,7),r2
+ 2e8:	00 33 ff 72 		JUMP	0x008d		; 100234 <CalibrateRC+0x100064>
+ 2ec:	00 1c af 01 		MOVE	a,(i2,1)
+ 2f0:	00 1c 3f 03 		SUBS	a,(i2,3)
+ 2f4:	00 02 ef 05 		MOVE	(i2,5),a
+ 2f8:	00 1c af 00 		MOVE	a,(i2,0)
+ 2fc:	00 1c 7f 02 		SUBSC	a,(i2,2)
+ 300:	00 02 ef 04 		MOVE	(i2,4),a
+ 304:	00 1c af 04 		MOVE	a,(i2,4)
+ 308:	00 1c bf 05 		OR	a,(i2,5)
+ 30c:	00 36 ff 37 		JZS	0x00c8		; 100320 <CalibrateRC+0x100150>
+ 310:	00 04 ab 00 		MOVE	r3,0xff	; ff <DFLLRun+0xff>
+ 314:	00 0d 1f bb 		INC	r3,r3
+ 318:	00 01 bb 00 		MOVE	0xff,r3	; ff <DFLLRun+0xff>
+ 31c:	00 33 ff 34 		JUMP	0x00cb		; 10032c <CalibrateRC+0x10015c>
+ 320:	00 04 ab 00 		MOVE	r3,0xff	; ff <DFLLRun+0xff>
+ 324:	00 0d bf bb 		DEC	r3,r3
+ 328:	00 01 bb 00 		MOVE	0xff,r3	; ff <DFLLRun+0xff>
+ 32c:	00 3a ff 96 		CALLS	0x0069		; 1001a4 <CalibrateRC+0xfffd4>
+ 330:	00 3a ff b6 		CALLS	0x0049		; 100124 <CalibrateRC+0xfff54>
+ 334:	00 02 eb 02 		MOVE	(i2,2),r3
+ 338:	00 02 ec 03 		MOVE	(i2,3),r2
+ 33c:	00 1c ac 01 		MOVE	r2,(i2,1)
+ 340:	00 1c 3c 03 		SUBS	r2,(i2,3)
+ 344:	00 1c ab 00 		MOVE	r3,(i2,0)
+ 348:	00 1c 7b 02 		SUBSC	r3,(i2,2)
+ 34c:	00 02 eb 08 		MOVE	(i2,8),r3
+ 350:	00 02 ec 09 		MOVE	(i2,9),r2
+ 354:	00 1c af 08 		MOVE	a,(i2,8)
+ 358:	00 0e ff 7f 		TSTPAT	a,#0x80
+ 35c:	00 36 ff 23 		JZS	0x00dc		; 100370 <CalibrateRC+0x1001a0>
+ 360:	00 1d 9f 09 		CPL2	a,(i2,9)
+ 364:	00 02 ef 09 		MOVE	(i2,9),a
+ 368:	00 1d cf 08 		CPL2C	a,(i2,8)
+ 36c:	00 02 ef 08 		MOVE	(i2,8),a
+ 370:	00 1c af 04 		MOVE	a,(i2,4)
+ 374:	00 02 ef 0a 		MOVE	(i2,10),a
+ 378:	00 1c af 05 		MOVE	a,(i2,5)
+ 37c:	00 02 ef 0b 		MOVE	(i2,11),a
+ 380:	00 1c af 0a 		MOVE	a,(i2,10)
+ 384:	00 0e ff 7f 		TSTPAT	a,#0x80
+ 388:	00 36 ff 18 		JZS	0x00e7		; 10039c <CalibrateRC+0x1001cc>
+ 38c:	00 1d 9f 0b 		CPL2	a,(i2,11)
+ 390:	00 02 ef 0b 		MOVE	(i2,11),a
+ 394:	00 1d cf 0a 		CPL2C	a,(i2,10)
+ 398:	00 02 ef 0a 		MOVE	(i2,10),a
+ 39c:	00 1c ac 09 		MOVE	r2,(i2,9)
+ 3a0:	00 1c ab 08 		MOVE	r3,(i2,8)
+ 3a4:	00 1c 0b 0a 		CMPA	r3,(i2,10)
+ 3a8:	00 32 ff 13 		JNE	0x00ec		; 1003b0 <CalibrateRC+0x1001e0>
+ 3ac:	00 1c 1c 0b 		CMP	r2,(i2,11)
+ 3b0:	00 34 ff 08 		JLE	0x00f7		; 1003dc <CalibrateRC+0x10020c>
+ 3b4:	00 1c af 04 		MOVE	a,(i2,4)
+ 3b8:	00 1c bf 05 		OR	a,(i2,5)
+ 3bc:	00 36 ff 0b 		JZS	0x00f4		; 1003d0 <CalibrateRC+0x100200>
+ 3c0:	00 04 ab 00 		MOVE	r3,0xff	; ff <DFLLRun+0xff>
+ 3c4:	00 0d bf bb 		DEC	r3,r3
+ 3c8:	00 01 bb 00 		MOVE	0xff,r3	; ff <DFLLRun+0xff>
+ 3cc:	00 33 ff 08 		JUMP	0x00f7		; 1003dc <CalibrateRC+0x10020c>
+ 3d0:	00 04 ab 00 		MOVE	r3,0xff	; ff <DFLLRun+0xff>
+ 3d4:	00 0d 1f bb 		INC	r3,r3
+ 3d8:	00 01 bb 00 		MOVE	0xff,r3	; ff <DFLLRun+0xff>
+ 3dc:	00 0b bf f0 		FREQ	nodiv
+ 3e0:	00 16 af 0c 		MOVE	a,(i3,12)+
+ 3e4:	00 16 a9 01 		MOVE	iph,(i3,1)+
+ 3e8:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+ 3ec:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ 3f0:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ 3f4:	00 23 ff ff 		JUMP	ip

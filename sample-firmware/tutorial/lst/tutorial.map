@@ -1,0 +1,421 @@
+Archive member included because of file (symbol)
+
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqcomon.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\crt0.o (_interrupt)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqcomon.o) (Irq_RfifRx)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_rfiftx.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o) (Handle_Irq_RfifTx)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_128hz.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o) (Handle_Irq_128Hz)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_rfifrx.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o) (Handle_Irq_RfifRx)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cmpd.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o) (Handle_Irq_Cmpd)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cnta.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o) (Handle_Irq_CntA)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cntc.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o) (Handle_Irq_CntC)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_uarttx.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o) (Handle_Irq_UartTx)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_uartrx.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o) (Handle_Irq_UartRx)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqcomon.o) (Irq_UsrtCond1)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_usrtcond1.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o) (Handle_Irq_UsrtCond1)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_usrtcond2.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o) (Handle_Irq_UsrtCond2)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa5.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o) (Handle_Irq_Pa5)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa4.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o) (Handle_Irq_Pa4)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_1hz.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o) (Handle_Irq_1Hz)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_vld.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o) (Handle_Irq_Vld)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa1.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o) (Handle_Irq_Pa1)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa0.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o) (Handle_Irq_Pa0)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave2.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqcomon.o) (Irq_Pa7)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa7.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave2.o) (Handle_Irq_Pa7)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa6.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave2.o) (Handle_Irq_Pa6)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cntb.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave2.o) (Handle_Irq_CntB)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cntd.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave2.o) (Handle_Irq_CntD)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa3.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave2.o) (Handle_Irq_Pa3)
+C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa2.o)
+                              C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave2.o) (Handle_Irq_Pa2)
+C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_small_rom_sc_lsc.a(d:/repository/xestuff/mklibs/./obj/srss/abs.o)
+                              obj\dflldriver.o (abs)
+C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_small_rom_sc_lsc.a(d:/repository/xestuff/mklibs/./obj/srss/strcmp.o)
+                              obj\main.o (strcmp)
+C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_small_rom_sc_lsc.a(d:/repository/xestuff/mklibs/./obj/srss/strcpy.o)
+                              obj\main.o (strcpy)
+C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_small_rom_sc_lsc.a(d:/repository/xestuff/mklibs/./obj/srss/strlen.o)
+                              obj\main.o (strlen)
+C:\Ride7\Ride\GNU\c816-gcc\lib\gcc-lib\c816\egcs-2.91.02/libgcc_sc.a(mulsi3.o)
+                              obj\initialisation.o (mulsi3)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+prog_rom         0x00100000         0x00008000
+data_ram_int0    0x00000080         0x00000080
+data_ram_int     0x00000100         0x00000180
+error_no_drom    0x00010000         0x00000000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\Ride7\Ride\lib\C816\templates\XE88LC06A\crt0.o
+LOAD D:\Data\SX1212_API\API\API_code\tutorial\tutorial.elf.wrapp.o
+LOAD obj\sx1212driver.o
+LOAD obj\main.o
+LOAD obj\initialisation.o
+LOAD obj\dflldriver.o
+LOAD C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a
+                0x00000000                Reg00 = 0x0
+                0x00000001                Reg01 = 0x1
+                0x00000002                Reg02 = 0x2
+                0x00000003                Reg03 = 0x3
+                0x00000004                Reg04 = 0x4
+                0x00000005                Reg05 = 0x5
+                0x00000006                Reg06 = 0x6
+                0x00000007                Reg07 = 0x7
+                0x00000010                RegSysCtrl = 0x10
+                0x00000011                RegSysReset = 0x11
+                0x00000012                RegSysClock = 0x12
+                0x00000013                RegSysMisc = 0x13
+                0x00000014                RegSysWd = 0x14
+                0x00000015                RegSysPre0 = 0x15
+                0x0000001b                RegSysRcTrim1 = 0x1b
+                0x0000001c                RegSysRcTrim2 = 0x1c
+                0x00000020                RegPAIn = 0x20
+                0x00000021                RegPADebounce = 0x21
+                0x00000022                RegPAEdge = 0x22
+                0x00000023                RegPAPullup = 0x23
+                0x00000024                RegPARes0 = 0x24
+                0x00000025                RegPARes1 = 0x25
+                0x00000026                RegPACtrl = 0x26
+                0x00000027                RegPASnaptorail = 0x27
+                0x00000028                RegPBOut = 0x28
+                0x00000029                RegPBIn = 0x29
+                0x0000002a                RegPBDir = 0x2a
+                0x0000002b                RegPBOpen = 0x2b
+                0x0000002c                RegPBPullup = 0x2c
+                0x0000002d                RegPBAna = 0x2d
+                0x00000030                RegPDOut = 0x30
+                0x00000031                RegPDIn = 0x31
+                0x00000032                RegPDDir = 0x32
+                0x00000033                RegPDPullup = 0x33
+                0x0000003c                RegEvn = 0x3c
+                0x0000003d                RegEvnEn = 0x3d
+                0x0000003e                RegEvnPriority = 0x3e
+                0x0000003f                RegEvnEvn = 0x3f
+                0x00000040                RegIrqHig = 0x40
+                0x00000041                RegIrqMid = 0x41
+                0x00000042                RegIrqLow = 0x42
+                0x00000043                RegIrqEnHig = 0x43
+                0x00000044                RegIrqEnMid = 0x44
+                0x00000045                RegIrqEnLow = 0x45
+                0x00000046                RegIrqPriority = 0x46
+                0x00000047                RegIrqIrq = 0x47
+                0x00000048                RegUsrtS1 = 0x48
+                0x00000049                RegUsrtS0 = 0x49
+                0x0000004a                RegUsrtCond1 = 0x4a
+                0x0000004b                RegUsrtCond2 = 0x4b
+                0x0000004c                RegUsrtCtrl = 0x4c
+                0x0000004d                RegUsrtBufferS1 = 0x4d
+                0x0000004e                RegUsrtEdgeS0 = 0x4e
+                0x00000050                RegUartCtrl = 0x50
+                0x00000051                RegUartCmd = 0x51
+                0x00000052                RegUartTx = 0x52
+                0x00000053                RegUartTxSta = 0x53
+                0x00000054                RegUartRx = 0x54
+                0x00000055                RegUartRxSta = 0x55
+                0x00000058                RegCntA = 0x58
+                0x00000059                RegCntB = 0x59
+                0x0000005a                RegCntC = 0x5a
+                0x0000005b                RegCntD = 0x5b
+                0x0000005c                RegCntCtrlCk = 0x5c
+                0x0000005d                RegCntConfig1 = 0x5d
+                0x0000005e                RegCntConfig2 = 0x5e
+                0x0000005f                RegCntOn = 0x5f
+                0x00000060                RegRfifCmd1 = 0x60
+                0x00000061                RegRfifCmd2 = 0x61
+                0x00000062                RegRfifCmd3 = 0x62
+                0x00000063                RegRfifTx = 0x63
+                0x00000064                RegRfifTxSta = 0x64
+                0x00000065                RegRfifRx = 0x65
+                0x00000066                RegRfifRxSta = 0x66
+                0x00000067                RegRfifRxSPat = 0x67
+                0x00000072                RegCmpdStat = 0x72
+                0x00000073                RegCmpdCtrl = 0x73
+                0x0000007e                RegVldCtrl = 0x7e
+                0x0000007f                RegVldStat = 0x7f
+                0x00000280                _estack = 0x280
+                0x00000028                _softuart_Tx_Port = RegPBOut
+                0x00000020                _softuart_Rx_Port = RegPAIn
+                0x00000008                _softuart_Tx_Mask = 0x8
+                0x00000001                _softuart_Rx_Mask = 0x1
+                0x000000f7                _softuart_Not_Tx_Mask = 0xf7
+                0x000000fe                _softuart_Not_Rx_Mask = 0xfe
+                0x0000002a                _softuart_Tx_PortDir = RegPBDir
+                0x00000026                _softuart_Rx_PortDir = 0x26
+                0x00000021                _softuart_Rx_PortDebounce = RegPADebounce
+                0x00000022                _softuart_Rx_PortEdge = RegPAEdge
+                0x00000023                _softuart_Rx_PortPullup = RegPAPullup
+                0x00000024                _softuart_Rx_PortRes0 = RegPARes0
+                0x00000025                _softuart_Rx_PortRes1 = RegPARes1
+                0x0000002b                _softuart_Tx_PortOpen = RegPBOpen
+                0x0000002c                _softuart_Tx_PortPullup = RegPBPullup
+                0x0000002d                _softuart_Tx_PortAna = RegPBAna
+                0x00000010                _harduart_div = 0x10
+                0x00000007                _harduart_nop = 0x7
+
+.text           0x00100000     0x3488
+                0x00100000                _stext = .
+ *(.text)
+ .text          0x00100000       0x84 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\crt0.o
+                0x00100000                _start
+ .text          0x00100084     0x18e8 obj\sx1212driver.o
+                0x0010189c                SpiInOut
+                0x001005cc                SetRFMode
+                0x00100084                InitRFChip
+                0x00101120                SendByte
+                0x00101818                RxEventsOff
+                0x001016c0                TxEventsOn
+                0x00101388                ReceiveByte
+                0x00100ce8                SendRfFrame
+                0x00100c48                ReadRegister
+                0x001015e4                Wait
+                0x00100bb8                WriteRegister
+                0x00101790                RxEventsOn
+                0x00101748                TxEventsOff
+                0x00101860                InvertByte
+                0x00101598                ReadRssi
+                0x00100f04                ReceiveRfFrame
+ .text          0x0010196c      0x28c obj\main.o
+                0x0010196c                OnMaster
+                0x00101bac                main
+                0x00101aa0                OnSlave
+ .text          0x00101bf8      0xe40 obj\initialisation.o
+                0x00101c78                InitPortB
+                0x00101bf8                InitMicro
+                0x00101ca8                InitCounters
+                0x00101c48                InitPortA
+                0x00102a10                InitPortD
+                0x00101d58                InitUART
+                0x00101ce0                InitRCOscillator
+ .text          0x00102a38      0x3f8 obj\dflldriver.o
+                0x00102bdc                RCSetDelay
+                0x00102b5c                FrequencyMeasure
+                0x00102a38                DFLLRun
+                0x00102c08                CalibrateRC
+ .text          0x00102e30       0xf8 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqcomon.o)
+                0x00102e30                _interrupt
+                0x00102eec                ret_int
+ .text          0x00102f28       0x68 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave0.o)
+                0x00102f58                Irq_CntC
+                0x00102f7c                Irq_UartRx
+                0x00102f70                Irq_UartTx
+                0x00102f28                Irq_RfifRx
+                0x00102f34                Irq_128Hz
+                0x00102f64                Irq_Cmpd
+                0x00102f4c                Irq_CntA
+                0x00102f40                Irq_RfifTx
+ .text          0x00102f90        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_rfiftx.o)
+                0x00102f90                Handle_Irq_RfifTx
+ .text          0x00102f94        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_128hz.o)
+                0x00102f94                Handle_Irq_128Hz
+ .text          0x00102f98        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_rfifrx.o)
+                0x00102f98                Handle_Irq_RfifRx
+ .text          0x00102f9c        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cmpd.o)
+                0x00102f9c                Handle_Irq_Cmpd
+ .text          0x00102fa0        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cnta.o)
+                0x00102fa0                Handle_Irq_CntA
+ .text          0x00102fa4        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cntc.o)
+                0x00102fa4                Handle_Irq_CntC
+ .text          0x00102fa8        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_uarttx.o)
+                0x00102fa8                Handle_Irq_UartTx
+ .text          0x00102fac        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_uartrx.o)
+                0x00102fac                Handle_Irq_UartRx
+ .text          0x00102fb0       0x6c C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave1.o)
+                0x00102fbc                Irq_UsrtCond1
+                0x00102fd8                Irq_Pa4
+                0x00102fe4                Irq_1Hz
+                0x00102ff0                Irq_Vld
+                0x00102fb0                Irq_UsrtCond2
+                0x00102ffc                Irq_Pa1
+                0x00103008                Irq_Pa0
+                0x00102fcc                Irq_Pa5
+ .text          0x0010301c        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_usrtcond1.o)
+                0x0010301c                Handle_Irq_UsrtCond1
+ .text          0x00103020        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_usrtcond2.o)
+                0x00103020                Handle_Irq_UsrtCond2
+ .text          0x00103024        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa5.o)
+                0x00103024                Handle_Irq_Pa5
+ .text          0x00103028        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa4.o)
+                0x00103028                Handle_Irq_Pa4
+ .text          0x0010302c        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_1hz.o)
+                0x0010302c                Handle_Irq_1Hz
+ .text          0x00103030        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_vld.o)
+                0x00103030                Handle_Irq_Vld
+ .text          0x00103034        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa1.o)
+                0x00103034                Handle_Irq_Pa1
+ .text          0x00103038        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa0.o)
+                0x00103038                Handle_Irq_Pa0
+ .text          0x0010303c       0x50 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqsave2.o)
+                0x00103054                Irq_CntB
+                0x00103048                Irq_Pa6
+                0x00103078                Irq_Pa2
+                0x00103060                Irq_CntD
+                0x0010306c                Irq_Pa3
+                0x0010303c                Irq_Pa7
+ .text          0x0010308c        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa7.o)
+                0x0010308c                Handle_Irq_Pa7
+ .text          0x00103090        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa6.o)
+                0x00103090                Handle_Irq_Pa6
+ .text          0x00103094        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cntb.o)
+                0x00103094                Handle_Irq_CntB
+ .text          0x00103098        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_cntd.o)
+                0x00103098                Handle_Irq_CntD
+ .text          0x0010309c        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa3.o)
+                0x0010309c                Handle_Irq_Pa3
+ .text          0x001030a0        0x4 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\IRQHandler.a(irqhandler_pa2.o)
+                0x001030a0                Handle_Irq_Pa2
+ .text          0x001030a4       0x14 C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_small_rom_sc_lsc.a(d:/repository/xestuff/mklibs/./obj/srss/abs.o)
+                0x001030a4                abs
+ .text          0x001030b8       0x70 C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_small_rom_sc_lsc.a(d:/repository/xestuff/mklibs/./obj/srss/strcmp.o)
+                0x001030b8                strcmp
+ .text          0x00103128       0x58 C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_small_rom_sc_lsc.a(d:/repository/xestuff/mklibs/./obj/srss/strcpy.o)
+                0x00103128                strcpy
+ .text          0x00103180       0x3c C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_small_rom_sc_lsc.a(d:/repository/xestuff/mklibs/./obj/srss/strlen.o)
+                0x00103180                strlen
+ .text          0x001031bc       0x98 C:\Ride7\Ride\GNU\c816-gcc\lib\gcc-lib\c816\egcs-2.91.02/libgcc_sc.a(mulsi3.o)
+                0x001031bc                mulsi3
+ .text          0x00103254      0x234 D:\Data\SX1212_API\API\API_code\tutorial\tutorial.elf.DataInit.o
+                0x00103268                DataInit
+                0x00103488                _etext = .
+                0x00103488                _eprom = .
+
+.bss            0x00000100       0x40
+                0x00000100                _sbss = .
+ *(.bss)
+ .bss           0x00000100       0x40 obj\main.o
+                0x00000100                RFbuffer
+ *(COMMON)
+                0x00000140                _ebss = .
+                0x00000140                _heapBottom = .
+
+.page0_bss      0x00000080       0x19
+                0x00000080                _spage0bss = .
+ *(.page0_bss)
+ .page0_bss     0x00000080        0x8 C:\Ride7\Ride\lib\C816\templates\XE88LC06A\crt0.o
+                0x00000080                __spill
+ .page0_bss     0x00000088        0x8 obj\sx1212driver.o
+ .page0_bss     0x00000090        0x1 obj\main.o
+                0x00000090                RFbufferSize
+ .page0_bss     0x00000091        0x8 obj\dflldriver.o
+                0x00000099                _epage0bss = .
+
+.page0_data     0x00000099        0xb
+                0x00000099                _spage0data = .
+ *(.page0_data)
+ .page0_data    0x00000099        0x9 obj\sx1212driver.o
+ .page0_data    0x000000a2        0x2 obj\main.o
+                0x000000a3                SendNextPacket
+                0x000000a2                EnableMaster
+                0x000000a4                _epage0data = .
+
+.data           0x00000140       0x36
+                0x00000140                _sdata = .
+ *(.data)
+ .data          0x00000140       0x36 obj\sx1212driver.o
+                0x00000140                RegistersCfg
+                0x00000176                _edata = .
+
+.rodata         0x00000176        0xa
+                0x00000176                _srodata = .
+ *(.rodata)
+ .rodata        0x00000176        0xa obj\main.o
+                0x00000180                _rodata = .
+
+.shbss          0x00000180        0x0
+                0x00000180                _sshbss = .
+ *(.shbss)
+                0x00000180                _eshbss = .
+
+.stab           0x00000000      0x7c8
+ *(.stab)
+ .stab          0x00000000      0x7c8 D:\Data\SX1212_API\API\API_code\tutorial\tutorial.elf.DataInit.o
+
+.stabstr        0x000007c8      0x1e6
+ *(.stabstr)
+ .stabstr       0x000007c8      0x1e6 D:\Data\SX1212_API\API\API_code\tutorial\tutorial.elf.DataInit.o
+                                  0x0 (size before relaxing)
+LOAD C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_small_rom_sc_lsc.a
+LOAD C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libm_small_rom_sc_lsc.a
+LOAD C:\Ride7\Ride\GNU\c816-gcc\lib\gcc-lib\c816\egcs-2.91.02/libgcc_sc.a
+LOAD D:\Data\SX1212_API\API\API_code\tutorial\tutorial.elf.DataInit.o
+LOAD C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libgcc.a
+LOAD C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libc_huge.a
+LOAD C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libm_huge.a
+LOAD C:/Ride7/Ride/GNU/c816-gcc/c816/lib/libgcc.a
+OUTPUT(D:\Data\SX1212_API\API\API_code\tutorial\tutorial.elf elf32-c816)
+
+.debug_abbrev   0x00000000      0x372
+ .debug_abbrev  0x00000000      0x14d obj\sx1212driver.o
+ .debug_abbrev  0x0000014d       0xbc obj\main.o
+ .debug_abbrev  0x00000209       0xac obj\initialisation.o
+ .debug_abbrev  0x000002b5       0xbd obj\dflldriver.o
+
+.debug_info     0x00000000      0xc58
+ .debug_info    0x00000000      0x4db obj\sx1212driver.o
+ .debug_info    0x000004db      0x1b9 obj\main.o
+ .debug_info    0x00000694      0x2f1 obj\initialisation.o
+ .debug_info    0x00000985      0x2d3 obj\dflldriver.o
+
+.debug_line     0x00000000     0x13bc
+ .debug_line    0x00000000      0xa0d obj\sx1212driver.o
+ .debug_line    0x00000a0d      0x1db obj\main.o
+ .debug_line    0x00000be8      0x4df obj\initialisation.o
+ .debug_line    0x000010c7      0x2f5 obj\dflldriver.o
+
+.debug_pubnames
+                0x00000000      0x258
+ .debug_pubnames
+                0x00000000      0x113 obj\sx1212driver.o
+ .debug_pubnames
+                0x00000113       0x76 obj\main.o
+ .debug_pubnames
+                0x00000189       0x7d obj\initialisation.o
+ .debug_pubnames
+                0x00000206       0x52 obj\dflldriver.o
+
+.debug_aranges  0x00000000       0x50
+ .debug_aranges
+                0x00000000       0x14 obj\sx1212driver.o
+ .debug_aranges
+                0x00000014       0x14 obj\main.o
+ .debug_aranges
+                0x00000028       0x14 obj\initialisation.o
+ .debug_aranges
+                0x0000003c       0x14 obj\dflldriver.o
+
+.debug_str      0x00000000      0x4e2
+ .debug_str     0x00000000      0x28b obj\sx1212driver.o
+                                0x2df (size before relaxing)
+ .debug_str     0x0000028b       0x51 obj\main.o
+                                0x152 (size before relaxing)
+ .debug_str     0x000002dc       0xfc obj\initialisation.o
+                                0x25f (size before relaxing)
+ .debug_str     0x000003d8      0x10a obj\dflldriver.o
+                                0x25f (size before relaxing)

@@ -1,0 +1,1650 @@
+
+obj\sx1212driver.o:     file format elf32-c816
+obj\sx1212driver.o
+
+Disassembly of section .text:
+
+00000000 <InitRFChip>:
+InitRFChip():
+       0:	00 03 74 ff 		MOVE	-(i3,1),i2l
+       4:	00 03 75 ff 		MOVE	-(i3,1),i2h
+       8:	00 03 78 ff 		MOVE	-(i3,1),ipl
+       c:	00 03 79 ff 		MOVE	-(i3,1),iph
+      10:	00 16 af fe 		MOVE	a,-(i3,2)
+      14:	00 0c af 75 		MOVE	i2h,i3h
+      18:	00 0c af 64 		MOVE	i2l,i3l
+      1c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+      20:	00 0e bb c7 		OR	r3,#0x38
+      24:	00 0e 2b 40 		AND	r3,#0xbf
+      28:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+      2c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+      30:	00 0e bb c7 		OR	r3,#0x38
+      34:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+      38:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+      3c:	00 0e bb c7 		OR	r3,#0x38
+      40:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+      44:	00 0e af ff 		MOVE	a,#0x0
+      48:	00 02 ef 00 		MOVE	(i2,0),a
+      4c:	00 02 ef 01 		MOVE	(i2,1),a
+      50:	00 1d 1c 01 		INC	r2,(i2,1)
+      54:	00 1d 5b 00 		INCC	r3,(i2,0)
+      58:	00 0e 1b ff 		CMP	r3,#0x0
+      5c:	00 32 ff e6 		JNE	0x0019		; 100064 <SpiInOut+0xfe84c>
+      60:	00 0e 1c e4 		CMP	r2,#0x1b
+      64:	00 34 ff e4 		JLE	0x001b		; 10006c <SpiInOut+0xfe854>
+      68:	00 33 ff ba 		JUMP	0x0045		; 100114 <SpiInOut+0xfe8fc>
+      6c:	00 1c ac 01 		MOVE	r2,(i2,1)
+      70:	00 1c ab 00 		MOVE	r3,(i2,0)
+      74:	00 0e 1b ff 		CMP	r3,#0x0
+      78:	00 32 ff df 		JNE	0x0020		; 100080 <SpiInOut+0xfe868>
+      7c:	00 0e 1c ec 		CMP	r2,#0x13
+      80:	00 30 ff ce 		JGT	0x0031		; 1000c4 <SpiInOut+0xfe8ac>
+      84:	00 1c a3 01 		MOVE	i1h,(i2,1)
+      88:	00 0e a9 00 		MOVE	iph,#0xff
+      8c:	00 0e a8 00 		MOVE	ipl,#0xff
+      90:	00 1c ae 01 		MOVE	r0,(i2,1)
+      94:	00 1c ad 00 		MOVE	r1,(i2,0)
+      98:	00 0c af db 		MOVE	r3,r1
+      9c:	00 0c af ec 		MOVE	r2,r0
+      a0:	00 0c ce cc 		ADD	r2,r2,r0
+      a4:	00 0c dd bb 		ADDC	r3,r3,r1
+      a8:	00 0c c8 c0 		ADD	i0l,r2,ipl
+      ac:	00 0c d9 b1 		ADDC	i0h,r3,iph
+      b0:	00 0c af 3b 		MOVE	r3,i1h
+      b4:	00 18 ad 01 		MOVE	r1,(i0,1)
+      b8:	00 18 ac 00 		MOVE	r2,(i0,0)
+      bc:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+      c0:	00 33 ff bf 		JUMP	0x0040		; 100100 <SpiInOut+0xfe8e8>
+      c4:	00 1d 13 01 		INC	i1h,(i2,1)
+      c8:	00 0e a9 00 		MOVE	iph,#0xff
+      cc:	00 0e a8 00 		MOVE	ipl,#0xff
+      d0:	00 1c ae 01 		MOVE	r0,(i2,1)
+      d4:	00 1c ad 00 		MOVE	r1,(i2,0)
+      d8:	00 0c af db 		MOVE	r3,r1
+      dc:	00 0c af ec 		MOVE	r2,r0
+      e0:	00 0c ce cc 		ADD	r2,r2,r0
+      e4:	00 0c dd bb 		ADDC	r3,r3,r1
+      e8:	00 0c c8 c0 		ADD	i0l,r2,ipl
+      ec:	00 0c d9 b1 		ADDC	i0h,r3,iph
+      f0:	00 0c af 3b 		MOVE	r3,i1h
+      f4:	00 18 ad 01 		MOVE	r1,(i0,1)
+      f8:	00 18 ac 00 		MOVE	r2,(i0,0)
+      fc:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     100:	00 1d 1f 01 		INC	a,(i2,1)
+     104:	00 02 ef 01 		MOVE	(i2,1),a
+     108:	00 1d 5f 00 		INCC	a,(i2,0)
+     10c:	00 02 ef 00 		MOVE	(i2,0),a
+     110:	00 33 ff eb 		JUMP	0x0014		; 100050 <SpiInOut+0xfe838>
+     114:	00 0e a1 00 		MOVE	i0h,#0xff
+     118:	00 0e a0 00 		MOVE	i0l,#0xff
+     11c:	00 19 6b 24 		SHR	r3,(i0,36)
+     120:	00 19 4c 25 		SHRC	r2,(i0,37)
+     124:	00 0e ec bf 		MUL	r2,#0x40
+     128:	00 0e eb bf 		MUL	r3,#0x40
+     12c:	00 0c bc fc 		OR	r2,a,r2
+     130:	00 0c af cb 		MOVE	r3,r2
+     134:	00 0e 2b fc 		AND	r3,#0x3
+     138:	00 0d 1f bf 		INC	a,r3
+     13c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     140:	00 0e af ff 		MOVE	a,#0x0
+     144:	00 02 ef 00 		MOVE	(i2,0),a
+     148:	00 02 ef 01 		MOVE	(i2,1),a
+     14c:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+     150:	00 0e ab ff 		MOVE	r3,#0x0
+     154:	00 1c ae 01 		MOVE	r0,(i2,1)
+     158:	00 1c ad 00 		MOVE	r1,(i2,0)
+     15c:	00 0c 1d bf 		CMP	r1,r3
+     160:	00 32 ff a5 		JNE	0x005a		; 100168 <SpiInOut+0xfe950>
+     164:	00 0c 1e cf 		CMP	r0,r2
+     168:	00 35 ff a3 		JLT	0x005c		; 100170 <SpiInOut+0xfe958>
+     16c:	00 33 ff 8b 		JUMP	0x0074		; 1001d0 <SpiInOut+0xfe9b8>
+     170:	00 1c a2 01 		MOVE	i1l,(i2,1)
+     174:	00 0e c2 00 		ADD	i1l,#0xff
+     178:	00 1c a3 00 		MOVE	i1h,(i2,0)
+     17c:	00 0e d3 00 		ADDC	i1h,#0xff
+     180:	00 0e a9 00 		MOVE	iph,#0xff
+     184:	00 0e a8 00 		MOVE	ipl,#0xff
+     188:	00 1c ae 01 		MOVE	r0,(i2,1)
+     18c:	00 1c ad 00 		MOVE	r1,(i2,0)
+     190:	00 0c af db 		MOVE	r3,r1
+     194:	00 0c af ec 		MOVE	r2,r0
+     198:	00 0c ce cc 		ADD	r2,r2,r0
+     19c:	00 0c dd bb 		ADDC	r3,r3,r1
+     1a0:	00 0c c8 cc 		ADD	r2,r2,ipl
+     1a4:	00 0c d9 bb 		ADDC	r3,r3,iph
+     1a8:	00 0c af c0 		MOVE	i0l,r2
+     1ac:	00 0e c0 d5 		ADD	i0l,#0x2a
+     1b0:	00 0d 5f b1 		INCC	i0h,r3
+     1b4:	00 18 af 01 		MOVE	a,(i0,1)
+     1b8:	00 02 df 00 		MOVE	(i1,0),a
+     1bc:	00 1d 1f 01 		INC	a,(i2,1)
+     1c0:	00 02 ef 01 		MOVE	(i2,1),a
+     1c4:	00 1d 5f 00 		INCC	a,(i2,0)
+     1c8:	00 02 ef 00 		MOVE	(i2,0),a
+     1cc:	00 33 ff ac 		JUMP	0x0053		; 10014c <SpiInOut+0xfe934>
+     1d0:	00 0e a1 00 		MOVE	i0h,#0xff
+     1d4:	00 0e a0 00 		MOVE	i0l,#0xff
+     1d8:	00 18 ac 07 		MOVE	r2,(i0,7)
+     1dc:	00 18 ab 06 		MOVE	r3,(i0,6)
+     1e0:	00 0e 1b ff 		CMP	r3,#0x0
+     1e4:	00 32 ff 76 		JNE	0x0089		; 100224 <SpiInOut+0xfea0c>
+     1e8:	00 0e 1c 83 		CMP	r2,#0x7c
+     1ec:	00 32 ff 76 		JNE	0x0089		; 100224 <SpiInOut+0xfea0c>
+     1f0:	00 0e a1 00 		MOVE	i0h,#0xff
+     1f4:	00 0e a0 00 		MOVE	i0l,#0xff
+     1f8:	00 18 ae 09 		MOVE	r0,(i0,9)
+     1fc:	00 18 ad 08 		MOVE	r1,(i0,8)
+     200:	00 0e 1d ff 		CMP	r1,#0x0
+     204:	00 32 ff 76 		JNE	0x0089		; 100224 <SpiInOut+0xfea0c>
+     208:	00 0e 1e e0 		CMP	r0,#0x1f
+     20c:	00 32 ff 76 		JNE	0x0089		; 100224 <SpiInOut+0xfea0c>
+     210:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     214:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     218:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     21c:	00 00 cb 00 		MOVE	0xff,#0x34	; ff <InitRFChip+0xff>
+     220:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     224:	00 0e a1 00 		MOVE	i0h,#0xff
+     228:	00 0e a0 00 		MOVE	i0l,#0xff
+     22c:	00 18 ac 07 		MOVE	r2,(i0,7)
+     230:	00 18 ab 06 		MOVE	r3,(i0,6)
+     234:	00 0e 1b ff 		CMP	r3,#0x0
+     238:	00 32 ff 61 		JNE	0x009e		; 100278 <SpiInOut+0xfea60>
+     23c:	00 0e 1c 9c 		CMP	r2,#0x63
+     240:	00 32 ff 61 		JNE	0x009e		; 100278 <SpiInOut+0xfea60>
+     244:	00 0e a1 00 		MOVE	i0h,#0xff
+     248:	00 0e a0 00 		MOVE	i0l,#0xff
+     24c:	00 18 ae 09 		MOVE	r0,(i0,9)
+     250:	00 18 ad 08 		MOVE	r1,(i0,8)
+     254:	00 0e 1d ff 		CMP	r1,#0x0
+     258:	00 32 ff 61 		JNE	0x009e		; 100278 <SpiInOut+0xfea60>
+     25c:	00 0e 1e e0 		CMP	r0,#0x1f
+     260:	00 32 ff 61 		JNE	0x009e		; 100278 <SpiInOut+0xfea60>
+     264:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     268:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     26c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     270:	00 00 d6 00 		MOVE	0xff,#0x29	; ff <InitRFChip+0xff>
+     274:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     278:	00 0e a1 00 		MOVE	i0h,#0xff
+     27c:	00 0e a0 00 		MOVE	i0l,#0xff
+     280:	00 18 ac 07 		MOVE	r2,(i0,7)
+     284:	00 18 ab 06 		MOVE	r3,(i0,6)
+     288:	00 0e 1b ff 		CMP	r3,#0x0
+     28c:	00 32 ff 4c 		JNE	0x00b3		; 1002cc <SpiInOut+0xfeab4>
+     290:	00 0e 1c b0 		CMP	r2,#0x4f
+     294:	00 32 ff 4c 		JNE	0x00b3		; 1002cc <SpiInOut+0xfeab4>
+     298:	00 0e a1 00 		MOVE	i0h,#0xff
+     29c:	00 0e a0 00 		MOVE	i0l,#0xff
+     2a0:	00 18 ae 09 		MOVE	r0,(i0,9)
+     2a4:	00 18 ad 08 		MOVE	r1,(i0,8)
+     2a8:	00 0e 1d ff 		CMP	r1,#0x0
+     2ac:	00 32 ff 4c 		JNE	0x00b3		; 1002cc <SpiInOut+0xfeab4>
+     2b0:	00 0e 1e e0 		CMP	r0,#0x1f
+     2b4:	00 32 ff 4c 		JNE	0x00b3		; 1002cc <SpiInOut+0xfeab4>
+     2b8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     2bc:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     2c0:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     2c4:	00 00 de 00 		MOVE	0xff,#0x21	; ff <InitRFChip+0xff>
+     2c8:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     2cc:	00 0e a1 00 		MOVE	i0h,#0xff
+     2d0:	00 0e a0 00 		MOVE	i0l,#0xff
+     2d4:	00 18 ac 07 		MOVE	r2,(i0,7)
+     2d8:	00 18 ab 06 		MOVE	r3,(i0,6)
+     2dc:	00 0e 1b ff 		CMP	r3,#0x0
+     2e0:	00 32 ff 37 		JNE	0x00c8		; 100320 <SpiInOut+0xfeb08>
+     2e4:	00 0e 1c d8 		CMP	r2,#0x27
+     2e8:	00 32 ff 37 		JNE	0x00c8		; 100320 <SpiInOut+0xfeb08>
+     2ec:	00 0e a1 00 		MOVE	i0h,#0xff
+     2f0:	00 0e a0 00 		MOVE	i0l,#0xff
+     2f4:	00 18 ae 09 		MOVE	r0,(i0,9)
+     2f8:	00 18 ad 08 		MOVE	r1,(i0,8)
+     2fc:	00 0e 1d ff 		CMP	r1,#0x0
+     300:	00 32 ff 37 		JNE	0x00c8		; 100320 <SpiInOut+0xfeb08>
+     304:	00 0e 1e e0 		CMP	r0,#0x1f
+     308:	00 32 ff 37 		JNE	0x00c8		; 100320 <SpiInOut+0xfeb08>
+     30c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     310:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     314:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     318:	00 00 ee 00 		MOVE	0xff,#0x11	; ff <InitRFChip+0xff>
+     31c:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     320:	00 0e a1 00 		MOVE	i0h,#0xff
+     324:	00 0e a0 00 		MOVE	i0l,#0xff
+     328:	00 18 ac 07 		MOVE	r2,(i0,7)
+     32c:	00 18 ab 06 		MOVE	r3,(i0,6)
+     330:	00 0e 1b ff 		CMP	r3,#0x0
+     334:	00 32 ff 22 		JNE	0x00dd		; 100374 <SpiInOut+0xfeb5c>
+     338:	00 0e 1c d8 		CMP	r2,#0x27
+     33c:	00 32 ff 22 		JNE	0x00dd		; 100374 <SpiInOut+0xfeb5c>
+     340:	00 0e a1 00 		MOVE	i0h,#0xff
+     344:	00 0e a0 00 		MOVE	i0l,#0xff
+     348:	00 18 ae 09 		MOVE	r0,(i0,9)
+     34c:	00 18 ad 08 		MOVE	r1,(i0,8)
+     350:	00 0e 1d ff 		CMP	r1,#0x0
+     354:	00 32 ff 22 		JNE	0x00dd		; 100374 <SpiInOut+0xfeb5c>
+     358:	00 0e 1e e0 		CMP	r0,#0x1f
+     35c:	00 32 ff 22 		JNE	0x00dd		; 100374 <SpiInOut+0xfeb5c>
+     360:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     364:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     368:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     36c:	00 00 f4 00 		MOVE	0xff,#0x0b	; ff <InitRFChip+0xff>
+     370:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     374:	00 0e a1 00 		MOVE	i0h,#0xff
+     378:	00 0e a0 00 		MOVE	i0l,#0xff
+     37c:	00 18 ac 07 		MOVE	r2,(i0,7)
+     380:	00 18 ab 06 		MOVE	r3,(i0,6)
+     384:	00 0e 1b ff 		CMP	r3,#0x0
+     388:	00 32 ff 0d 		JNE	0x00f2		; 1003c8 <SpiInOut+0xfebb0>
+     38c:	00 0e 1c ec 		CMP	r2,#0x13
+     390:	00 32 ff 0d 		JNE	0x00f2		; 1003c8 <SpiInOut+0xfebb0>
+     394:	00 0e a1 00 		MOVE	i0h,#0xff
+     398:	00 0e a0 00 		MOVE	i0l,#0xff
+     39c:	00 18 ae 09 		MOVE	r0,(i0,9)
+     3a0:	00 18 ad 08 		MOVE	r1,(i0,8)
+     3a4:	00 0e 1d ff 		CMP	r1,#0x0
+     3a8:	00 32 ff 0d 		JNE	0x00f2		; 1003c8 <SpiInOut+0xfebb0>
+     3ac:	00 0e 1e e0 		CMP	r0,#0x1f
+     3b0:	00 32 ff 0d 		JNE	0x00f2		; 1003c8 <SpiInOut+0xfebb0>
+     3b4:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     3b8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     3bc:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     3c0:	00 00 f6 00 		MOVE	0xff,#0x09	; ff <InitRFChip+0xff>
+     3c4:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     3c8:	00 0e a1 00 		MOVE	i0h,#0xff
+     3cc:	00 0e a0 00 		MOVE	i0l,#0xff
+     3d0:	00 18 ac 07 		MOVE	r2,(i0,7)
+     3d4:	00 18 ab 06 		MOVE	r3,(i0,6)
+     3d8:	00 0e 1b ff 		CMP	r3,#0x0
+     3dc:	00 32 fe f8 		JNE	0x0107		; 10041c <SpiInOut+0xfec04>
+     3e0:	00 0e 1c f6 		CMP	r2,#0x9
+     3e4:	00 32 fe f8 		JNE	0x0107		; 10041c <SpiInOut+0xfec04>
+     3e8:	00 0e a1 00 		MOVE	i0h,#0xff
+     3ec:	00 0e a0 00 		MOVE	i0l,#0xff
+     3f0:	00 18 ae 09 		MOVE	r0,(i0,9)
+     3f4:	00 18 ad 08 		MOVE	r1,(i0,8)
+     3f8:	00 0e 1d ff 		CMP	r1,#0x0
+     3fc:	00 32 fe f8 		JNE	0x0107		; 10041c <SpiInOut+0xfec04>
+     400:	00 0e 1e e0 		CMP	r0,#0x1f
+     404:	00 32 fe f8 		JNE	0x0107		; 10041c <SpiInOut+0xfec04>
+     408:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     40c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     410:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     414:	00 00 fa 00 		MOVE	0xff,#0x05	; ff <InitRFChip+0xff>
+     418:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     41c:	00 0e a1 00 		MOVE	i0h,#0xff
+     420:	00 0e a0 00 		MOVE	i0l,#0xff
+     424:	00 18 ac 07 		MOVE	r2,(i0,7)
+     428:	00 18 ab 06 		MOVE	r3,(i0,6)
+     42c:	00 0e 1b ff 		CMP	r3,#0x0
+     430:	00 32 fe e3 		JNE	0x011c		; 100470 <SpiInOut+0xfec58>
+     434:	00 0e 1c f8 		CMP	r2,#0x7
+     438:	00 32 fe e3 		JNE	0x011c		; 100470 <SpiInOut+0xfec58>
+     43c:	00 0e a1 00 		MOVE	i0h,#0xff
+     440:	00 0e a0 00 		MOVE	i0l,#0xff
+     444:	00 18 ae 09 		MOVE	r0,(i0,9)
+     448:	00 18 ad 08 		MOVE	r1,(i0,8)
+     44c:	00 0e 1d ff 		CMP	r1,#0x0
+     450:	00 32 fe e3 		JNE	0x011c		; 100470 <SpiInOut+0xfec58>
+     454:	00 0e 1e e0 		CMP	r0,#0x1f
+     458:	00 32 fe e3 		JNE	0x011c		; 100470 <SpiInOut+0xfec58>
+     45c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     460:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     464:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     468:	00 00 fb 00 		MOVE	0xff,#0x04	; ff <InitRFChip+0xff>
+     46c:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     470:	00 0e a1 00 		MOVE	i0h,#0xff
+     474:	00 0e a0 00 		MOVE	i0l,#0xff
+     478:	00 18 ac 07 		MOVE	r2,(i0,7)
+     47c:	00 18 ab 06 		MOVE	r3,(i0,6)
+     480:	00 0e 1b ff 		CMP	r3,#0x0
+     484:	00 32 fe ce 		JNE	0x0131		; 1004c4 <SpiInOut+0xfecac>
+     488:	00 0e 1c fb 		CMP	r2,#0x4
+     48c:	00 32 fe ce 		JNE	0x0131		; 1004c4 <SpiInOut+0xfecac>
+     490:	00 0e a1 00 		MOVE	i0h,#0xff
+     494:	00 0e a0 00 		MOVE	i0l,#0xff
+     498:	00 18 ae 09 		MOVE	r0,(i0,9)
+     49c:	00 18 ad 08 		MOVE	r1,(i0,8)
+     4a0:	00 0e 1d ff 		CMP	r1,#0x0
+     4a4:	00 32 fe ce 		JNE	0x0131		; 1004c4 <SpiInOut+0xfecac>
+     4a8:	00 0e 1e e0 		CMP	r0,#0x1f
+     4ac:	00 32 fe ce 		JNE	0x0131		; 1004c4 <SpiInOut+0xfecac>
+     4b0:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     4b4:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     4b8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     4bc:	00 00 fc 00 		MOVE	0xff,#0x03	; ff <InitRFChip+0xff>
+     4c0:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     4c4:	00 0e a1 00 		MOVE	i0h,#0xff
+     4c8:	00 0e a0 00 		MOVE	i0l,#0xff
+     4cc:	00 18 ac 07 		MOVE	r2,(i0,7)
+     4d0:	00 18 ab 06 		MOVE	r3,(i0,6)
+     4d4:	00 0e 1b ff 		CMP	r3,#0x0
+     4d8:	00 32 fe b9 		JNE	0x0146		; 100518 <SpiInOut+0xfed00>
+     4dc:	00 0e 1c fc 		CMP	r2,#0x3
+     4e0:	00 32 fe b9 		JNE	0x0146		; 100518 <SpiInOut+0xfed00>
+     4e4:	00 0e a1 00 		MOVE	i0h,#0xff
+     4e8:	00 0e a0 00 		MOVE	i0l,#0xff
+     4ec:	00 18 ae 09 		MOVE	r0,(i0,9)
+     4f0:	00 18 ad 08 		MOVE	r1,(i0,8)
+     4f4:	00 0e 1d ff 		CMP	r1,#0x0
+     4f8:	00 32 fe b9 		JNE	0x0146		; 100518 <SpiInOut+0xfed00>
+     4fc:	00 0e 1e e0 		CMP	r0,#0x1f
+     500:	00 32 fe b9 		JNE	0x0146		; 100518 <SpiInOut+0xfed00>
+     504:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     508:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     50c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     510:	00 00 fd 00 		MOVE	0xff,#0x02	; ff <InitRFChip+0xff>
+     514:	00 33 fe b5 		JUMP	0x014a		; 100528 <SpiInOut+0xfed10>
+     518:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     51c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     520:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     524:	00 00 cb 00 		MOVE	0xff,#0x34	; ff <InitRFChip+0xff>
+     528:	00 0e ab ff 		MOVE	r3,#0x0
+     52c:	00 3a fe ad 		CALLS	0x0152		; 100548 <SpiInOut+0xfed30>
+     530:	00 16 af 02 		MOVE	a,(i3,2)+
+     534:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     538:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     53c:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     540:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     544:	00 23 ff ff 		JUMP	ip
+
+00000548 <SetRFMode>:
+SetRFMode():
+     548:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     54c:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     550:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     554:	00 03 79 ff 		MOVE	-(i3,1),iph
+     558:	00 16 af ff 		MOVE	a,-(i3,1)
+     55c:	00 0c af 75 		MOVE	i2h,i3h
+     560:	00 0c af 64 		MOVE	i2l,i3l
+     564:	00 02 eb 00 		MOVE	(i2,0),r3
+     568:	00 1c af 00 		MOVE	a,(i2,0)
+     56c:	00 04 1f 00 		CMP	a,0xff	; ff <InitRFChip+0xff>
+     570:	00 36 fd 38 		JEQ	0x02c7		; 100b1c <SpiInOut+0xff304>
+     574:	00 1c af 00 		MOVE	a,(i2,0)
+     578:	00 0e 1f 7f 		CMP	a,#0x80
+     57c:	00 32 fe 26 		JNE	0x01d9		; 100764 <SpiInOut+0xfef4c>
+     580:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     584:	00 32 fe 6f 		JZC	0x0190		; 100640 <SpiInOut+0xfee28>
+     588:	00 0e a1 00 		MOVE	i0h,#0xff
+     58c:	00 0e a0 00 		MOVE	i0l,#0xff
+     590:	00 18 ac 01 		MOVE	r2,(i0,1)
+     594:	00 0e 2c e0 		AND	r2,#0x1f
+     598:	00 0e ab ff 		MOVE	r3,#0x0
+     59c:	00 0c af bd 		MOVE	r1,r3
+     5a0:	00 0c af ce 		MOVE	r0,r2
+     5a4:	00 0e be df 		OR	r0,#0x20
+     5a8:	00 0e ab ff 		MOVE	r3,#0x0
+     5ac:	00 0c af dc 		MOVE	r2,r1
+     5b0:	00 0c af ed 		MOVE	r1,r0
+     5b4:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     5b8:	00 0e ac ff 		MOVE	r2,#0x0
+     5bc:	00 0e ab cf 		MOVE	r3,#0x30
+     5c0:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     5c4:	00 0e a1 00 		MOVE	i0h,#0xff
+     5c8:	00 0e a0 00 		MOVE	i0l,#0xff
+     5cc:	00 18 ac 01 		MOVE	r2,(i0,1)
+     5d0:	00 0e 2c e0 		AND	r2,#0x1f
+     5d4:	00 0e ab ff 		MOVE	r3,#0x0
+     5d8:	00 0c af bd 		MOVE	r1,r3
+     5dc:	00 0c af ce 		MOVE	r0,r2
+     5e0:	00 0e be bf 		OR	r0,#0x40
+     5e4:	00 0e ab ff 		MOVE	r3,#0x0
+     5e8:	00 0c af dc 		MOVE	r2,r1
+     5ec:	00 0c af ed 		MOVE	r1,r0
+     5f0:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     5f4:	00 0e ac 51 		MOVE	r2,#0xae
+     5f8:	00 0e ab f8 		MOVE	r3,#0x7
+     5fc:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     600:	00 0e a1 00 		MOVE	i0h,#0xff
+     604:	00 0e a0 00 		MOVE	i0l,#0xff
+     608:	00 18 ac 01 		MOVE	r2,(i0,1)
+     60c:	00 0e 2c e0 		AND	r2,#0x1f
+     610:	00 0e ab ff 		MOVE	r3,#0x0
+     614:	00 0c af bd 		MOVE	r1,r3
+     618:	00 0c af ce 		MOVE	r0,r2
+     61c:	00 0e be 7f 		OR	r0,#0x80
+     620:	00 0e ab ff 		MOVE	r3,#0x0
+     624:	00 0c af dc 		MOVE	r2,r1
+     628:	00 0c af ed 		MOVE	r1,r0
+     62c:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     630:	00 0e ac 32 		MOVE	r2,#0xcd
+     634:	00 0e ab fb 		MOVE	r3,#0x4
+     638:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     63c:	00 33 fe 28 		JUMP	0x01d7		; 10075c <SpiInOut+0xfef44>
+     640:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     644:	00 0e 1f df 		CMP	a,#0x20
+     648:	00 32 fe 4d 		JNE	0x01b2		; 1006c8 <SpiInOut+0xfeeb0>
+     64c:	00 0e a1 00 		MOVE	i0h,#0xff
+     650:	00 0e a0 00 		MOVE	i0l,#0xff
+     654:	00 18 ac 01 		MOVE	r2,(i0,1)
+     658:	00 0e 2c e0 		AND	r2,#0x1f
+     65c:	00 0e ab ff 		MOVE	r3,#0x0
+     660:	00 0c af bd 		MOVE	r1,r3
+     664:	00 0c af ce 		MOVE	r0,r2
+     668:	00 0e be bf 		OR	r0,#0x40
+     66c:	00 0e ab ff 		MOVE	r3,#0x0
+     670:	00 0c af dc 		MOVE	r2,r1
+     674:	00 0c af ed 		MOVE	r1,r0
+     678:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     67c:	00 0e ac 51 		MOVE	r2,#0xae
+     680:	00 0e ab f8 		MOVE	r3,#0x7
+     684:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     688:	00 0e a1 00 		MOVE	i0h,#0xff
+     68c:	00 0e a0 00 		MOVE	i0l,#0xff
+     690:	00 18 ac 01 		MOVE	r2,(i0,1)
+     694:	00 0e 2c e0 		AND	r2,#0x1f
+     698:	00 0e ab ff 		MOVE	r3,#0x0
+     69c:	00 0c af bd 		MOVE	r1,r3
+     6a0:	00 0c af ce 		MOVE	r0,r2
+     6a4:	00 0e be 7f 		OR	r0,#0x80
+     6a8:	00 0e ab ff 		MOVE	r3,#0x0
+     6ac:	00 0c af dc 		MOVE	r2,r1
+     6b0:	00 0c af ed 		MOVE	r1,r0
+     6b4:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     6b8:	00 0e ac 32 		MOVE	r2,#0xcd
+     6bc:	00 0e ab fb 		MOVE	r3,#0x4
+     6c0:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     6c4:	00 33 fe 28 		JUMP	0x01d7		; 10075c <SpiInOut+0xfef44>
+     6c8:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     6cc:	00 0e 1f bf 		CMP	a,#0x40
+     6d0:	00 32 fe 3a 		JNE	0x01c5		; 100714 <SpiInOut+0xfeefc>
+     6d4:	00 0e a1 00 		MOVE	i0h,#0xff
+     6d8:	00 0e a0 00 		MOVE	i0l,#0xff
+     6dc:	00 18 ac 01 		MOVE	r2,(i0,1)
+     6e0:	00 0e 2c e0 		AND	r2,#0x1f
+     6e4:	00 0e ab ff 		MOVE	r3,#0x0
+     6e8:	00 0c af bd 		MOVE	r1,r3
+     6ec:	00 0c af ce 		MOVE	r0,r2
+     6f0:	00 0e be 7f 		OR	r0,#0x80
+     6f4:	00 0e ab ff 		MOVE	r3,#0x0
+     6f8:	00 0c af dc 		MOVE	r2,r1
+     6fc:	00 0c af ed 		MOVE	r1,r0
+     700:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     704:	00 0e ac 32 		MOVE	r2,#0xcd
+     708:	00 0e ab fb 		MOVE	r3,#0x4
+     70c:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     710:	00 33 fe 28 		JUMP	0x01d7		; 10075c <SpiInOut+0xfef44>
+     714:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     718:	00 0e 1f 9f 		CMP	a,#0x60
+     71c:	00 32 fe 28 		JNE	0x01d7		; 10075c <SpiInOut+0xfef44>
+     720:	00 0e a1 00 		MOVE	i0h,#0xff
+     724:	00 0e a0 00 		MOVE	i0l,#0xff
+     728:	00 18 ac 01 		MOVE	r2,(i0,1)
+     72c:	00 0e 2c e0 		AND	r2,#0x1f
+     730:	00 0e ab ff 		MOVE	r3,#0x0
+     734:	00 0c af bd 		MOVE	r1,r3
+     738:	00 0c af ce 		MOVE	r0,r2
+     73c:	00 0e be 7f 		OR	r0,#0x80
+     740:	00 0e ab ff 		MOVE	r3,#0x0
+     744:	00 0c af dc 		MOVE	r2,r1
+     748:	00 0c af ed 		MOVE	r1,r0
+     74c:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     750:	00 0e ac 32 		MOVE	r2,#0xcd
+     754:	00 0e ab fb 		MOVE	r3,#0x4
+     758:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     75c:	00 00 7f 00 		MOVE	0xff,#0x80	; ff <InitRFChip+0xff>
+     760:	00 33 fd 38 		JUMP	0x02c7		; 100b1c <SpiInOut+0xff304>
+     764:	00 1c af 00 		MOVE	a,(i2,0)
+     768:	00 0e 1f 9f 		CMP	a,#0x60
+     76c:	00 32 fd aa 		JNE	0x0255		; 100954 <SpiInOut+0xff13c>
+     770:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     774:	00 32 fd f3 		JZC	0x020c		; 100830 <SpiInOut+0xff018>
+     778:	00 0e a1 00 		MOVE	i0h,#0xff
+     77c:	00 0e a0 00 		MOVE	i0l,#0xff
+     780:	00 18 ac 01 		MOVE	r2,(i0,1)
+     784:	00 0e 2c e0 		AND	r2,#0x1f
+     788:	00 0e ab ff 		MOVE	r3,#0x0
+     78c:	00 0c af bd 		MOVE	r1,r3
+     790:	00 0c af ce 		MOVE	r0,r2
+     794:	00 0e be df 		OR	r0,#0x20
+     798:	00 0e ab ff 		MOVE	r3,#0x0
+     79c:	00 0c af dc 		MOVE	r2,r1
+     7a0:	00 0c af ed 		MOVE	r1,r0
+     7a4:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     7a8:	00 0e ac ff 		MOVE	r2,#0x0
+     7ac:	00 0e ab cf 		MOVE	r3,#0x30
+     7b0:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     7b4:	00 0e a1 00 		MOVE	i0h,#0xff
+     7b8:	00 0e a0 00 		MOVE	i0l,#0xff
+     7bc:	00 18 ac 01 		MOVE	r2,(i0,1)
+     7c0:	00 0e 2c e0 		AND	r2,#0x1f
+     7c4:	00 0e ab ff 		MOVE	r3,#0x0
+     7c8:	00 0c af bd 		MOVE	r1,r3
+     7cc:	00 0c af ce 		MOVE	r0,r2
+     7d0:	00 0e be bf 		OR	r0,#0x40
+     7d4:	00 0e ab ff 		MOVE	r3,#0x0
+     7d8:	00 0c af dc 		MOVE	r2,r1
+     7dc:	00 0c af ed 		MOVE	r1,r0
+     7e0:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     7e4:	00 0e ac 51 		MOVE	r2,#0xae
+     7e8:	00 0e ab f8 		MOVE	r3,#0x7
+     7ec:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     7f0:	00 0e a1 00 		MOVE	i0h,#0xff
+     7f4:	00 0e a0 00 		MOVE	i0l,#0xff
+     7f8:	00 18 ac 01 		MOVE	r2,(i0,1)
+     7fc:	00 0e 2c e0 		AND	r2,#0x1f
+     800:	00 0e ab ff 		MOVE	r3,#0x0
+     804:	00 0c af bd 		MOVE	r1,r3
+     808:	00 0c af ce 		MOVE	r0,r2
+     80c:	00 0e be 9f 		OR	r0,#0x60
+     810:	00 0e ab ff 		MOVE	r3,#0x0
+     814:	00 0c af dc 		MOVE	r2,r1
+     818:	00 0c af ed 		MOVE	r1,r0
+     81c:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     820:	00 0e ac 32 		MOVE	r2,#0xcd
+     824:	00 0e ab fb 		MOVE	r3,#0x4
+     828:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     82c:	00 33 fd ac 		JUMP	0x0253		; 10094c <SpiInOut+0xff134>
+     830:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     834:	00 0e 1f df 		CMP	a,#0x20
+     838:	00 32 fd d1 		JNE	0x022e		; 1008b8 <SpiInOut+0xff0a0>
+     83c:	00 0e a1 00 		MOVE	i0h,#0xff
+     840:	00 0e a0 00 		MOVE	i0l,#0xff
+     844:	00 18 ac 01 		MOVE	r2,(i0,1)
+     848:	00 0e 2c e0 		AND	r2,#0x1f
+     84c:	00 0e ab ff 		MOVE	r3,#0x0
+     850:	00 0c af bd 		MOVE	r1,r3
+     854:	00 0c af ce 		MOVE	r0,r2
+     858:	00 0e be bf 		OR	r0,#0x40
+     85c:	00 0e ab ff 		MOVE	r3,#0x0
+     860:	00 0c af dc 		MOVE	r2,r1
+     864:	00 0c af ed 		MOVE	r1,r0
+     868:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     86c:	00 0e ac 51 		MOVE	r2,#0xae
+     870:	00 0e ab f8 		MOVE	r3,#0x7
+     874:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     878:	00 0e a1 00 		MOVE	i0h,#0xff
+     87c:	00 0e a0 00 		MOVE	i0l,#0xff
+     880:	00 18 ac 01 		MOVE	r2,(i0,1)
+     884:	00 0e 2c e0 		AND	r2,#0x1f
+     888:	00 0e ab ff 		MOVE	r3,#0x0
+     88c:	00 0c af bd 		MOVE	r1,r3
+     890:	00 0c af ce 		MOVE	r0,r2
+     894:	00 0e be 9f 		OR	r0,#0x60
+     898:	00 0e ab ff 		MOVE	r3,#0x0
+     89c:	00 0c af dc 		MOVE	r2,r1
+     8a0:	00 0c af ed 		MOVE	r1,r0
+     8a4:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     8a8:	00 0e ac 32 		MOVE	r2,#0xcd
+     8ac:	00 0e ab fb 		MOVE	r3,#0x4
+     8b0:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     8b4:	00 33 fd ac 		JUMP	0x0253		; 10094c <SpiInOut+0xff134>
+     8b8:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     8bc:	00 0e 1f bf 		CMP	a,#0x40
+     8c0:	00 32 fd be 		JNE	0x0241		; 100904 <SpiInOut+0xff0ec>
+     8c4:	00 0e a1 00 		MOVE	i0h,#0xff
+     8c8:	00 0e a0 00 		MOVE	i0l,#0xff
+     8cc:	00 18 ac 01 		MOVE	r2,(i0,1)
+     8d0:	00 0e 2c e0 		AND	r2,#0x1f
+     8d4:	00 0e ab ff 		MOVE	r3,#0x0
+     8d8:	00 0c af bd 		MOVE	r1,r3
+     8dc:	00 0c af ce 		MOVE	r0,r2
+     8e0:	00 0e be 9f 		OR	r0,#0x60
+     8e4:	00 0e ab ff 		MOVE	r3,#0x0
+     8e8:	00 0c af dc 		MOVE	r2,r1
+     8ec:	00 0c af ed 		MOVE	r1,r0
+     8f0:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     8f4:	00 0e ac 32 		MOVE	r2,#0xcd
+     8f8:	00 0e ab fb 		MOVE	r3,#0x4
+     8fc:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     900:	00 33 fd ac 		JUMP	0x0253		; 10094c <SpiInOut+0xff134>
+     904:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     908:	00 0e 1f 7f 		CMP	a,#0x80
+     90c:	00 32 fd ac 		JNE	0x0253		; 10094c <SpiInOut+0xff134>
+     910:	00 0e a1 00 		MOVE	i0h,#0xff
+     914:	00 0e a0 00 		MOVE	i0l,#0xff
+     918:	00 18 ac 01 		MOVE	r2,(i0,1)
+     91c:	00 0e 2c e0 		AND	r2,#0x1f
+     920:	00 0e ab ff 		MOVE	r3,#0x0
+     924:	00 0c af bd 		MOVE	r1,r3
+     928:	00 0c af ce 		MOVE	r0,r2
+     92c:	00 0e be 9f 		OR	r0,#0x60
+     930:	00 0e ab ff 		MOVE	r3,#0x0
+     934:	00 0c af dc 		MOVE	r2,r1
+     938:	00 0c af ed 		MOVE	r1,r0
+     93c:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     940:	00 0e ac 32 		MOVE	r2,#0xcd
+     944:	00 0e ab fb 		MOVE	r3,#0x4
+     948:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     94c:	00 00 9f 00 		MOVE	0xff,#0x60	; ff <InitRFChip+0xff>
+     950:	00 33 fd 38 		JUMP	0x02c7		; 100b1c <SpiInOut+0xff304>
+     954:	00 1c af 00 		MOVE	a,(i2,0)
+     958:	00 0e 1f bf 		CMP	a,#0x40
+     95c:	00 32 fd 65 		JNE	0x029a		; 100a68 <SpiInOut+0xff250>
+     960:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     964:	00 32 fd 86 		JZC	0x0279		; 1009e4 <SpiInOut+0xff1cc>
+     968:	00 0e a1 00 		MOVE	i0h,#0xff
+     96c:	00 0e a0 00 		MOVE	i0l,#0xff
+     970:	00 18 ac 01 		MOVE	r2,(i0,1)
+     974:	00 0e 2c e0 		AND	r2,#0x1f
+     978:	00 0e ab ff 		MOVE	r3,#0x0
+     97c:	00 0c af bd 		MOVE	r1,r3
+     980:	00 0c af ce 		MOVE	r0,r2
+     984:	00 0e be df 		OR	r0,#0x20
+     988:	00 0e ab ff 		MOVE	r3,#0x0
+     98c:	00 0c af dc 		MOVE	r2,r1
+     990:	00 0c af ed 		MOVE	r1,r0
+     994:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     998:	00 0e ac ff 		MOVE	r2,#0x0
+     99c:	00 0e ab cf 		MOVE	r3,#0x30
+     9a0:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     9a4:	00 0e a1 00 		MOVE	i0h,#0xff
+     9a8:	00 0e a0 00 		MOVE	i0l,#0xff
+     9ac:	00 18 ac 01 		MOVE	r2,(i0,1)
+     9b0:	00 0e 2c e0 		AND	r2,#0x1f
+     9b4:	00 0e ab ff 		MOVE	r3,#0x0
+     9b8:	00 0c af bd 		MOVE	r1,r3
+     9bc:	00 0c af ce 		MOVE	r0,r2
+     9c0:	00 0e be bf 		OR	r0,#0x40
+     9c4:	00 0e ab ff 		MOVE	r3,#0x0
+     9c8:	00 0c af dc 		MOVE	r2,r1
+     9cc:	00 0c af ed 		MOVE	r1,r0
+     9d0:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     9d4:	00 0e ac 51 		MOVE	r2,#0xae
+     9d8:	00 0e ab f8 		MOVE	r3,#0x7
+     9dc:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     9e0:	00 33 fd 67 		JUMP	0x0298		; 100a60 <SpiInOut+0xff248>
+     9e4:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     9e8:	00 0e 1f df 		CMP	a,#0x20
+     9ec:	00 32 fd 73 		JNE	0x028c		; 100a30 <SpiInOut+0xff218>
+     9f0:	00 0e a1 00 		MOVE	i0h,#0xff
+     9f4:	00 0e a0 00 		MOVE	i0l,#0xff
+     9f8:	00 18 ac 01 		MOVE	r2,(i0,1)
+     9fc:	00 0e 2c e0 		AND	r2,#0x1f
+     a00:	00 0e ab ff 		MOVE	r3,#0x0
+     a04:	00 0c af bd 		MOVE	r1,r3
+     a08:	00 0c af ce 		MOVE	r0,r2
+     a0c:	00 0e be bf 		OR	r0,#0x40
+     a10:	00 0e ab ff 		MOVE	r3,#0x0
+     a14:	00 0c af dc 		MOVE	r2,r1
+     a18:	00 0c af ed 		MOVE	r1,r0
+     a1c:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     a20:	00 0e ac 51 		MOVE	r2,#0xae
+     a24:	00 0e ab f8 		MOVE	r3,#0x7
+     a28:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     a2c:	00 33 fd 67 		JUMP	0x0298		; 100a60 <SpiInOut+0xff248>
+     a30:	00 0e a1 00 		MOVE	i0h,#0xff
+     a34:	00 0e a0 00 		MOVE	i0l,#0xff
+     a38:	00 18 ac 01 		MOVE	r2,(i0,1)
+     a3c:	00 0e 2c e0 		AND	r2,#0x1f
+     a40:	00 0e ab ff 		MOVE	r3,#0x0
+     a44:	00 0c af bd 		MOVE	r1,r3
+     a48:	00 0c af ce 		MOVE	r0,r2
+     a4c:	00 0e be bf 		OR	r0,#0x40
+     a50:	00 0e ab ff 		MOVE	r3,#0x0
+     a54:	00 0c af dc 		MOVE	r2,r1
+     a58:	00 0c af ed 		MOVE	r1,r0
+     a5c:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     a60:	00 00 bf 00 		MOVE	0xff,#0x40	; ff <InitRFChip+0xff>
+     a64:	00 33 fd 38 		JUMP	0x02c7		; 100b1c <SpiInOut+0xff304>
+     a68:	00 1c af 00 		MOVE	a,(i2,0)
+     a6c:	00 0e 1f df 		CMP	a,#0x20
+     a70:	00 32 fd 42 		JNE	0x02bd		; 100af4 <SpiInOut+0xff2dc>
+     a74:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     a78:	00 32 fd 50 		JZC	0x02af		; 100abc <SpiInOut+0xff2a4>
+     a7c:	00 0e a1 00 		MOVE	i0h,#0xff
+     a80:	00 0e a0 00 		MOVE	i0l,#0xff
+     a84:	00 18 ac 01 		MOVE	r2,(i0,1)
+     a88:	00 0e 2c e0 		AND	r2,#0x1f
+     a8c:	00 0e ab ff 		MOVE	r3,#0x0
+     a90:	00 0c af bd 		MOVE	r1,r3
+     a94:	00 0c af ce 		MOVE	r0,r2
+     a98:	00 0e be df 		OR	r0,#0x20
+     a9c:	00 0e ab ff 		MOVE	r3,#0x0
+     aa0:	00 0c af dc 		MOVE	r2,r1
+     aa4:	00 0c af ed 		MOVE	r1,r0
+     aa8:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     aac:	00 0e ac ff 		MOVE	r2,#0x0
+     ab0:	00 0e ab cf 		MOVE	r3,#0x30
+     ab4:	00 3a fa a7 		CALLS	0x0558		; 101560 <SpiInOut+0xffd48>
+     ab8:	00 33 fd 44 		JUMP	0x02bb		; 100aec <SpiInOut+0xff2d4>
+     abc:	00 0e a1 00 		MOVE	i0h,#0xff
+     ac0:	00 0e a0 00 		MOVE	i0l,#0xff
+     ac4:	00 18 ac 01 		MOVE	r2,(i0,1)
+     ac8:	00 0e 2c e0 		AND	r2,#0x1f
+     acc:	00 0e ab ff 		MOVE	r3,#0x0
+     ad0:	00 0c af bd 		MOVE	r1,r3
+     ad4:	00 0c af ce 		MOVE	r0,r2
+     ad8:	00 0e be df 		OR	r0,#0x20
+     adc:	00 0e ab ff 		MOVE	r3,#0x0
+     ae0:	00 0c af dc 		MOVE	r2,r1
+     ae4:	00 0c af ed 		MOVE	r1,r0
+     ae8:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     aec:	00 00 df 00 		MOVE	0xff,#0x20	; ff <InitRFChip+0xff>
+     af0:	00 33 fd 38 		JUMP	0x02c7		; 100b1c <SpiInOut+0xff304>
+     af4:	00 0e a1 00 		MOVE	i0h,#0xff
+     af8:	00 0e a0 00 		MOVE	i0l,#0xff
+     afc:	00 18 ae 01 		MOVE	r0,(i0,1)
+     b00:	00 0e 2e e0 		AND	r0,#0x1f
+     b04:	00 0e ad ff 		MOVE	r1,#0x0
+     b08:	00 0e ab ff 		MOVE	r3,#0x0
+     b0c:	00 0c af dc 		MOVE	r2,r1
+     b10:	00 0c af ed 		MOVE	r1,r0
+     b14:	00 3a fd 32 		CALLS	0x02cd		; 100b34 <SpiInOut+0xff31c>
+     b18:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     b1c:	00 16 af 01 		MOVE	a,(i3,1)+
+     b20:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     b24:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     b28:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     b2c:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     b30:	00 23 ff ff 		JUMP	ip
+
+00000b34 <WriteRegister>:
+WriteRegister():
+     b34:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     b38:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     b3c:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     b40:	00 03 79 ff 		MOVE	-(i3,1),iph
+     b44:	00 16 af fd 		MOVE	a,-(i3,3)
+     b48:	00 0c af 75 		MOVE	i2h,i3h
+     b4c:	00 0c af 64 		MOVE	i2l,i3l
+     b50:	00 02 eb 00 		MOVE	(i2,0),r3
+     b54:	00 02 ec 01 		MOVE	(i2,1),r2
+     b58:	00 02 ed 02 		MOVE	(i2,2),r1
+     b5c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     b60:	00 0e bb c7 		OR	r3,#0x38
+     b64:	00 0e 2b 40 		AND	r3,#0xbf
+     b68:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     b6c:	00 1c ac 00 		MOVE	r2,(i2,0)
+     b70:	00 0e ab ff 		MOVE	r3,#0x0
+     b74:	00 0d af cc 		SHL	r2,r2
+     b78:	00 0c af cf 		MOVE	a,r2
+     b7c:	00 0e 2f c1 		AND	a,#0x3e
+     b80:	00 02 ef 00 		MOVE	(i2,0),a
+     b84:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     b88:	00 0e 2b 08 		AND	r3,#0xf7
+     b8c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     b90:	00 1c ab 00 		MOVE	r3,(i2,0)
+     b94:	00 3a f9 f9 		CALLS	0x0606		; 101818 <SpiInOut+0x100000>
+     b98:	00 1c ab 02 		MOVE	r3,(i2,2)
+     b9c:	00 3a f9 f9 		CALLS	0x0606		; 101818 <SpiInOut+0x100000>
+     ba0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     ba4:	00 0e bb f7 		OR	r3,#0x8
+     ba8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     bac:	00 16 af 03 		MOVE	a,(i3,3)+
+     bb0:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     bb4:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     bb8:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     bbc:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     bc0:	00 23 ff ff 		JUMP	ip
+
+00000bc4 <ReadRegister>:
+ReadRegister():
+     bc4:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     bc8:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     bcc:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     bd0:	00 03 79 ff 		MOVE	-(i3,1),iph
+     bd4:	00 16 af fe 		MOVE	a,-(i3,2)
+     bd8:	00 0c af 75 		MOVE	i2h,i3h
+     bdc:	00 0c af 64 		MOVE	i2l,i3l
+     be0:	00 02 eb 00 		MOVE	(i2,0),r3
+     be4:	00 0e af ff 		MOVE	a,#0x0
+     be8:	00 02 ef 01 		MOVE	(i2,1),a
+     bec:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     bf0:	00 0e bb c7 		OR	r3,#0x38
+     bf4:	00 0e 2b 40 		AND	r3,#0xbf
+     bf8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     bfc:	00 1c ac 00 		MOVE	r2,(i2,0)
+     c00:	00 0e ab ff 		MOVE	r3,#0x0
+     c04:	00 0d af cc 		SHL	r2,r2
+     c08:	00 0c af cb 		MOVE	r3,r2
+     c0c:	00 0e 2b 81 		AND	r3,#0x7e
+     c10:	00 0e bf bf 		OR	a,#0x40
+     c14:	00 02 ef 00 		MOVE	(i2,0),a
+     c18:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     c1c:	00 0e 2b 08 		AND	r3,#0xf7
+     c20:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     c24:	00 1c ab 00 		MOVE	r3,(i2,0)
+     c28:	00 3a f9 f9 		CALLS	0x0606		; 101818 <SpiInOut+0x100000>
+     c2c:	00 0e ab ff 		MOVE	r3,#0x0
+     c30:	00 3a f9 f9 		CALLS	0x0606		; 101818 <SpiInOut+0x100000>
+     c34:	00 02 ec 01 		MOVE	(i2,1),r2
+     c38:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     c3c:	00 0e bb f7 		OR	r3,#0x8
+     c40:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     c44:	00 1c ac 01 		MOVE	r2,(i2,1)
+     c48:	00 0e ab ff 		MOVE	r3,#0x0
+     c4c:	00 16 af 02 		MOVE	a,(i3,2)+
+     c50:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     c54:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     c58:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     c5c:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     c60:	00 23 ff ff 		JUMP	ip
+
+00000c64 <SendRfFrame>:
+SendRfFrame():
+     c64:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     c68:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     c6c:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     c70:	00 03 79 ff 		MOVE	-(i3,1),iph
+     c74:	00 16 af fd 		MOVE	a,-(i3,3)
+     c78:	00 0c af 75 		MOVE	i2h,i3h
+     c7c:	00 0c af 64 		MOVE	i2l,i3l
+     c80:	00 02 eb 00 		MOVE	(i2,0),r3
+     c84:	00 02 ec 01 		MOVE	(i2,1),r2
+     c88:	00 02 ed 02 		MOVE	(i2,2),r1
+     c8c:	00 1c af 02 		MOVE	a,(i2,2)
+     c90:	00 0e 1f bf 		CMP	a,#0x40
+     c94:	00 34 fc d1 		JLE	0x032e		; 100cb8 <SpiInOut+0xff4a0>
+     c98:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     c9c:	00 0e bf fe 		OR	a,#0x1
+     ca0:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     ca4:	00 1c a0 08 		MOVE	i0l,(i2,8)
+     ca8:	00 1c a1 07 		MOVE	i0h,(i2,7)
+     cac:	00 0e af fe 		MOVE	a,#0x1
+     cb0:	00 02 cf 00 		MOVE	(i0,0),a
+     cb4:	00 33 fc 65 		JUMP	0x039a		; 100e68 <SpiInOut+0xff650>
+     cb8:	00 0e ab 7f 		MOVE	r3,#0x80
+     cbc:	00 3a fe ad 		CALLS	0x0152		; 100548 <SpiInOut+0xfed30>
+     cc0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     cc4:	00 0e bb fe 		OR	r3,#0x1
+     cc8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     ccc:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     cd0:	00 0e bf fd 		OR	a,#0x2
+     cd4:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     cd8:	00 0e 2f 01 		AND	a,#0xfe
+     cdc:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     ce0:	00 1c af 02 		MOVE	a,(i2,2)
+     ce4:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     ce8:	00 1c af 00 		MOVE	a,(i2,0)
+     cec:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     cf0:	00 1c af 01 		MOVE	a,(i2,1)
+     cf4:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     cf8:	00 3a fa 70 		CALLS	0x058f		; 10163c <SpiInOut+0xffe24>
+     cfc:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     d00:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     d04:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+     d08:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     d0c:	00 0e 1b ff 		CMP	r3,#0x0
+     d10:	00 32 fc b9 		JNE	0x0346		; 100d18 <SpiInOut+0xff500>
+     d14:	00 0e 1c fc 		CMP	r2,#0x3
+     d18:	00 34 fc b7 		JLE	0x0348		; 100d20 <SpiInOut+0xff508>
+     d1c:	00 33 fc b0 		JUMP	0x034f		; 100d3c <SpiInOut+0xff524>
+     d20:	00 0e ab aa 		MOVE	r3,#0x55
+     d24:	00 3a fb d8 		CALLS	0x0427		; 10109c <SpiInOut+0xff884>
+     d28:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+     d2c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     d30:	00 05 5f 00 		INCC	a,0xff	; ff <InitRFChip+0xff>
+     d34:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     d38:	00 33 fc be 		JUMP	0x0341		; 100d04 <SpiInOut+0xff4ec>
+     d3c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     d40:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     d44:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+     d48:	00 0e ab ff 		MOVE	r3,#0x0
+     d4c:	00 04 ae 00 		MOVE	r0,0xff	; ff <InitRFChip+0xff>
+     d50:	00 04 ad 00 		MOVE	r1,0xff	; ff <InitRFChip+0xff>
+     d54:	00 0c 1d bf 		CMP	r1,r3
+     d58:	00 32 fc a7 		JNE	0x0358		; 100d60 <SpiInOut+0xff548>
+     d5c:	00 0c 1e cf 		CMP	r0,r2
+     d60:	00 35 fc a5 		JLT	0x035a		; 100d68 <SpiInOut+0xff550>
+     d64:	00 33 fc 9a 		JUMP	0x0365		; 100d94 <SpiInOut+0xff57c>
+     d68:	00 04 a0 00 		MOVE	i0l,0xff	; ff <InitRFChip+0xff>
+     d6c:	00 0e c0 00 		ADD	i0l,#0xff
+     d70:	00 04 a1 00 		MOVE	i0h,0xff	; ff <InitRFChip+0xff>
+     d74:	00 0e d1 00 		ADDC	i0h,#0xff
+     d78:	00 18 ab 00 		MOVE	r3,(i0,0)
+     d7c:	00 3a fb d8 		CALLS	0x0427		; 10109c <SpiInOut+0xff884>
+     d80:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+     d84:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     d88:	00 05 5f 00 		INCC	a,0xff	; ff <InitRFChip+0xff>
+     d8c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     d90:	00 33 fc ae 		JUMP	0x0351		; 100d44 <SpiInOut+0xff52c>
+     d94:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     d98:	00 3a fb d8 		CALLS	0x0427		; 10109c <SpiInOut+0xff884>
+     d9c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     da0:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     da4:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     da8:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+     dac:	00 0e ab ff 		MOVE	r3,#0x0
+     db0:	00 04 ae 00 		MOVE	r0,0xff	; ff <InitRFChip+0xff>
+     db4:	00 04 ad 00 		MOVE	r1,0xff	; ff <InitRFChip+0xff>
+     db8:	00 0c 1d bf 		CMP	r1,r3
+     dbc:	00 32 fc 8e 		JNE	0x0371		; 100dc4 <SpiInOut+0xff5ac>
+     dc0:	00 0c 1e cf 		CMP	r0,r2
+     dc4:	00 35 fc 8c 		JLT	0x0373		; 100dcc <SpiInOut+0xff5b4>
+     dc8:	00 33 fc 7c 		JUMP	0x0383		; 100e0c <SpiInOut+0xff5f4>
+     dcc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     dd0:	00 0c af bc 		MOVE	r2,r3
+     dd4:	00 0e ab ff 		MOVE	r3,#0x0
+     dd8:	00 0c af c0 		MOVE	i0l,r2
+     ddc:	00 0c af b1 		MOVE	i0h,r3
+     de0:	00 04 c0 00 		ADD	i0l,0xff	; ff <InitRFChip+0xff>
+     de4:	00 04 d1 00 		ADDC	i0h,0xff	; ff <InitRFChip+0xff>
+     de8:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+     dec:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     df0:	00 18 ab 00 		MOVE	r3,(i0,0)
+     df4:	00 3a fb d8 		CALLS	0x0427		; 10109c <SpiInOut+0xff884>
+     df8:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+     dfc:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     e00:	00 05 5f 00 		INCC	a,0xff	; ff <InitRFChip+0xff>
+     e04:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     e08:	00 33 fc 95 		JUMP	0x036a		; 100da8 <SpiInOut+0xff590>
+     e0c:	00 3f ff ff 		NOP
+     e10:	00 0b df ff 		HALT
+     e14:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     e18:	00 0e 2b 6f 		AND	r3,#0x90
+     e1c:	00 0e 1b ff 		CMP	r3,#0x0
+     e20:	00 36 fc 7b 		JEQ	0x0384		; 100e10 <SpiInOut+0xff5f8>
+     e24:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+     e28:	00 0e 2a 01 		AND	stat,#0xfe
+     e2c:	00 0b df ff 		HALT
+     e30:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     e34:	00 0e 2b 6f 		AND	r3,#0x90
+     e38:	00 0e 1b ff 		CMP	r3,#0x0
+     e3c:	00 36 fc 74 		JEQ	0x038b		; 100e2c <SpiInOut+0xff614>
+     e40:	00 3a fa 4e 		CALLS	0x05b1		; 1016c4 <SpiInOut+0xffeac>
+     e44:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     e48:	00 0e bf fe 		OR	a,#0x1
+     e4c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     e50:	00 0e 2f 08 		AND	a,#0xf7
+     e54:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     e58:	00 1c a0 08 		MOVE	i0l,(i2,8)
+     e5c:	00 1c a1 07 		MOVE	i0h,(i2,7)
+     e60:	00 0e af ff 		MOVE	a,#0x0
+     e64:	00 02 cf 00 		MOVE	(i0,0),a
+     e68:	00 16 af 03 		MOVE	a,(i3,3)+
+     e6c:	00 16 a9 01 		MOVE	iph,(i3,1)+
+     e70:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+     e74:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+     e78:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+     e7c:	00 23 ff ff 		JUMP	ip
+
+00000e80 <ReceiveRfFrame>:
+ReceiveRfFrame():
+     e80:	00 03 74 ff 		MOVE	-(i3,1),i2l
+     e84:	00 03 75 ff 		MOVE	-(i3,1),i2h
+     e88:	00 03 78 ff 		MOVE	-(i3,1),ipl
+     e8c:	00 03 79 ff 		MOVE	-(i3,1),iph
+     e90:	00 16 af fc 		MOVE	a,-(i3,4)
+     e94:	00 0c af 75 		MOVE	i2h,i3h
+     e98:	00 0c af 64 		MOVE	i2l,i3l
+     e9c:	00 02 eb 00 		MOVE	(i2,0),r3
+     ea0:	00 02 ec 01 		MOVE	(i2,1),r2
+     ea4:	00 02 ed 02 		MOVE	(i2,2),r1
+     ea8:	00 02 ee 03 		MOVE	(i2,3),r0
+     eac:	00 1c af 00 		MOVE	a,(i2,0)
+     eb0:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     eb4:	00 1c af 01 		MOVE	a,(i2,1)
+     eb8:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     ebc:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRFChip+0xff>
+     ec0:	00 00 fd 00 		MOVE	0xff,#0x02	; ff <InitRFChip+0xff>
+     ec4:	00 0e ab 9f 		MOVE	r3,#0x60
+     ec8:	00 3a fe ad 		CALLS	0x0152		; 100548 <SpiInOut+0xfed30>
+     ecc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     ed0:	00 0e 2b 01 		AND	r3,#0xfe
+     ed4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     ed8:	00 3a fa 3c 		CALLS	0x05c3		; 10170c <SpiInOut+0xffef4>
+     edc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     ee0:	00 0e 2b 7f 		AND	r3,#0x80
+     ee4:	00 0e 1b ff 		CMP	r3,#0x0
+     ee8:	00 36 fc 3a 		JEQ	0x03c5		; 100f14 <SpiInOut+0xff6fc>
+     eec:	00 3a fa 1a 		CALLS	0x05e5		; 101794 <SpiInOut+0xfff7c>
+     ef0:	00 1c a0 03 		MOVE	i0l,(i2,3)
+     ef4:	00 1c a1 02 		MOVE	i0h,(i2,2)
+     ef8:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     efc:	00 02 cf 00 		MOVE	(i0,0),a
+     f00:	00 1c a0 09 		MOVE	i0l,(i2,9)
+     f04:	00 1c a1 08 		MOVE	i0h,(i2,8)
+     f08:	00 0e af fd 		MOVE	a,#0x2
+     f0c:	00 02 cf 00 		MOVE	(i0,0),a
+     f10:	00 33 fb de 		JUMP	0x0421		; 101084 <SpiInOut+0xff86c>
+     f14:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f18:	00 0e 2b f7 		AND	r3,#0x8
+     f1c:	00 0e 1b ff 		CMP	r3,#0x0
+     f20:	00 36 fc 48 		JEQ	0x03b7		; 100edc <SpiInOut+0xff6c4>
+     f24:	00 00 6f 00 		MOVE	0xff,#0x90	; ff <InitRFChip+0xff>
+     f28:	00 0e 2a 21 		AND	stat,#0xde
+     f2c:	00 3a fb 3e 		CALLS	0x04c1		; 101304 <SpiInOut+0xffaec>
+     f30:	00 01 bc 00 		MOVE	0xff,r2	; ff <InitRFChip+0xff>
+     f34:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+     f38:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     f3c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f40:	00 0e 2b 03 		AND	r3,#0xfc
+     f44:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     f48:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f4c:	00 0e 2b 90 		AND	r3,#0x6f
+     f50:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     f54:	00 0e 2a 01 		AND	stat,#0xfe
+     f58:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     f5c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+     f60:	00 04 ae 00 		MOVE	r0,0xff	; ff <InitRFChip+0xff>
+     f64:	00 04 ad 00 		MOVE	r1,0xff	; ff <InitRFChip+0xff>
+     f68:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+     f6c:	00 0e ab ff 		MOVE	r3,#0x0
+     f70:	00 01 be 00 		MOVE	0xff,r0	; ff <InitRFChip+0xff>
+     f74:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f78:	00 0e bb 6f 		OR	r3,#0x90
+     f7c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     f80:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f84:	00 0e bb 6f 		OR	r3,#0x90
+     f88:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     f8c:	00 0e 2a 21 		AND	stat,#0xde
+     f90:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+     f94:	00 0e bb fc 		OR	r3,#0x3
+     f98:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+     f9c:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     fa0:	00 0e 1f c0 		CMP	a,#0x3f
+     fa4:	00 34 fc 0c 		JLE	0x03f3		; 100fcc <SpiInOut+0xff7b4>
+     fa8:	00 1c a0 03 		MOVE	i0l,(i2,3)
+     fac:	00 1c a1 02 		MOVE	i0h,(i2,2)
+     fb0:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+     fb4:	00 02 cf 00 		MOVE	(i0,0),a
+     fb8:	00 1c a0 09 		MOVE	i0l,(i2,9)
+     fbc:	00 1c a1 08 		MOVE	i0h,(i2,8)
+     fc0:	00 0e af fe 		MOVE	a,#0x1
+     fc4:	00 02 cf 00 		MOVE	(i0,0),a
+     fc8:	00 33 fb de 		JUMP	0x0421		; 101084 <SpiInOut+0xff86c>
+     fcc:	00 3f ff ff 		NOP
+     fd0:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+     fd4:	00 0e ab ff 		MOVE	r3,#0x0
+     fd8:	00 04 ae 00 		MOVE	r0,0xff	; ff <InitRFChip+0xff>
+     fdc:	00 0e ad ff 		MOVE	r1,#0x0
+     fe0:	00 0d 1f ee 		INC	r0,r0
+     fe4:	00 0d 5f dd 		INCC	r1,r1
+     fe8:	00 0c 0b df 		CMPA	r3,r1
+     fec:	00 32 fc 02 		JNE	0x03fd		; 100ff4 <SpiInOut+0xff7dc>
+     ff0:	00 0c 1c ef 		CMP	r2,r0
+     ff4:	00 35 fc 00 		JLT	0x03ff		; 100ffc <SpiInOut+0xff7e4>
+     ff8:	00 33 fb e6 		JUMP	0x0419		; 101064 <SpiInOut+0xff84c>
+     ffc:	00 3a fb 3e 		CALLS	0x04c1		; 101304 <SpiInOut+0xffaec>
+    1000:	00 0c af cd 		MOVE	r1,r2
+    1004:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+    1008:	00 0e ab ff 		MOVE	r3,#0x0
+    100c:	00 04 cc 00 		ADD	r2,0xff	; ff <InitRFChip+0xff>
+    1010:	00 04 db 00 		ADDC	r3,0xff	; ff <InitRFChip+0xff>
+    1014:	00 0d bf c0 		DEC	i0l,r2
+    1018:	00 0d ff b1 		DECC	i0h,r3
+    101c:	00 02 cd 00 		MOVE	(i0,0),r1
+    1020:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1024:	00 0e 2b 7f 		AND	r3,#0x80
+    1028:	00 0e 1b ff 		CMP	r3,#0x0
+    102c:	00 36 fb e9 		JEQ	0x0416		; 101058 <SpiInOut+0xff840>
+    1030:	00 3a fa 1a 		CALLS	0x05e5		; 101794 <SpiInOut+0xfff7c>
+    1034:	00 1c a0 03 		MOVE	i0l,(i2,3)
+    1038:	00 1c a1 02 		MOVE	i0h,(i2,2)
+    103c:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+    1040:	00 02 cf 00 		MOVE	(i0,0),a
+    1044:	00 1c a0 09 		MOVE	i0l,(i2,9)
+    1048:	00 1c a1 08 		MOVE	i0h,(i2,8)
+    104c:	00 0e af fd 		MOVE	a,#0x2
+    1050:	00 02 cf 00 		MOVE	(i0,0),a
+    1054:	00 33 fb de 		JUMP	0x0421		; 101084 <SpiInOut+0xff86c>
+    1058:	00 05 1f 00 		INC	a,0xff	; ff <InitRFChip+0xff>
+    105c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    1060:	00 33 fc 0b 		JUMP	0x03f4		; 100fd0 <SpiInOut+0xff7b8>
+    1064:	00 1c a0 03 		MOVE	i0l,(i2,3)
+    1068:	00 1c a1 02 		MOVE	i0h,(i2,2)
+    106c:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+    1070:	00 02 cf 00 		MOVE	(i0,0),a
+    1074:	00 1c a0 09 		MOVE	i0l,(i2,9)
+    1078:	00 1c a1 08 		MOVE	i0h,(i2,8)
+    107c:	00 0e af ff 		MOVE	a,#0x0
+    1080:	00 02 cf 00 		MOVE	(i0,0),a
+    1084:	00 16 af 04 		MOVE	a,(i3,4)+
+    1088:	00 16 a9 01 		MOVE	iph,(i3,1)+
+    108c:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+    1090:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1094:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1098:	00 23 ff ff 		JUMP	ip
+
+0000109c <SendByte>:
+SendByte():
+    109c:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    10a0:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    10a4:	00 16 af ff 		MOVE	a,-(i3,1)
+    10a8:	00 0c af 75 		MOVE	i2h,i3h
+    10ac:	00 0c af 64 		MOVE	i2l,i3l
+    10b0:	00 02 eb 00 		MOVE	(i2,0),r3
+    10b4:	00 0b df ff 		HALT
+    10b8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    10bc:	00 0e 2b 6f 		AND	r3,#0x90
+    10c0:	00 0e 1b ff 		CMP	r3,#0x0
+    10c4:	00 36 fb d2 		JEQ	0x042d		; 1010b4 <SpiInOut+0xff89c>
+    10c8:	00 1c ab 00 		MOVE	r3,(i2,0)
+    10cc:	00 0e 2b 7f 		AND	r3,#0x80
+    10d0:	00 0e 1b ff 		CMP	r3,#0x0
+    10d4:	00 36 fb c5 		JEQ	0x043a		; 1010e8 <SpiInOut+0xff8d0>
+    10d8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    10dc:	00 0e bb fe 		OR	r3,#0x1
+    10e0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    10e4:	00 33 fb c2 		JUMP	0x043d		; 1010f4 <SpiInOut+0xff8dc>
+    10e8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    10ec:	00 0e 2b 01 		AND	r3,#0xfe
+    10f0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    10f4:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    10f8:	00 0e 2a 01 		AND	stat,#0xfe
+    10fc:	00 0b df ff 		HALT
+    1100:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1104:	00 0e 2b 6f 		AND	r3,#0x90
+    1108:	00 0e 1b ff 		CMP	r3,#0x0
+    110c:	00 36 fb c0 		JEQ	0x043f		; 1010fc <SpiInOut+0xff8e4>
+    1110:	00 1c ab 00 		MOVE	r3,(i2,0)
+    1114:	00 0e 2b bf 		AND	r3,#0x40
+    1118:	00 0e 1b ff 		CMP	r3,#0x0
+    111c:	00 36 fb b3 		JEQ	0x044c		; 101130 <SpiInOut+0xff918>
+    1120:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1124:	00 0e bb fe 		OR	r3,#0x1
+    1128:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    112c:	00 33 fb b0 		JUMP	0x044f		; 10113c <SpiInOut+0xff924>
+    1130:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1134:	00 0e 2b 01 		AND	r3,#0xfe
+    1138:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    113c:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    1140:	00 0e 2a 01 		AND	stat,#0xfe
+    1144:	00 0b df ff 		HALT
+    1148:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    114c:	00 0e 2b 6f 		AND	r3,#0x90
+    1150:	00 0e 1b ff 		CMP	r3,#0x0
+    1154:	00 36 fb ae 		JEQ	0x0451		; 101144 <SpiInOut+0xff92c>
+    1158:	00 1c ab 00 		MOVE	r3,(i2,0)
+    115c:	00 0e 2b df 		AND	r3,#0x20
+    1160:	00 0e 1b ff 		CMP	r3,#0x0
+    1164:	00 36 fb a1 		JEQ	0x045e		; 101178 <SpiInOut+0xff960>
+    1168:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    116c:	00 0e bb fe 		OR	r3,#0x1
+    1170:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1174:	00 33 fb 9e 		JUMP	0x0461		; 101184 <SpiInOut+0xff96c>
+    1178:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    117c:	00 0e 2b 01 		AND	r3,#0xfe
+    1180:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1184:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    1188:	00 0e 2a 01 		AND	stat,#0xfe
+    118c:	00 0b df ff 		HALT
+    1190:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1194:	00 0e 2b 6f 		AND	r3,#0x90
+    1198:	00 0e 1b ff 		CMP	r3,#0x0
+    119c:	00 36 fb 9c 		JEQ	0x0463		; 10118c <SpiInOut+0xff974>
+    11a0:	00 1c ab 00 		MOVE	r3,(i2,0)
+    11a4:	00 0e 2b ef 		AND	r3,#0x10
+    11a8:	00 0e 1b ff 		CMP	r3,#0x0
+    11ac:	00 36 fb 8f 		JEQ	0x0470		; 1011c0 <SpiInOut+0xff9a8>
+    11b0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    11b4:	00 0e bb fe 		OR	r3,#0x1
+    11b8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    11bc:	00 33 fb 8c 		JUMP	0x0473		; 1011cc <SpiInOut+0xff9b4>
+    11c0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    11c4:	00 0e 2b 01 		AND	r3,#0xfe
+    11c8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    11cc:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    11d0:	00 0e 2a 01 		AND	stat,#0xfe
+    11d4:	00 0b df ff 		HALT
+    11d8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    11dc:	00 0e 2b 6f 		AND	r3,#0x90
+    11e0:	00 0e 1b ff 		CMP	r3,#0x0
+    11e4:	00 36 fb 8a 		JEQ	0x0475		; 1011d4 <SpiInOut+0xff9bc>
+    11e8:	00 1c ab 00 		MOVE	r3,(i2,0)
+    11ec:	00 0e 2b f7 		AND	r3,#0x8
+    11f0:	00 0e 1b ff 		CMP	r3,#0x0
+    11f4:	00 36 fb 7d 		JEQ	0x0482		; 101208 <SpiInOut+0xff9f0>
+    11f8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    11fc:	00 0e bb fe 		OR	r3,#0x1
+    1200:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1204:	00 33 fb 7a 		JUMP	0x0485		; 101214 <SpiInOut+0xff9fc>
+    1208:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    120c:	00 0e 2b 01 		AND	r3,#0xfe
+    1210:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1214:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    1218:	00 0e 2a 01 		AND	stat,#0xfe
+    121c:	00 0b df ff 		HALT
+    1220:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1224:	00 0e 2b 6f 		AND	r3,#0x90
+    1228:	00 0e 1b ff 		CMP	r3,#0x0
+    122c:	00 36 fb 78 		JEQ	0x0487		; 10121c <SpiInOut+0xffa04>
+    1230:	00 1c ab 00 		MOVE	r3,(i2,0)
+    1234:	00 0e 2b fb 		AND	r3,#0x4
+    1238:	00 0e 1b ff 		CMP	r3,#0x0
+    123c:	00 36 fb 6b 		JEQ	0x0494		; 101250 <SpiInOut+0xffa38>
+    1240:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1244:	00 0e bb fe 		OR	r3,#0x1
+    1248:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    124c:	00 33 fb 68 		JUMP	0x0497		; 10125c <SpiInOut+0xffa44>
+    1250:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1254:	00 0e 2b 01 		AND	r3,#0xfe
+    1258:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    125c:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    1260:	00 0e 2a 01 		AND	stat,#0xfe
+    1264:	00 0b df ff 		HALT
+    1268:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    126c:	00 0e 2b 6f 		AND	r3,#0x90
+    1270:	00 0e 1b ff 		CMP	r3,#0x0
+    1274:	00 36 fb 66 		JEQ	0x0499		; 101264 <SpiInOut+0xffa4c>
+    1278:	00 1c ab 00 		MOVE	r3,(i2,0)
+    127c:	00 0e 2b fd 		AND	r3,#0x2
+    1280:	00 0e 1b ff 		CMP	r3,#0x0
+    1284:	00 36 fb 59 		JEQ	0x04a6		; 101298 <SpiInOut+0xffa80>
+    1288:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    128c:	00 0e bb fe 		OR	r3,#0x1
+    1290:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1294:	00 33 fb 56 		JUMP	0x04a9		; 1012a4 <SpiInOut+0xffa8c>
+    1298:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    129c:	00 0e 2b 01 		AND	r3,#0xfe
+    12a0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    12a4:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    12a8:	00 0e 2a 01 		AND	stat,#0xfe
+    12ac:	00 0b df ff 		HALT
+    12b0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    12b4:	00 0e 2b 6f 		AND	r3,#0x90
+    12b8:	00 0e 1b ff 		CMP	r3,#0x0
+    12bc:	00 36 fb 54 		JEQ	0x04ab		; 1012ac <SpiInOut+0xffa94>
+    12c0:	00 1c ab 00 		MOVE	r3,(i2,0)
+    12c4:	00 0e 2b fe 		AND	r3,#0x1
+    12c8:	00 0e 1b ff 		CMP	r3,#0x0
+    12cc:	00 36 fb 47 		JEQ	0x04b8		; 1012e0 <SpiInOut+0xffac8>
+    12d0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    12d4:	00 0e bb fe 		OR	r3,#0x1
+    12d8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    12dc:	00 33 fb 44 		JUMP	0x04bb		; 1012ec <SpiInOut+0xffad4>
+    12e0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    12e4:	00 0e 2b 01 		AND	r3,#0xfe
+    12e8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    12ec:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    12f0:	00 0e 2a 01 		AND	stat,#0xfe
+    12f4:	00 16 af 01 		MOVE	a,(i3,1)+
+    12f8:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    12fc:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1300:	00 23 ff ff 		JUMP	ip
+
+00001304 <ReceiveByte>:
+ReceiveByte():
+    1304:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1308:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    130c:	00 16 af ff 		MOVE	a,-(i3,1)
+    1310:	00 0c af 75 		MOVE	i2h,i3h
+    1314:	00 0c af 64 		MOVE	i2l,i3l
+    1318:	00 0e af ff 		MOVE	a,#0x0
+    131c:	00 02 ef 00 		MOVE	(i2,0),a
+    1320:	00 0b df ff 		HALT
+    1324:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1328:	00 0e 2b 6f 		AND	r3,#0x90
+    132c:	00 0e 1b ff 		CMP	r3,#0x0
+    1330:	00 36 fb 37 		JEQ	0x04c8		; 101320 <SpiInOut+0xffb08>
+    1334:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    1338:	00 0e 2a 01 		AND	stat,#0xfe
+    133c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1340:	00 0e 2b fe 		AND	r3,#0x1
+    1344:	00 0e 1b ff 		CMP	r3,#0x0
+    1348:	00 36 fb 29 		JEQ	0x04d6		; 101358 <SpiInOut+0xffb40>
+    134c:	00 1c af 00 		MOVE	a,(i2,0)
+    1350:	00 0e bf 7f 		OR	a,#0x80
+    1354:	00 02 ef 00 		MOVE	(i2,0),a
+    1358:	00 3f ff ff 		NOP
+    135c:	00 0b df ff 		HALT
+    1360:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1364:	00 0e 2b 6f 		AND	r3,#0x90
+    1368:	00 0e 1b ff 		CMP	r3,#0x0
+    136c:	00 36 fb 28 		JEQ	0x04d7		; 10135c <SpiInOut+0xffb44>
+    1370:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    1374:	00 0e 2a 01 		AND	stat,#0xfe
+    1378:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    137c:	00 0e 2b fe 		AND	r3,#0x1
+    1380:	00 0e 1b ff 		CMP	r3,#0x0
+    1384:	00 36 fb 1a 		JEQ	0x04e5		; 101394 <SpiInOut+0xffb7c>
+    1388:	00 1c af 00 		MOVE	a,(i2,0)
+    138c:	00 0e bf bf 		OR	a,#0x40
+    1390:	00 02 ef 00 		MOVE	(i2,0),a
+    1394:	00 3f ff ff 		NOP
+    1398:	00 0b df ff 		HALT
+    139c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13a0:	00 0e 2b 6f 		AND	r3,#0x90
+    13a4:	00 0e 1b ff 		CMP	r3,#0x0
+    13a8:	00 36 fb 19 		JEQ	0x04e6		; 101398 <SpiInOut+0xffb80>
+    13ac:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    13b0:	00 0e 2a 01 		AND	stat,#0xfe
+    13b4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13b8:	00 0e 2b fe 		AND	r3,#0x1
+    13bc:	00 0e 1b ff 		CMP	r3,#0x0
+    13c0:	00 36 fb 0b 		JEQ	0x04f4		; 1013d0 <SpiInOut+0xffbb8>
+    13c4:	00 1c af 00 		MOVE	a,(i2,0)
+    13c8:	00 0e bf df 		OR	a,#0x20
+    13cc:	00 02 ef 00 		MOVE	(i2,0),a
+    13d0:	00 3f ff ff 		NOP
+    13d4:	00 0b df ff 		HALT
+    13d8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13dc:	00 0e 2b 6f 		AND	r3,#0x90
+    13e0:	00 0e 1b ff 		CMP	r3,#0x0
+    13e4:	00 36 fb 0a 		JEQ	0x04f5		; 1013d4 <SpiInOut+0xffbbc>
+    13e8:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    13ec:	00 0e 2a 01 		AND	stat,#0xfe
+    13f0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    13f4:	00 0e 2b fe 		AND	r3,#0x1
+    13f8:	00 0e 1b ff 		CMP	r3,#0x0
+    13fc:	00 36 fa fc 		JEQ	0x0503		; 10140c <SpiInOut+0xffbf4>
+    1400:	00 1c af 00 		MOVE	a,(i2,0)
+    1404:	00 0e bf ef 		OR	a,#0x10
+    1408:	00 02 ef 00 		MOVE	(i2,0),a
+    140c:	00 3f ff ff 		NOP
+    1410:	00 0b df ff 		HALT
+    1414:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1418:	00 0e 2b 6f 		AND	r3,#0x90
+    141c:	00 0e 1b ff 		CMP	r3,#0x0
+    1420:	00 36 fa fb 		JEQ	0x0504		; 101410 <SpiInOut+0xffbf8>
+    1424:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    1428:	00 0e 2a 01 		AND	stat,#0xfe
+    142c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1430:	00 0e 2b fe 		AND	r3,#0x1
+    1434:	00 0e 1b ff 		CMP	r3,#0x0
+    1438:	00 36 fa ed 		JEQ	0x0512		; 101448 <SpiInOut+0xffc30>
+    143c:	00 1c af 00 		MOVE	a,(i2,0)
+    1440:	00 0e bf f7 		OR	a,#0x8
+    1444:	00 02 ef 00 		MOVE	(i2,0),a
+    1448:	00 3f ff ff 		NOP
+    144c:	00 0b df ff 		HALT
+    1450:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1454:	00 0e 2b 6f 		AND	r3,#0x90
+    1458:	00 0e 1b ff 		CMP	r3,#0x0
+    145c:	00 36 fa ec 		JEQ	0x0513		; 10144c <SpiInOut+0xffc34>
+    1460:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    1464:	00 0e 2a 01 		AND	stat,#0xfe
+    1468:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    146c:	00 0e 2b fe 		AND	r3,#0x1
+    1470:	00 0e 1b ff 		CMP	r3,#0x0
+    1474:	00 36 fa de 		JEQ	0x0521		; 101484 <SpiInOut+0xffc6c>
+    1478:	00 1c af 00 		MOVE	a,(i2,0)
+    147c:	00 0e bf fb 		OR	a,#0x4
+    1480:	00 02 ef 00 		MOVE	(i2,0),a
+    1484:	00 3f ff ff 		NOP
+    1488:	00 0b df ff 		HALT
+    148c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1490:	00 0e 2b 6f 		AND	r3,#0x90
+    1494:	00 0e 1b ff 		CMP	r3,#0x0
+    1498:	00 36 fa dd 		JEQ	0x0522		; 101488 <SpiInOut+0xffc70>
+    149c:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    14a0:	00 0e 2a 01 		AND	stat,#0xfe
+    14a4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    14a8:	00 0e 2b fe 		AND	r3,#0x1
+    14ac:	00 0e 1b ff 		CMP	r3,#0x0
+    14b0:	00 36 fa cf 		JEQ	0x0530		; 1014c0 <SpiInOut+0xffca8>
+    14b4:	00 1c af 00 		MOVE	a,(i2,0)
+    14b8:	00 0e bf fd 		OR	a,#0x2
+    14bc:	00 02 ef 00 		MOVE	(i2,0),a
+    14c0:	00 3f ff ff 		NOP
+    14c4:	00 0b df ff 		HALT
+    14c8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    14cc:	00 0e 2b 6f 		AND	r3,#0x90
+    14d0:	00 0e 1b ff 		CMP	r3,#0x0
+    14d4:	00 36 fa ce 		JEQ	0x0531		; 1014c4 <SpiInOut+0xffcac>
+    14d8:	00 00 ef 00 		MOVE	0xff,#0x10	; ff <InitRFChip+0xff>
+    14dc:	00 0e 2a 01 		AND	stat,#0xfe
+    14e0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    14e4:	00 0e 2b fe 		AND	r3,#0x1
+    14e8:	00 0e 1b ff 		CMP	r3,#0x0
+    14ec:	00 36 fa c0 		JEQ	0x053f		; 1014fc <SpiInOut+0xffce4>
+    14f0:	00 1c af 00 		MOVE	a,(i2,0)
+    14f4:	00 0e bf fe 		OR	a,#0x1
+    14f8:	00 02 ef 00 		MOVE	(i2,0),a
+    14fc:	00 1c ac 00 		MOVE	r2,(i2,0)
+    1500:	00 0e ab ff 		MOVE	r3,#0x0
+    1504:	00 16 af 01 		MOVE	a,(i3,1)+
+    1508:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    150c:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1510:	00 23 ff ff 		JUMP	ip
+
+00001514 <ReadRssi>:
+ReadRssi():
+    1514:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1518:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    151c:	00 03 78 ff 		MOVE	-(i3,1),ipl
+    1520:	00 03 79 ff 		MOVE	-(i3,1),iph
+    1524:	00 16 af fe 		MOVE	a,-(i3,2)
+    1528:	00 0c af 75 		MOVE	i2h,i3h
+    152c:	00 0c af 64 		MOVE	i2l,i3l
+    1530:	00 0e ab eb 		MOVE	r3,#0x14
+    1534:	00 3a fd 0e 		CALLS	0x02f1		; 100bc4 <SpiInOut+0xff3ac>
+    1538:	00 02 eb 00 		MOVE	(i2,0),r3
+    153c:	00 02 ec 01 		MOVE	(i2,1),r2
+    1540:	00 1c ac 01 		MOVE	r2,(i2,1)
+    1544:	00 1c ab 00 		MOVE	r3,(i2,0)
+    1548:	00 16 af 02 		MOVE	a,(i3,2)+
+    154c:	00 16 a9 01 		MOVE	iph,(i3,1)+
+    1550:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+    1554:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1558:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    155c:	00 23 ff ff 		JUMP	ip
+
+00001560 <Wait>:
+Wait():
+    1560:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1564:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1568:	00 16 af fe 		MOVE	a,-(i3,2)
+    156c:	00 0c af 75 		MOVE	i2h,i3h
+    1570:	00 0c af 64 		MOVE	i2l,i3l
+    1574:	00 02 eb 00 		MOVE	(i2,0),r3
+    1578:	00 02 ec 01 		MOVE	(i2,1),r2
+    157c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1580:	00 0e 2b 03 		AND	r3,#0xfc
+    1584:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1588:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    158c:	00 0e 2b 80 		AND	r3,#0x7f
+    1590:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1594:	00 00 7f 00 		MOVE	0xff,#0x80	; ff <InitRFChip+0xff>
+    1598:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    159c:	00 0e 2b 03 		AND	r3,#0xfc
+    15a0:	00 0e bb fe 		OR	r3,#0x1
+    15a4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    15a8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    15ac:	00 0e bb cb 		OR	r3,#0x34
+    15b0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    15b4:	00 1c af 01 		MOVE	a,(i2,1)
+    15b8:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    15bc:	00 1c ac 00 		MOVE	r2,(i2,0)
+    15c0:	00 0e ab ff 		MOVE	r3,#0x0
+    15c4:	00 01 bc 00 		MOVE	0xff,r2	; ff <InitRFChip+0xff>
+    15c8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    15cc:	00 0e bb 7f 		OR	r3,#0x80
+    15d0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    15d4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    15d8:	00 0e bb 7f 		OR	r3,#0x80
+    15dc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    15e0:	00 0e 2a 01 		AND	stat,#0xfe
+    15e4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    15e8:	00 0e bb fc 		OR	r3,#0x3
+    15ec:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    15f0:	00 0b df ff 		HALT
+    15f4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    15f8:	00 0e 2b 7f 		AND	r3,#0x80
+    15fc:	00 0e 1b ff 		CMP	r3,#0x0
+    1600:	00 36 fa 83 		JEQ	0x057c		; 1015f0 <SpiInOut+0xffdd8>
+    1604:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1608:	00 0e 2b 01 		AND	r3,#0xfe
+    160c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1610:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1614:	00 0e 2b 80 		AND	r3,#0x7f
+    1618:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    161c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1620:	00 0e bb 7f 		OR	r3,#0x80
+    1624:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1628:	00 0e 2a 01 		AND	stat,#0xfe
+    162c:	00 16 af 02 		MOVE	a,(i3,2)+
+    1630:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1634:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1638:	00 23 ff ff 		JUMP	ip
+
+0000163c <TxEventsOn>:
+TxEventsOn():
+    163c:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1640:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1644:	00 0c af 75 		MOVE	i2h,i3h
+    1648:	00 0c af 64 		MOVE	i2l,i3l
+    164c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1650:	00 0e 2b 03 		AND	r3,#0xfc
+    1654:	00 0e bb fc 		OR	r3,#0x3
+    1658:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    165c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1660:	00 0e bb cb 		OR	r3,#0x34
+    1664:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1668:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+    166c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    1670:	00 04 ae 00 		MOVE	r0,0xff	; ff <InitRFChip+0xff>
+    1674:	00 04 ad 00 		MOVE	r1,0xff	; ff <InitRFChip+0xff>
+    1678:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+    167c:	00 0e ab ff 		MOVE	r3,#0x0
+    1680:	00 01 be 00 		MOVE	0xff,r0	; ff <InitRFChip+0xff>
+    1684:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1688:	00 0e bb fd 		OR	r3,#0x2
+    168c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1690:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1694:	00 0e bb 6f 		OR	r3,#0x90
+    1698:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    169c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16a0:	00 0e bb 6f 		OR	r3,#0x90
+    16a4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    16a8:	00 0e 2a 21 		AND	stat,#0xde
+    16ac:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16b0:	00 0e bb fc 		OR	r3,#0x3
+    16b4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    16b8:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    16bc:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    16c0:	00 23 ff ff 		JUMP	ip
+
+000016c4 <TxEventsOff>:
+TxEventsOff():
+    16c4:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    16c8:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    16cc:	00 0c af 75 		MOVE	i2h,i3h
+    16d0:	00 0c af 64 		MOVE	i2l,i3l
+    16d4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16d8:	00 0e 2b 03 		AND	r3,#0xfc
+    16dc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    16e0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16e4:	00 0e 2b 90 		AND	r3,#0x6f
+    16e8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    16ec:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    16f0:	00 0e bb 6f 		OR	r3,#0x90
+    16f4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    16f8:	00 0e 2a 01 		AND	stat,#0xfe
+    16fc:	00 0e ba df 		OR	stat,#0x20
+    1700:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1704:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1708:	00 23 ff ff 		JUMP	ip
+
+0000170c <RxEventsOn>:
+RxEventsOn():
+    170c:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1710:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1714:	00 0c af 75 		MOVE	i2h,i3h
+    1718:	00 0c af 64 		MOVE	i2l,i3l
+    171c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1720:	00 0e 2b 03 		AND	r3,#0xfc
+    1724:	00 0e bb fc 		OR	r3,#0x3
+    1728:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    172c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1730:	00 0e bb cb 		OR	r3,#0x34
+    1734:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1738:	00 04 af 00 		MOVE	a,0xff	; ff <InitRFChip+0xff>
+    173c:	00 01 bf 00 		MOVE	0xff,a	; ff <InitRFChip+0xff>
+    1740:	00 04 ae 00 		MOVE	r0,0xff	; ff <InitRFChip+0xff>
+    1744:	00 04 ad 00 		MOVE	r1,0xff	; ff <InitRFChip+0xff>
+    1748:	00 04 ac 00 		MOVE	r2,0xff	; ff <InitRFChip+0xff>
+    174c:	00 0e ab ff 		MOVE	r3,#0x0
+    1750:	00 01 be 00 		MOVE	0xff,r0	; ff <InitRFChip+0xff>
+    1754:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1758:	00 0e 2b 02 		AND	r3,#0xfd
+    175c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1760:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1764:	00 0e bb 6f 		OR	r3,#0x90
+    1768:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    176c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1770:	00 0e bb 6f 		OR	r3,#0x90
+    1774:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1778:	00 0e 2a 21 		AND	stat,#0xde
+    177c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1780:	00 0e bb fc 		OR	r3,#0x3
+    1784:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1788:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    178c:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1790:	00 23 ff ff 		JUMP	ip
+
+00001794 <RxEventsOff>:
+RxEventsOff():
+    1794:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    1798:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    179c:	00 0c af 75 		MOVE	i2h,i3h
+    17a0:	00 0c af 64 		MOVE	i2l,i3l
+    17a4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    17a8:	00 0e 2b 03 		AND	r3,#0xfc
+    17ac:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    17b0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    17b4:	00 0e 2b 90 		AND	r3,#0x6f
+    17b8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    17bc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    17c0:	00 0e bb 6f 		OR	r3,#0x90
+    17c4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    17c8:	00 0e 2a 01 		AND	stat,#0xfe
+    17cc:	00 0e ba df 		OR	stat,#0x20
+    17d0:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    17d4:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    17d8:	00 23 ff ff 		JUMP	ip
+
+000017dc <InvertByte>:
+InvertByte():
+    17dc:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    17e0:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    17e4:	00 16 af ff 		MOVE	a,-(i3,1)
+    17e8:	00 0c af 75 		MOVE	i2h,i3h
+    17ec:	00 0c af 64 		MOVE	i2l,i3l
+    17f0:	00 02 eb 00 		MOVE	(i2,0),r3
+    17f4:	00 0e ae f7 		MOVE	r0,#0x8
+
+000017f8 <LoopInvertByte>:
+LoopInvertByte():
+    17f8:	00 0d af bb 		SHL	r3,r3
+    17fc:	00 0d 4f cc 		SHRC	r2,r2
+    1800:	00 0d bf ee 		DEC	r0,r0
+    1804:	00 32 fa 01 		JZC	0x05fe		; 1017f8 <SpiInOut+0xfffe0>
+    1808:	00 16 af 01 		MOVE	a,(i3,1)+
+    180c:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    1810:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    1814:	00 23 ff ff 		JUMP	ip
+
+00001818 <SpiInOut>:
+SpiInOut():
+    1818:	00 03 74 ff 		MOVE	-(i3,1),i2l
+    181c:	00 03 75 ff 		MOVE	-(i3,1),i2h
+    1820:	00 16 af fd 		MOVE	a,-(i3,3)
+    1824:	00 0c af 75 		MOVE	i2h,i3h
+    1828:	00 0c af 64 		MOVE	i2l,i3l
+    182c:	00 02 eb 00 		MOVE	(i2,0),r3
+    1830:	00 0e af ff 		MOVE	a,#0x0
+    1834:	00 02 ef 02 		MOVE	(i2,2),a
+    1838:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    183c:	00 0e 2b 10 		AND	r3,#0xef
+    1840:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1844:	00 0e af 7f 		MOVE	a,#0x80
+    1848:	00 02 ef 01 		MOVE	(i2,1),a
+    184c:	00 1c af 01 		MOVE	a,(i2,1)
+    1850:	00 32 f9 e9 		JZC	0x0616		; 101858 <SpiInOut+0x100040>
+    1854:	00 33 f9 ce 		JUMP	0x0631		; 1018c4 <SpiInOut+0x1000ac>
+    1858:	00 1c ab 00 		MOVE	r3,(i2,0)
+    185c:	00 1c 2b 01 		AND	r3,(i2,1)
+    1860:	00 0e 1b ff 		CMP	r3,#0x0
+    1864:	00 36 f9 e1 		JEQ	0x061e		; 101878 <SpiInOut+0x100060>
+    1868:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    186c:	00 0e bb df 		OR	r3,#0x20
+    1870:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1874:	00 33 f9 de 		JUMP	0x0621		; 101884 <SpiInOut+0x10006c>
+    1878:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    187c:	00 0e 2b 20 		AND	r3,#0xdf
+    1880:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1884:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1888:	00 0e bb ef 		OR	r3,#0x10
+    188c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    1890:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    1894:	00 0e 2b bf 		AND	r3,#0x40
+    1898:	00 0e 1b ff 		CMP	r3,#0x0
+    189c:	00 36 f9 d4 		JEQ	0x062b		; 1018ac <SpiInOut+0x100094>
+    18a0:	00 1c af 02 		MOVE	a,(i2,2)
+    18a4:	00 1c bf 01 		OR	a,(i2,1)
+    18a8:	00 02 ef 02 		MOVE	(i2,2),a
+    18ac:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    18b0:	00 0e 2b 10 		AND	r3,#0xef
+    18b4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    18b8:	00 1d 6b 01 		SHR	r3,(i2,1)
+    18bc:	00 02 eb 01 		MOVE	(i2,1),r3
+    18c0:	00 33 f9 ec 		JUMP	0x0613		; 10184c <SpiInOut+0x100034>
+    18c4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRFChip+0xff>
+    18c8:	00 0e 2b 20 		AND	r3,#0xdf
+    18cc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRFChip+0xff>
+    18d0:	00 1c ac 02 		MOVE	r2,(i2,2)
+    18d4:	00 0e ab ff 		MOVE	r3,#0x0
+    18d8:	00 16 af 03 		MOVE	a,(i3,3)+
+    18dc:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+    18e0:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+    18e4:	00 23 ff ff 		JUMP	ip

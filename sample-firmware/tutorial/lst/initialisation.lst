@@ -1,0 +1,938 @@
+
+obj\initialisation.o:     file format elf32-c816
+obj\initialisation.o
+
+Disassembly of section .text:
+
+00000000 <InitMicro>:
+InitMicro():
+   0:	00 03 74 ff 		MOVE	-(i3,1),i2l
+   4:	00 03 75 ff 		MOVE	-(i3,1),i2h
+   8:	00 03 78 ff 		MOVE	-(i3,1),ipl
+   c:	00 03 79 ff 		MOVE	-(i3,1),iph
+  10:	00 0c af 75 		MOVE	i2h,i3h
+  14:	00 0c af 64 		MOVE	i2l,i3l
+  18:	00 3a ff eb 		CALLS	0x0014		; 100050 <InitPortD+0xff238>
+  1c:	00 3a ff df 		CALLS	0x0020		; 100080 <InitPortD+0xff268>
+  20:	00 3a fc 79 		CALLS	0x0386		; 100e18 <InitPortD+0x100000>
+  24:	00 3a ff d3 		CALLS	0x002c		; 1000b0 <InitPortD+0xff298>
+  28:	00 0e ae ff 		MOVE	r0,#0x0
+  2c:	00 0e ad 7f 		MOVE	r1,#0x80
+  30:	00 0e ac da 		MOVE	r2,#0x25
+  34:	00 0e ab ff 		MOVE	r3,#0x0
+  38:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+  3c:	00 16 a9 01 		MOVE	iph,(i3,1)+
+  40:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+  44:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+  48:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+  4c:	00 23 ff ff 		JUMP	ip
+
+00000050 <InitPortA>:
+InitPortA():
+  50:	00 03 74 ff 		MOVE	-(i3,1),i2l
+  54:	00 03 75 ff 		MOVE	-(i3,1),i2h
+  58:	00 0c af 75 		MOVE	i2h,i3h
+  5c:	00 0c af 64 		MOVE	i2l,i3l
+  60:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  64:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  68:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  6c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  70:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  74:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+  78:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+  7c:	00 23 ff ff 		JUMP	ip
+
+00000080 <InitPortB>:
+InitPortB():
+  80:	00 03 74 ff 		MOVE	-(i3,1),i2l
+  84:	00 03 75 ff 		MOVE	-(i3,1),i2h
+  88:	00 0c af 75 		MOVE	i2h,i3h
+  8c:	00 0c af 64 		MOVE	i2l,i3l
+  90:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  94:	00 00 00 00 		MOVE	0xff,#0xff	; ff <InitRCOscillator+0x17>
+  98:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  9c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  a0:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  a4:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+  a8:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+  ac:	00 23 ff ff 		JUMP	ip
+
+000000b0 <InitCounters>:
+InitCounters():
+  b0:	00 03 74 ff 		MOVE	-(i3,1),i2l
+  b4:	00 03 75 ff 		MOVE	-(i3,1),i2h
+  b8:	00 0c af 75 		MOVE	i2h,i3h
+  bc:	00 0c af 64 		MOVE	i2l,i3l
+  c0:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  c4:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  c8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  cc:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  d0:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  d4:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  d8:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+  dc:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+  e0:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+  e4:	00 23 ff ff 		JUMP	ip
+
+000000e8 <InitRCOscillator>:
+InitRCOscillator():
+  e8:	00 03 74 ff 		MOVE	-(i3,1),i2l
+  ec:	00 03 75 ff 		MOVE	-(i3,1),i2h
+  f0:	00 03 78 ff 		MOVE	-(i3,1),ipl
+  f4:	00 03 79 ff 		MOVE	-(i3,1),iph
+  f8:	00 16 af fc 		MOVE	a,-(i3,4)
+  fc:	00 0c af 75 		MOVE	i2h,i3h
+ 100:	00 0c af 64 		MOVE	i2l,i3l
+ 104:	00 02 eb 00 		MOVE	(i2,0),r3
+ 108:	00 02 ec 01 		MOVE	(i2,1),r2
+ 10c:	00 02 ed 02 		MOVE	(i2,2),r1
+ 110:	00 02 ee 03 		MOVE	(i2,3),r0
+ 114:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 118:	00 0e 2b 03 		AND	r3,#0xfc
+ 11c:	00 0e bb fc 		OR	r3,#0x3
+ 120:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 124:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 128:	00 0e 2b f7 		AND	r3,#0x8
+ 12c:	00 0e 1b ff 		CMP	r3,#0x0
+ 130:	00 32 ff b6 		JNE	0x0049		; 100124 <InitPortD+0xff30c>
+ 134:	00 1c ae 03 		MOVE	r0,(i2,3)
+ 138:	00 1c ad 02 		MOVE	r1,(i2,2)
+ 13c:	00 1c ac 01 		MOVE	r2,(i2,1)
+ 140:	00 1c ab 00 		MOVE	r3,(i2,0)
+ 144:	00 3a ff ff 		CALLS	0x0000		; 100000 <InitPortD+0xff1e8>
+ 148:	00 16 af 04 		MOVE	a,(i3,4)+
+ 14c:	00 16 a9 01 		MOVE	iph,(i3,1)+
+ 150:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+ 154:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ 158:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ 15c:	00 23 ff ff 		JUMP	ip
+
+00000160 <InitUART>:
+InitUART():
+ 160:	00 03 74 ff 		MOVE	-(i3,1),i2l
+ 164:	00 03 75 ff 		MOVE	-(i3,1),i2h
+ 168:	00 03 78 ff 		MOVE	-(i3,1),ipl
+ 16c:	00 03 79 ff 		MOVE	-(i3,1),iph
+ 170:	00 16 af ec 		MOVE	a,-(i3,20)
+ 174:	00 0c af 75 		MOVE	i2h,i3h
+ 178:	00 0c af 64 		MOVE	i2l,i3l
+ 17c:	00 02 eb 00 		MOVE	(i2,0),r3
+ 180:	00 02 ec 01 		MOVE	(i2,1),r2
+ 184:	00 02 ed 02 		MOVE	(i2,2),r1
+ 188:	00 02 ee 03 		MOVE	(i2,3),r0
+ 18c:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+ 190:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+ 194:	00 1c af 00 		MOVE	a,(i2,0)
+ 198:	00 02 ef 10 		MOVE	(i2,16),a
+ 19c:	00 1c af 01 		MOVE	a,(i2,1)
+ 1a0:	00 02 ef 11 		MOVE	(i2,17),a
+ 1a4:	00 1c af 02 		MOVE	a,(i2,2)
+ 1a8:	00 02 ef 12 		MOVE	(i2,18),a
+ 1ac:	00 1c af 03 		MOVE	a,(i2,3)
+ 1b0:	00 02 ef 13 		MOVE	(i2,19),a
+ 1b4:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 1b8:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 1bc:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 1c0:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 1c4:	00 0e 1b ff 		CMP	r3,#0x0
+ 1c8:	00 32 ff 86 		JNE	0x0079		; 1001e4 <InitPortD+0xff3cc>
+ 1cc:	00 0e 1c ff 		CMP	r2,#0x0
+ 1d0:	00 32 ff 86 		JNE	0x0079		; 1001e4 <InitPortD+0xff3cc>
+ 1d4:	00 0e 1d ed 		CMP	r1,#0x12
+ 1d8:	00 32 ff 86 		JNE	0x0079		; 1001e4 <InitPortD+0xff3cc>
+ 1dc:	00 0e 1e 3f 		CMP	r0,#0xc0
+ 1e0:	00 36 fd 3a 		JEQ	0x02c5		; 100b14 <InitPortD+0xffcfc>
+ 1e4:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 1e8:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 1ec:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 1f0:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 1f4:	00 0e 1b ff 		CMP	r3,#0x0
+ 1f8:	00 32 ff 7b 		JNE	0x0084		; 100210 <InitPortD+0xff3f8>
+ 1fc:	00 0e 1c ff 		CMP	r2,#0x0
+ 200:	00 32 ff 7b 		JNE	0x0084		; 100210 <InitPortD+0xff3f8>
+ 204:	00 0e 1d ed 		CMP	r1,#0x12
+ 208:	00 32 ff 7b 		JNE	0x0084		; 100210 <InitPortD+0xff3f8>
+ 20c:	00 0e 1e 3f 		CMP	r0,#0xc0
+ 210:	00 30 ff 3c 		JGT	0x00c3		; 10030c <InitPortD+0xff4f4>
+ 214:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 218:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 21c:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 220:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 224:	00 0e 1b ff 		CMP	r3,#0x0
+ 228:	00 32 ff 6e 		JNE	0x0091		; 100244 <InitPortD+0xff42c>
+ 22c:	00 0e 1c ff 		CMP	r2,#0x0
+ 230:	00 32 ff 6e 		JNE	0x0091		; 100244 <InitPortD+0xff42c>
+ 234:	00 0e 1d fd 		CMP	r1,#0x2
+ 238:	00 32 ff 6e 		JNE	0x0091		; 100244 <InitPortD+0xff42c>
+ 23c:	00 0e 1e a7 		CMP	r0,#0x58
+ 240:	00 36 fc ca 		JEQ	0x0335		; 100cd4 <InitPortD+0xffebc>
+ 244:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 248:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 24c:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 250:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 254:	00 0e 1b ff 		CMP	r3,#0x0
+ 258:	00 32 ff 63 		JNE	0x009c		; 100270 <InitPortD+0xff458>
+ 25c:	00 0e 1c ff 		CMP	r2,#0x0
+ 260:	00 32 ff 63 		JNE	0x009c		; 100270 <InitPortD+0xff458>
+ 264:	00 0e 1d fd 		CMP	r1,#0x2
+ 268:	00 32 ff 63 		JNE	0x009c		; 100270 <InitPortD+0xff458>
+ 26c:	00 0e 1e a7 		CMP	r0,#0x58
+ 270:	00 30 ff 55 		JGT	0x00aa		; 1002a8 <InitPortD+0xff490>
+ 274:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 278:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 27c:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 280:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 284:	00 0e 1b ff 		CMP	r3,#0x0
+ 288:	00 32 ff 56 		JNE	0x00a9		; 1002a4 <InitPortD+0xff48c>
+ 28c:	00 0e 1c ff 		CMP	r2,#0x0
+ 290:	00 32 ff 56 		JNE	0x00a9		; 1002a4 <InitPortD+0xff48c>
+ 294:	00 0e 1d fe 		CMP	r1,#0x1
+ 298:	00 32 ff 56 		JNE	0x00a9		; 1002a4 <InitPortD+0xff48c>
+ 29c:	00 0e 1e d3 		CMP	r0,#0x2c
+ 2a0:	00 36 fc be 		JEQ	0x0341		; 100d04 <InitPortD+0xffeec>
+ 2a4:	00 33 fc b2 		JUMP	0x034d		; 100d34 <InitPortD+0xfff1c>
+ 2a8:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 2ac:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 2b0:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 2b4:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 2b8:	00 0e 1b ff 		CMP	r3,#0x0
+ 2bc:	00 32 ff 49 		JNE	0x00b6		; 1002d8 <InitPortD+0xff4c0>
+ 2c0:	00 0e 1c ff 		CMP	r2,#0x0
+ 2c4:	00 32 ff 49 		JNE	0x00b6		; 1002d8 <InitPortD+0xff4c0>
+ 2c8:	00 0e 1d fb 		CMP	r1,#0x4
+ 2cc:	00 32 ff 49 		JNE	0x00b6		; 1002d8 <InitPortD+0xff4c0>
+ 2d0:	00 0e 1e 4f 		CMP	r0,#0xb0
+ 2d4:	00 36 fc d6 		JEQ	0x0329		; 100ca4 <InitPortD+0xffe8c>
+ 2d8:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 2dc:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 2e0:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 2e4:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 2e8:	00 0e 1b ff 		CMP	r3,#0x0
+ 2ec:	00 32 ff 3d 		JNE	0x00c2		; 100308 <InitPortD+0xff4f0>
+ 2f0:	00 0e 1c ff 		CMP	r2,#0x0
+ 2f4:	00 32 ff 3d 		JNE	0x00c2		; 100308 <InitPortD+0xff4f0>
+ 2f8:	00 0e 1d f6 		CMP	r1,#0x9
+ 2fc:	00 32 ff 3d 		JNE	0x00c2		; 100308 <InitPortD+0xff4f0>
+ 300:	00 0e 1e 9f 		CMP	r0,#0x60
+ 304:	00 36 fc e2 		JEQ	0x031d		; 100c74 <InitPortD+0xffe5c>
+ 308:	00 33 fc b2 		JUMP	0x034d		; 100d34 <InitPortD+0xfff1c>
+ 30c:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 310:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 314:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 318:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 31c:	00 0e 1b ff 		CMP	r3,#0x0
+ 320:	00 32 ff 30 		JNE	0x00cf		; 10033c <InitPortD+0xff524>
+ 324:	00 0e 1c ff 		CMP	r2,#0x0
+ 328:	00 32 ff 30 		JNE	0x00cf		; 10033c <InitPortD+0xff524>
+ 32c:	00 0e 1d 69 		CMP	r1,#0x96
+ 330:	00 32 ff 30 		JNE	0x00cf		; 10033c <InitPortD+0xff524>
+ 334:	00 0e 1e ff 		CMP	r0,#0x0
+ 338:	00 36 fe 42 		JEQ	0x01bd		; 1006f4 <InitPortD+0xff8dc>
+ 33c:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 340:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 344:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 348:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 34c:	00 0e 1b ff 		CMP	r3,#0x0
+ 350:	00 32 ff 25 		JNE	0x00da		; 100368 <InitPortD+0xff550>
+ 354:	00 0e 1c ff 		CMP	r2,#0x0
+ 358:	00 32 ff 25 		JNE	0x00da		; 100368 <InitPortD+0xff550>
+ 35c:	00 0e 1d 69 		CMP	r1,#0x96
+ 360:	00 32 ff 25 		JNE	0x00da		; 100368 <InitPortD+0xff550>
+ 364:	00 0e 1e ff 		CMP	r0,#0x0
+ 368:	00 30 ff 0b 		JGT	0x00f4		; 1003d0 <InitPortD+0xff5b8>
+ 36c:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 370:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 374:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 378:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 37c:	00 0e 1b ff 		CMP	r3,#0x0
+ 380:	00 32 ff 18 		JNE	0x00e7		; 10039c <InitPortD+0xff584>
+ 384:	00 0e 1c ff 		CMP	r2,#0x0
+ 388:	00 32 ff 18 		JNE	0x00e7		; 10039c <InitPortD+0xff584>
+ 38c:	00 0e 1d da 		CMP	r1,#0x25
+ 390:	00 32 ff 18 		JNE	0x00e7		; 10039c <InitPortD+0xff584>
+ 394:	00 0e 1e 7f 		CMP	r0,#0x80
+ 398:	00 36 fd 92 		JEQ	0x026d		; 1009b4 <InitPortD+0xffb9c>
+ 39c:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 3a0:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 3a4:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 3a8:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 3ac:	00 0e 1b ff 		CMP	r3,#0x0
+ 3b0:	00 32 ff 0c 		JNE	0x00f3		; 1003cc <InitPortD+0xff5b4>
+ 3b4:	00 0e 1c ff 		CMP	r2,#0x0
+ 3b8:	00 32 ff 0c 		JNE	0x00f3		; 1003cc <InitPortD+0xff5b4>
+ 3bc:	00 0e 1d b4 		CMP	r1,#0x4b
+ 3c0:	00 32 ff 0c 		JNE	0x00f3		; 1003cc <InitPortD+0xff5b4>
+ 3c4:	00 0e 1e ff 		CMP	r0,#0x0
+ 3c8:	00 36 fd ea 		JEQ	0x0215		; 100854 <InitPortD+0xffa3c>
+ 3cc:	00 33 fc b2 		JUMP	0x034d		; 100d34 <InitPortD+0xfff1c>
+ 3d0:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 3d4:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 3d8:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 3dc:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 3e0:	00 0e 1b ff 		CMP	r3,#0x0
+ 3e4:	00 32 fe ff 		JNE	0x0100		; 100400 <InitPortD+0xff5e8>
+ 3e8:	00 0e 1c ff 		CMP	r2,#0x0
+ 3ec:	00 32 fe ff 		JNE	0x0100		; 100400 <InitPortD+0xff5e8>
+ 3f0:	00 0e 1d 1e 		CMP	r1,#0xe1
+ 3f4:	00 32 fe ff 		JNE	0x0100		; 100400 <InitPortD+0xff5e8>
+ 3f8:	00 0e 1e ff 		CMP	r0,#0x0
+ 3fc:	00 36 fe 9a 		JEQ	0x0165		; 100594 <InitPortD+0xff77c>
+ 400:	00 1c ae 13 		MOVE	r0,(i2,19)
+ 404:	00 1c ad 12 		MOVE	r1,(i2,18)
+ 408:	00 1c ac 11 		MOVE	r2,(i2,17)
+ 40c:	00 1c ab 10 		MOVE	r3,(i2,16)
+ 410:	00 0e 1b ff 		CMP	r3,#0x0
+ 414:	00 32 fe f3 		JNE	0x010c		; 100430 <InitPortD+0xff618>
+ 418:	00 0e 1c fe 		CMP	r2,#0x1
+ 41c:	00 32 fe f3 		JNE	0x010c		; 100430 <InitPortD+0xff618>
+ 420:	00 0e 1d 3d 		CMP	r1,#0xc2
+ 424:	00 32 fe f3 		JNE	0x010c		; 100430 <InitPortD+0xff618>
+ 428:	00 0e 1e ff 		CMP	r0,#0x0
+ 42c:	00 36 fe f2 		JEQ	0x010d		; 100434 <InitPortD+0xff61c>
+ 430:	00 33 fc b2 		JUMP	0x034d		; 100d34 <InitPortD+0xfff1c>
+ 434:	00 1c ae 1b 		MOVE	r0,(i2,27)
+ 438:	00 0e ad ff 		MOVE	r1,#0x0
+ 43c:	00 0c af fc 		MOVE	r2,a
+ 440:	00 0c af fb 		MOVE	r3,a
+ 444:	00 03 7e ff 		MOVE	-(i3,1),r0
+ 448:	00 03 7d ff 		MOVE	-(i3,1),r1
+ 44c:	00 03 7c ff 		MOVE	-(i3,1),r2
+ 450:	00 03 7b ff 		MOVE	-(i3,1),r3
+ 454:	00 0e af ff 		MOVE	a,#0x0
+ 458:	00 03 7f ff 		MOVE	-(i3,1),a
+ 45c:	00 0e af df 		MOVE	a,#0x20
+ 460:	00 03 7f ff 		MOVE	-(i3,1),a
+ 464:	00 0e af e3 		MOVE	a,#0x1c
+ 468:	00 03 7f ff 		MOVE	-(i3,1),a
+ 46c:	00 0e af ff 		MOVE	a,#0x0
+ 470:	00 03 7f ff 		MOVE	-(i3,1),a
+ 474:	00 3a ff ff 		CALLS	0x0000		; 100000 <InitPortD+0xff1e8>
+ 478:	00 16 af 08 		MOVE	a,(i3,8)+
+ 47c:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ 480:	00 0e ac 80 		MOVE	r2,#0x7f
+ 484:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 488:	00 0c 2b cb 		AND	r3,r2,r3
+ 48c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 490:	00 1c af 1b 		MOVE	a,(i2,27)
+ 494:	00 02 ef 05 		MOVE	(i2,5),a
+ 498:	00 0e af ff 		MOVE	a,#0x0
+ 49c:	00 02 ef 04 		MOVE	(i2,4),a
+ 4a0:	00 1c ac 05 		MOVE	r2,(i2,5)
+ 4a4:	00 1c ab 04 		MOVE	r3,(i2,4)
+ 4a8:	00 0e 1b ff 		CMP	r3,#0x0
+ 4ac:	00 32 fe d1 		JNE	0x012e		; 1004b8 <InitPortD+0xff6a0>
+ 4b0:	00 0e 1c fb 		CMP	r2,#0x4
+ 4b4:	00 36 fe a9 		JEQ	0x0156		; 100558 <InitPortD+0xff740>
+ 4b8:	00 1c ac 05 		MOVE	r2,(i2,5)
+ 4bc:	00 1c ab 04 		MOVE	r3,(i2,4)
+ 4c0:	00 0e 0b ff 		CMPA	r3,#0x0
+ 4c4:	00 32 fe cc 		JNE	0x0133		; 1004cc <InitPortD+0xff6b4>
+ 4c8:	00 0e 1c fb 		CMP	r2,#0x4
+ 4cc:	00 30 fe be 		JGT	0x0141		; 100504 <InitPortD+0xff6ec>
+ 4d0:	00 1c ac 05 		MOVE	r2,(i2,5)
+ 4d4:	00 1c ab 04 		MOVE	r3,(i2,4)
+ 4d8:	00 0e 1b ff 		CMP	r3,#0x0
+ 4dc:	00 32 fe c5 		JNE	0x013a		; 1004e8 <InitPortD+0xff6d0>
+ 4e0:	00 0e 1c fe 		CMP	r2,#0x1
+ 4e4:	00 36 fe b1 		JEQ	0x014e		; 100538 <InitPortD+0xff720>
+ 4e8:	00 1c ac 05 		MOVE	r2,(i2,5)
+ 4ec:	00 1c ab 04 		MOVE	r3,(i2,4)
+ 4f0:	00 0e 1b ff 		CMP	r3,#0x0
+ 4f4:	00 32 fe bf 		JNE	0x0140		; 100500 <InitPortD+0xff6e8>
+ 4f8:	00 0e 1c fd 		CMP	r2,#0x2
+ 4fc:	00 36 fe ad 		JEQ	0x0152		; 100548 <InitPortD+0xff730>
+ 500:	00 33 fe 9e 		JUMP	0x0161		; 100584 <InitPortD+0xff76c>
+ 504:	00 1c ac 05 		MOVE	r2,(i2,5)
+ 508:	00 1c ab 04 		MOVE	r3,(i2,4)
+ 50c:	00 0e 1b ff 		CMP	r3,#0x0
+ 510:	00 32 fe b8 		JNE	0x0147		; 10051c <InitPortD+0xff704>
+ 514:	00 0e 1c f7 		CMP	r2,#0x8
+ 518:	00 36 fe a5 		JEQ	0x015a		; 100568 <InitPortD+0xff750>
+ 51c:	00 1c ac 05 		MOVE	r2,(i2,5)
+ 520:	00 1c ab 04 		MOVE	r3,(i2,4)
+ 524:	00 0e 1b ff 		CMP	r3,#0x0
+ 528:	00 32 fe b2 		JNE	0x014d		; 100534 <InitPortD+0xff71c>
+ 52c:	00 0e 1c ef 		CMP	r2,#0x10
+ 530:	00 36 fe a1 		JEQ	0x015e		; 100578 <InitPortD+0xff760>
+ 534:	00 33 fe 9e 		JUMP	0x0161		; 100584 <InitPortD+0xff76c>
+ 538:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 53c:	00 0e 2b 38 		AND	r3,#0xc7
+ 540:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 544:	00 33 fe 9e 		JUMP	0x0161		; 100584 <InitPortD+0xff76c>
+ 548:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 54c:	00 0e bb f7 		OR	r3,#0x8
+ 550:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 554:	00 33 fe 9e 		JUMP	0x0161		; 100584 <InitPortD+0xff76c>
+ 558:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 55c:	00 0e bb ef 		OR	r3,#0x10
+ 560:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 564:	00 33 fe 9e 		JUMP	0x0161		; 100584 <InitPortD+0xff76c>
+ 568:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 56c:	00 0e bb e7 		OR	r3,#0x18
+ 570:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 574:	00 33 fe 9e 		JUMP	0x0161		; 100584 <InitPortD+0xff76c>
+ 578:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 57c:	00 0e bb df 		OR	r3,#0x20
+ 580:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 584:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 588:	00 0e bb f8 		OR	r3,#0x7
+ 58c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 590:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ 594:	00 1c ae 1b 		MOVE	r0,(i2,27)
+ 598:	00 0e ad ff 		MOVE	r1,#0x0
+ 59c:	00 0c af fc 		MOVE	r2,a
+ 5a0:	00 0c af fb 		MOVE	r3,a
+ 5a4:	00 03 7e ff 		MOVE	-(i3,1),r0
+ 5a8:	00 03 7d ff 		MOVE	-(i3,1),r1
+ 5ac:	00 03 7c ff 		MOVE	-(i3,1),r2
+ 5b0:	00 03 7b ff 		MOVE	-(i3,1),r3
+ 5b4:	00 0e af ff 		MOVE	a,#0x0
+ 5b8:	00 03 7f ff 		MOVE	-(i3,1),a
+ 5bc:	00 0e af df 		MOVE	a,#0x20
+ 5c0:	00 03 7f ff 		MOVE	-(i3,1),a
+ 5c4:	00 0e af e3 		MOVE	a,#0x1c
+ 5c8:	00 03 7f ff 		MOVE	-(i3,1),a
+ 5cc:	00 0e af ff 		MOVE	a,#0x0
+ 5d0:	00 03 7f ff 		MOVE	-(i3,1),a
+ 5d4:	00 3a ff ff 		CALLS	0x0000		; 100000 <InitPortD+0xff1e8>
+ 5d8:	00 16 af 08 		MOVE	a,(i3,8)+
+ 5dc:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ 5e0:	00 0e ac 80 		MOVE	r2,#0x7f
+ 5e4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 5e8:	00 0c 2b cb 		AND	r3,r2,r3
+ 5ec:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 5f0:	00 1c af 1b 		MOVE	a,(i2,27)
+ 5f4:	00 02 ef 07 		MOVE	(i2,7),a
+ 5f8:	00 0e af ff 		MOVE	a,#0x0
+ 5fc:	00 02 ef 06 		MOVE	(i2,6),a
+ 600:	00 1c ac 07 		MOVE	r2,(i2,7)
+ 604:	00 1c ab 06 		MOVE	r3,(i2,6)
+ 608:	00 0e 1b ff 		CMP	r3,#0x0
+ 60c:	00 32 fe 79 		JNE	0x0186		; 100618 <InitPortD+0xff800>
+ 610:	00 0e 1c fb 		CMP	r2,#0x4
+ 614:	00 36 fe 51 		JEQ	0x01ae		; 1006b8 <InitPortD+0xff8a0>
+ 618:	00 1c ac 07 		MOVE	r2,(i2,7)
+ 61c:	00 1c ab 06 		MOVE	r3,(i2,6)
+ 620:	00 0e 0b ff 		CMPA	r3,#0x0
+ 624:	00 32 fe 74 		JNE	0x018b		; 10062c <InitPortD+0xff814>
+ 628:	00 0e 1c fb 		CMP	r2,#0x4
+ 62c:	00 30 fe 66 		JGT	0x0199		; 100664 <InitPortD+0xff84c>
+ 630:	00 1c ac 07 		MOVE	r2,(i2,7)
+ 634:	00 1c ab 06 		MOVE	r3,(i2,6)
+ 638:	00 0e 1b ff 		CMP	r3,#0x0
+ 63c:	00 32 fe 6d 		JNE	0x0192		; 100648 <InitPortD+0xff830>
+ 640:	00 0e 1c fe 		CMP	r2,#0x1
+ 644:	00 36 fe 59 		JEQ	0x01a6		; 100698 <InitPortD+0xff880>
+ 648:	00 1c ac 07 		MOVE	r2,(i2,7)
+ 64c:	00 1c ab 06 		MOVE	r3,(i2,6)
+ 650:	00 0e 1b ff 		CMP	r3,#0x0
+ 654:	00 32 fe 67 		JNE	0x0198		; 100660 <InitPortD+0xff848>
+ 658:	00 0e 1c fd 		CMP	r2,#0x2
+ 65c:	00 36 fe 55 		JEQ	0x01aa		; 1006a8 <InitPortD+0xff890>
+ 660:	00 33 fe 46 		JUMP	0x01b9		; 1006e4 <InitPortD+0xff8cc>
+ 664:	00 1c ac 07 		MOVE	r2,(i2,7)
+ 668:	00 1c ab 06 		MOVE	r3,(i2,6)
+ 66c:	00 0e 1b ff 		CMP	r3,#0x0
+ 670:	00 32 fe 60 		JNE	0x019f		; 10067c <InitPortD+0xff864>
+ 674:	00 0e 1c f7 		CMP	r2,#0x8
+ 678:	00 36 fe 4d 		JEQ	0x01b2		; 1006c8 <InitPortD+0xff8b0>
+ 67c:	00 1c ac 07 		MOVE	r2,(i2,7)
+ 680:	00 1c ab 06 		MOVE	r3,(i2,6)
+ 684:	00 0e 1b ff 		CMP	r3,#0x0
+ 688:	00 32 fe 5a 		JNE	0x01a5		; 100694 <InitPortD+0xff87c>
+ 68c:	00 0e 1c ef 		CMP	r2,#0x10
+ 690:	00 36 fe 49 		JEQ	0x01b6		; 1006d8 <InitPortD+0xff8c0>
+ 694:	00 33 fe 46 		JUMP	0x01b9		; 1006e4 <InitPortD+0xff8cc>
+ 698:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 69c:	00 0e 2b 38 		AND	r3,#0xc7
+ 6a0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 6a4:	00 33 fe 46 		JUMP	0x01b9		; 1006e4 <InitPortD+0xff8cc>
+ 6a8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 6ac:	00 0e bb f7 		OR	r3,#0x8
+ 6b0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 6b4:	00 33 fe 46 		JUMP	0x01b9		; 1006e4 <InitPortD+0xff8cc>
+ 6b8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 6bc:	00 0e bb ef 		OR	r3,#0x10
+ 6c0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 6c4:	00 33 fe 46 		JUMP	0x01b9		; 1006e4 <InitPortD+0xff8cc>
+ 6c8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 6cc:	00 0e bb e7 		OR	r3,#0x18
+ 6d0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 6d4:	00 33 fe 46 		JUMP	0x01b9		; 1006e4 <InitPortD+0xff8cc>
+ 6d8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 6dc:	00 0e bb df 		OR	r3,#0x20
+ 6e0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 6e4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 6e8:	00 0e bb f9 		OR	r3,#0x6
+ 6ec:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 6f0:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ 6f4:	00 1c ae 1b 		MOVE	r0,(i2,27)
+ 6f8:	00 0e ad ff 		MOVE	r1,#0x0
+ 6fc:	00 0c af fc 		MOVE	r2,a
+ 700:	00 0c af fb 		MOVE	r3,a
+ 704:	00 03 7e ff 		MOVE	-(i3,1),r0
+ 708:	00 03 7d ff 		MOVE	-(i3,1),r1
+ 70c:	00 03 7c ff 		MOVE	-(i3,1),r2
+ 710:	00 03 7b ff 		MOVE	-(i3,1),r3
+ 714:	00 0e af ff 		MOVE	a,#0x0
+ 718:	00 03 7f ff 		MOVE	-(i3,1),a
+ 71c:	00 0e af 9f 		MOVE	a,#0x60
+ 720:	00 03 7f ff 		MOVE	-(i3,1),a
+ 724:	00 0e af f6 		MOVE	a,#0x9
+ 728:	00 03 7f ff 		MOVE	-(i3,1),a
+ 72c:	00 0e af ff 		MOVE	a,#0x0
+ 730:	00 03 7f ff 		MOVE	-(i3,1),a
+ 734:	00 3a ff ff 		CALLS	0x0000		; 100000 <InitPortD+0xff1e8>
+ 738:	00 16 af 08 		MOVE	a,(i3,8)+
+ 73c:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ 740:	00 0e ac 80 		MOVE	r2,#0x7f
+ 744:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 748:	00 0c 2b cb 		AND	r3,r2,r3
+ 74c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 750:	00 1c af 1b 		MOVE	a,(i2,27)
+ 754:	00 02 ef 09 		MOVE	(i2,9),a
+ 758:	00 0e af ff 		MOVE	a,#0x0
+ 75c:	00 02 ef 08 		MOVE	(i2,8),a
+ 760:	00 1c ac 09 		MOVE	r2,(i2,9)
+ 764:	00 1c ab 08 		MOVE	r3,(i2,8)
+ 768:	00 0e 1b ff 		CMP	r3,#0x0
+ 76c:	00 32 fe 21 		JNE	0x01de		; 100778 <InitPortD+0xff960>
+ 770:	00 0e 1c fb 		CMP	r2,#0x4
+ 774:	00 36 fd f9 		JEQ	0x0206		; 100818 <InitPortD+0xffa00>
+ 778:	00 1c ac 09 		MOVE	r2,(i2,9)
+ 77c:	00 1c ab 08 		MOVE	r3,(i2,8)
+ 780:	00 0e 0b ff 		CMPA	r3,#0x0
+ 784:	00 32 fe 1c 		JNE	0x01e3		; 10078c <InitPortD+0xff974>
+ 788:	00 0e 1c fb 		CMP	r2,#0x4
+ 78c:	00 30 fe 0e 		JGT	0x01f1		; 1007c4 <InitPortD+0xff9ac>
+ 790:	00 1c ac 09 		MOVE	r2,(i2,9)
+ 794:	00 1c ab 08 		MOVE	r3,(i2,8)
+ 798:	00 0e 1b ff 		CMP	r3,#0x0
+ 79c:	00 32 fe 15 		JNE	0x01ea		; 1007a8 <InitPortD+0xff990>
+ 7a0:	00 0e 1c fe 		CMP	r2,#0x1
+ 7a4:	00 36 fe 01 		JEQ	0x01fe		; 1007f8 <InitPortD+0xff9e0>
+ 7a8:	00 1c ac 09 		MOVE	r2,(i2,9)
+ 7ac:	00 1c ab 08 		MOVE	r3,(i2,8)
+ 7b0:	00 0e 1b ff 		CMP	r3,#0x0
+ 7b4:	00 32 fe 0f 		JNE	0x01f0		; 1007c0 <InitPortD+0xff9a8>
+ 7b8:	00 0e 1c fd 		CMP	r2,#0x2
+ 7bc:	00 36 fd fd 		JEQ	0x0202		; 100808 <InitPortD+0xff9f0>
+ 7c0:	00 33 fd ee 		JUMP	0x0211		; 100844 <InitPortD+0xffa2c>
+ 7c4:	00 1c ac 09 		MOVE	r2,(i2,9)
+ 7c8:	00 1c ab 08 		MOVE	r3,(i2,8)
+ 7cc:	00 0e 1b ff 		CMP	r3,#0x0
+ 7d0:	00 32 fe 08 		JNE	0x01f7		; 1007dc <InitPortD+0xff9c4>
+ 7d4:	00 0e 1c f7 		CMP	r2,#0x8
+ 7d8:	00 36 fd f5 		JEQ	0x020a		; 100828 <InitPortD+0xffa10>
+ 7dc:	00 1c ac 09 		MOVE	r2,(i2,9)
+ 7e0:	00 1c ab 08 		MOVE	r3,(i2,8)
+ 7e4:	00 0e 1b ff 		CMP	r3,#0x0
+ 7e8:	00 32 fe 02 		JNE	0x01fd		; 1007f4 <InitPortD+0xff9dc>
+ 7ec:	00 0e 1c ef 		CMP	r2,#0x10
+ 7f0:	00 36 fd f1 		JEQ	0x020e		; 100838 <InitPortD+0xffa20>
+ 7f4:	00 33 fd ee 		JUMP	0x0211		; 100844 <InitPortD+0xffa2c>
+ 7f8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 7fc:	00 0e 2b 38 		AND	r3,#0xc7
+ 800:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 804:	00 33 fd ee 		JUMP	0x0211		; 100844 <InitPortD+0xffa2c>
+ 808:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 80c:	00 0e bb f7 		OR	r3,#0x8
+ 810:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 814:	00 33 fd ee 		JUMP	0x0211		; 100844 <InitPortD+0xffa2c>
+ 818:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 81c:	00 0e bb ef 		OR	r3,#0x10
+ 820:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 824:	00 33 fd ee 		JUMP	0x0211		; 100844 <InitPortD+0xffa2c>
+ 828:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 82c:	00 0e bb e7 		OR	r3,#0x18
+ 830:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 834:	00 33 fd ee 		JUMP	0x0211		; 100844 <InitPortD+0xffa2c>
+ 838:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 83c:	00 0e bb df 		OR	r3,#0x20
+ 840:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 844:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 848:	00 0e bb f8 		OR	r3,#0x7
+ 84c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 850:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ 854:	00 1c ae 1b 		MOVE	r0,(i2,27)
+ 858:	00 0e ad ff 		MOVE	r1,#0x0
+ 85c:	00 0c af fc 		MOVE	r2,a
+ 860:	00 0c af fb 		MOVE	r3,a
+ 864:	00 03 7e ff 		MOVE	-(i3,1),r0
+ 868:	00 03 7d ff 		MOVE	-(i3,1),r1
+ 86c:	00 03 7c ff 		MOVE	-(i3,1),r2
+ 870:	00 03 7b ff 		MOVE	-(i3,1),r3
+ 874:	00 0e af ff 		MOVE	a,#0x0
+ 878:	00 03 7f ff 		MOVE	-(i3,1),a
+ 87c:	00 0e af 9f 		MOVE	a,#0x60
+ 880:	00 03 7f ff 		MOVE	-(i3,1),a
+ 884:	00 0e af f6 		MOVE	a,#0x9
+ 888:	00 03 7f ff 		MOVE	-(i3,1),a
+ 88c:	00 0e af ff 		MOVE	a,#0x0
+ 890:	00 03 7f ff 		MOVE	-(i3,1),a
+ 894:	00 3a ff ff 		CALLS	0x0000		; 100000 <InitPortD+0xff1e8>
+ 898:	00 16 af 08 		MOVE	a,(i3,8)+
+ 89c:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ 8a0:	00 0e ac 80 		MOVE	r2,#0x7f
+ 8a4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 8a8:	00 0c 2b cb 		AND	r3,r2,r3
+ 8ac:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 8b0:	00 1c af 1b 		MOVE	a,(i2,27)
+ 8b4:	00 02 ef 0b 		MOVE	(i2,11),a
+ 8b8:	00 0e af ff 		MOVE	a,#0x0
+ 8bc:	00 02 ef 0a 		MOVE	(i2,10),a
+ 8c0:	00 1c ac 0b 		MOVE	r2,(i2,11)
+ 8c4:	00 1c ab 0a 		MOVE	r3,(i2,10)
+ 8c8:	00 0e 1b ff 		CMP	r3,#0x0
+ 8cc:	00 32 fd c9 		JNE	0x0236		; 1008d8 <InitPortD+0xffac0>
+ 8d0:	00 0e 1c fb 		CMP	r2,#0x4
+ 8d4:	00 36 fd a1 		JEQ	0x025e		; 100978 <InitPortD+0xffb60>
+ 8d8:	00 1c ac 0b 		MOVE	r2,(i2,11)
+ 8dc:	00 1c ab 0a 		MOVE	r3,(i2,10)
+ 8e0:	00 0e 0b ff 		CMPA	r3,#0x0
+ 8e4:	00 32 fd c4 		JNE	0x023b		; 1008ec <InitPortD+0xffad4>
+ 8e8:	00 0e 1c fb 		CMP	r2,#0x4
+ 8ec:	00 30 fd b6 		JGT	0x0249		; 100924 <InitPortD+0xffb0c>
+ 8f0:	00 1c ac 0b 		MOVE	r2,(i2,11)
+ 8f4:	00 1c ab 0a 		MOVE	r3,(i2,10)
+ 8f8:	00 0e 1b ff 		CMP	r3,#0x0
+ 8fc:	00 32 fd bd 		JNE	0x0242		; 100908 <InitPortD+0xffaf0>
+ 900:	00 0e 1c fe 		CMP	r2,#0x1
+ 904:	00 36 fd a9 		JEQ	0x0256		; 100958 <InitPortD+0xffb40>
+ 908:	00 1c ac 0b 		MOVE	r2,(i2,11)
+ 90c:	00 1c ab 0a 		MOVE	r3,(i2,10)
+ 910:	00 0e 1b ff 		CMP	r3,#0x0
+ 914:	00 32 fd b7 		JNE	0x0248		; 100920 <InitPortD+0xffb08>
+ 918:	00 0e 1c fd 		CMP	r2,#0x2
+ 91c:	00 36 fd a5 		JEQ	0x025a		; 100968 <InitPortD+0xffb50>
+ 920:	00 33 fd 96 		JUMP	0x0269		; 1009a4 <InitPortD+0xffb8c>
+ 924:	00 1c ac 0b 		MOVE	r2,(i2,11)
+ 928:	00 1c ab 0a 		MOVE	r3,(i2,10)
+ 92c:	00 0e 1b ff 		CMP	r3,#0x0
+ 930:	00 32 fd b0 		JNE	0x024f		; 10093c <InitPortD+0xffb24>
+ 934:	00 0e 1c f7 		CMP	r2,#0x8
+ 938:	00 36 fd 9d 		JEQ	0x0262		; 100988 <InitPortD+0xffb70>
+ 93c:	00 1c ac 0b 		MOVE	r2,(i2,11)
+ 940:	00 1c ab 0a 		MOVE	r3,(i2,10)
+ 944:	00 0e 1b ff 		CMP	r3,#0x0
+ 948:	00 32 fd aa 		JNE	0x0255		; 100954 <InitPortD+0xffb3c>
+ 94c:	00 0e 1c ef 		CMP	r2,#0x10
+ 950:	00 36 fd 99 		JEQ	0x0266		; 100998 <InitPortD+0xffb80>
+ 954:	00 33 fd 96 		JUMP	0x0269		; 1009a4 <InitPortD+0xffb8c>
+ 958:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 95c:	00 0e 2b 38 		AND	r3,#0xc7
+ 960:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 964:	00 33 fd 96 		JUMP	0x0269		; 1009a4 <InitPortD+0xffb8c>
+ 968:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 96c:	00 0e bb f7 		OR	r3,#0x8
+ 970:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 974:	00 33 fd 96 		JUMP	0x0269		; 1009a4 <InitPortD+0xffb8c>
+ 978:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 97c:	00 0e bb ef 		OR	r3,#0x10
+ 980:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 984:	00 33 fd 96 		JUMP	0x0269		; 1009a4 <InitPortD+0xffb8c>
+ 988:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 98c:	00 0e bb e7 		OR	r3,#0x18
+ 990:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 994:	00 33 fd 96 		JUMP	0x0269		; 1009a4 <InitPortD+0xffb8c>
+ 998:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 99c:	00 0e bb df 		OR	r3,#0x20
+ 9a0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 9a4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ 9a8:	00 0e bb f9 		OR	r3,#0x6
+ 9ac:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ 9b0:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ 9b4:	00 1c ae 1b 		MOVE	r0,(i2,27)
+ 9b8:	00 0e ad ff 		MOVE	r1,#0x0
+ 9bc:	00 0c af fc 		MOVE	r2,a
+ 9c0:	00 0c af fb 		MOVE	r3,a
+ 9c4:	00 03 7e ff 		MOVE	-(i3,1),r0
+ 9c8:	00 03 7d ff 		MOVE	-(i3,1),r1
+ 9cc:	00 03 7c ff 		MOVE	-(i3,1),r2
+ 9d0:	00 03 7b ff 		MOVE	-(i3,1),r3
+ 9d4:	00 0e af ff 		MOVE	a,#0x0
+ 9d8:	00 03 7f ff 		MOVE	-(i3,1),a
+ 9dc:	00 0e af 9f 		MOVE	a,#0x60
+ 9e0:	00 03 7f ff 		MOVE	-(i3,1),a
+ 9e4:	00 0e af f6 		MOVE	a,#0x9
+ 9e8:	00 03 7f ff 		MOVE	-(i3,1),a
+ 9ec:	00 0e af ff 		MOVE	a,#0x0
+ 9f0:	00 03 7f ff 		MOVE	-(i3,1),a
+ 9f4:	00 3a ff ff 		CALLS	0x0000		; 100000 <InitPortD+0xff1e8>
+ 9f8:	00 16 af 08 		MOVE	a,(i3,8)+
+ 9fc:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ a00:	00 0e ac 80 		MOVE	r2,#0x7f
+ a04:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ a08:	00 0c 2b cb 		AND	r3,r2,r3
+ a0c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ a10:	00 1c af 1b 		MOVE	a,(i2,27)
+ a14:	00 02 ef 0d 		MOVE	(i2,13),a
+ a18:	00 0e af ff 		MOVE	a,#0x0
+ a1c:	00 02 ef 0c 		MOVE	(i2,12),a
+ a20:	00 1c ac 0d 		MOVE	r2,(i2,13)
+ a24:	00 1c ab 0c 		MOVE	r3,(i2,12)
+ a28:	00 0e 1b ff 		CMP	r3,#0x0
+ a2c:	00 32 fd 71 		JNE	0x028e		; 100a38 <InitPortD+0xffc20>
+ a30:	00 0e 1c fb 		CMP	r2,#0x4
+ a34:	00 36 fd 49 		JEQ	0x02b6		; 100ad8 <InitPortD+0xffcc0>
+ a38:	00 1c ac 0d 		MOVE	r2,(i2,13)
+ a3c:	00 1c ab 0c 		MOVE	r3,(i2,12)
+ a40:	00 0e 0b ff 		CMPA	r3,#0x0
+ a44:	00 32 fd 6c 		JNE	0x0293		; 100a4c <InitPortD+0xffc34>
+ a48:	00 0e 1c fb 		CMP	r2,#0x4
+ a4c:	00 30 fd 5e 		JGT	0x02a1		; 100a84 <InitPortD+0xffc6c>
+ a50:	00 1c ac 0d 		MOVE	r2,(i2,13)
+ a54:	00 1c ab 0c 		MOVE	r3,(i2,12)
+ a58:	00 0e 1b ff 		CMP	r3,#0x0
+ a5c:	00 32 fd 65 		JNE	0x029a		; 100a68 <InitPortD+0xffc50>
+ a60:	00 0e 1c fe 		CMP	r2,#0x1
+ a64:	00 36 fd 51 		JEQ	0x02ae		; 100ab8 <InitPortD+0xffca0>
+ a68:	00 1c ac 0d 		MOVE	r2,(i2,13)
+ a6c:	00 1c ab 0c 		MOVE	r3,(i2,12)
+ a70:	00 0e 1b ff 		CMP	r3,#0x0
+ a74:	00 32 fd 5f 		JNE	0x02a0		; 100a80 <InitPortD+0xffc68>
+ a78:	00 0e 1c fd 		CMP	r2,#0x2
+ a7c:	00 36 fd 4d 		JEQ	0x02b2		; 100ac8 <InitPortD+0xffcb0>
+ a80:	00 33 fd 3e 		JUMP	0x02c1		; 100b04 <InitPortD+0xffcec>
+ a84:	00 1c ac 0d 		MOVE	r2,(i2,13)
+ a88:	00 1c ab 0c 		MOVE	r3,(i2,12)
+ a8c:	00 0e 1b ff 		CMP	r3,#0x0
+ a90:	00 32 fd 58 		JNE	0x02a7		; 100a9c <InitPortD+0xffc84>
+ a94:	00 0e 1c f7 		CMP	r2,#0x8
+ a98:	00 36 fd 45 		JEQ	0x02ba		; 100ae8 <InitPortD+0xffcd0>
+ a9c:	00 1c ac 0d 		MOVE	r2,(i2,13)
+ aa0:	00 1c ab 0c 		MOVE	r3,(i2,12)
+ aa4:	00 0e 1b ff 		CMP	r3,#0x0
+ aa8:	00 32 fd 52 		JNE	0x02ad		; 100ab4 <InitPortD+0xffc9c>
+ aac:	00 0e 1c ef 		CMP	r2,#0x10
+ ab0:	00 36 fd 41 		JEQ	0x02be		; 100af8 <InitPortD+0xffce0>
+ ab4:	00 33 fd 3e 		JUMP	0x02c1		; 100b04 <InitPortD+0xffcec>
+ ab8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ abc:	00 0e 2b 38 		AND	r3,#0xc7
+ ac0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ ac4:	00 33 fd 3e 		JUMP	0x02c1		; 100b04 <InitPortD+0xffcec>
+ ac8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ acc:	00 0e bb f7 		OR	r3,#0x8
+ ad0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ ad4:	00 33 fd 3e 		JUMP	0x02c1		; 100b04 <InitPortD+0xffcec>
+ ad8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ adc:	00 0e bb ef 		OR	r3,#0x10
+ ae0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ ae4:	00 33 fd 3e 		JUMP	0x02c1		; 100b04 <InitPortD+0xffcec>
+ ae8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ aec:	00 0e bb e7 		OR	r3,#0x18
+ af0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ af4:	00 33 fd 3e 		JUMP	0x02c1		; 100b04 <InitPortD+0xffcec>
+ af8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ afc:	00 0e bb df 		OR	r3,#0x20
+ b00:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ b04:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ b08:	00 0e bb fa 		OR	r3,#0x5
+ b0c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ b10:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ b14:	00 1c ae 1b 		MOVE	r0,(i2,27)
+ b18:	00 0e ad ff 		MOVE	r1,#0x0
+ b1c:	00 0c af fc 		MOVE	r2,a
+ b20:	00 0c af fb 		MOVE	r3,a
+ b24:	00 03 7e ff 		MOVE	-(i3,1),r0
+ b28:	00 03 7d ff 		MOVE	-(i3,1),r1
+ b2c:	00 03 7c ff 		MOVE	-(i3,1),r2
+ b30:	00 03 7b ff 		MOVE	-(i3,1),r3
+ b34:	00 0e af ff 		MOVE	a,#0x0
+ b38:	00 03 7f ff 		MOVE	-(i3,1),a
+ b3c:	00 0e af 9f 		MOVE	a,#0x60
+ b40:	00 03 7f ff 		MOVE	-(i3,1),a
+ b44:	00 0e af f6 		MOVE	a,#0x9
+ b48:	00 03 7f ff 		MOVE	-(i3,1),a
+ b4c:	00 0e af ff 		MOVE	a,#0x0
+ b50:	00 03 7f ff 		MOVE	-(i3,1),a
+ b54:	00 3a ff ff 		CALLS	0x0000		; 100000 <InitPortD+0xff1e8>
+ b58:	00 16 af 08 		MOVE	a,(i3,8)+
+ b5c:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ b60:	00 0e ac 80 		MOVE	r2,#0x7f
+ b64:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ b68:	00 0c 2b cb 		AND	r3,r2,r3
+ b6c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ b70:	00 1c af 1b 		MOVE	a,(i2,27)
+ b74:	00 02 ef 0f 		MOVE	(i2,15),a
+ b78:	00 0e af ff 		MOVE	a,#0x0
+ b7c:	00 02 ef 0e 		MOVE	(i2,14),a
+ b80:	00 1c ac 0f 		MOVE	r2,(i2,15)
+ b84:	00 1c ab 0e 		MOVE	r3,(i2,14)
+ b88:	00 0e 1b ff 		CMP	r3,#0x0
+ b8c:	00 32 fd 19 		JNE	0x02e6		; 100b98 <InitPortD+0xffd80>
+ b90:	00 0e 1c fb 		CMP	r2,#0x4
+ b94:	00 36 fc f1 		JEQ	0x030e		; 100c38 <InitPortD+0xffe20>
+ b98:	00 1c ac 0f 		MOVE	r2,(i2,15)
+ b9c:	00 1c ab 0e 		MOVE	r3,(i2,14)
+ ba0:	00 0e 0b ff 		CMPA	r3,#0x0
+ ba4:	00 32 fd 14 		JNE	0x02eb		; 100bac <InitPortD+0xffd94>
+ ba8:	00 0e 1c fb 		CMP	r2,#0x4
+ bac:	00 30 fd 06 		JGT	0x02f9		; 100be4 <InitPortD+0xffdcc>
+ bb0:	00 1c ac 0f 		MOVE	r2,(i2,15)
+ bb4:	00 1c ab 0e 		MOVE	r3,(i2,14)
+ bb8:	00 0e 1b ff 		CMP	r3,#0x0
+ bbc:	00 32 fd 0d 		JNE	0x02f2		; 100bc8 <InitPortD+0xffdb0>
+ bc0:	00 0e 1c fe 		CMP	r2,#0x1
+ bc4:	00 36 fc f9 		JEQ	0x0306		; 100c18 <InitPortD+0xffe00>
+ bc8:	00 1c ac 0f 		MOVE	r2,(i2,15)
+ bcc:	00 1c ab 0e 		MOVE	r3,(i2,14)
+ bd0:	00 0e 1b ff 		CMP	r3,#0x0
+ bd4:	00 32 fd 07 		JNE	0x02f8		; 100be0 <InitPortD+0xffdc8>
+ bd8:	00 0e 1c fd 		CMP	r2,#0x2
+ bdc:	00 36 fc f5 		JEQ	0x030a		; 100c28 <InitPortD+0xffe10>
+ be0:	00 33 fc e6 		JUMP	0x0319		; 100c64 <InitPortD+0xffe4c>
+ be4:	00 1c ac 0f 		MOVE	r2,(i2,15)
+ be8:	00 1c ab 0e 		MOVE	r3,(i2,14)
+ bec:	00 0e 1b ff 		CMP	r3,#0x0
+ bf0:	00 32 fd 00 		JNE	0x02ff		; 100bfc <InitPortD+0xffde4>
+ bf4:	00 0e 1c f7 		CMP	r2,#0x8
+ bf8:	00 36 fc ed 		JEQ	0x0312		; 100c48 <InitPortD+0xffe30>
+ bfc:	00 1c ac 0f 		MOVE	r2,(i2,15)
+ c00:	00 1c ab 0e 		MOVE	r3,(i2,14)
+ c04:	00 0e 1b ff 		CMP	r3,#0x0
+ c08:	00 32 fc fa 		JNE	0x0305		; 100c14 <InitPortD+0xffdfc>
+ c0c:	00 0e 1c ef 		CMP	r2,#0x10
+ c10:	00 36 fc e9 		JEQ	0x0316		; 100c58 <InitPortD+0xffe40>
+ c14:	00 33 fc e6 		JUMP	0x0319		; 100c64 <InitPortD+0xffe4c>
+ c18:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ c1c:	00 0e 2b 38 		AND	r3,#0xc7
+ c20:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ c24:	00 33 fc e6 		JUMP	0x0319		; 100c64 <InitPortD+0xffe4c>
+ c28:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ c2c:	00 0e bb f7 		OR	r3,#0x8
+ c30:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ c34:	00 33 fc e6 		JUMP	0x0319		; 100c64 <InitPortD+0xffe4c>
+ c38:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ c3c:	00 0e bb ef 		OR	r3,#0x10
+ c40:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ c44:	00 33 fc e6 		JUMP	0x0319		; 100c64 <InitPortD+0xffe4c>
+ c48:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ c4c:	00 0e bb e7 		OR	r3,#0x18
+ c50:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ c54:	00 33 fc e6 		JUMP	0x0319		; 100c64 <InitPortD+0xffe4c>
+ c58:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ c5c:	00 0e bb df 		OR	r3,#0x20
+ c60:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ c64:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ c68:	00 0e bb fb 		OR	r3,#0x4
+ c6c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ c70:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ c74:	00 0e ae ff 		MOVE	r0,#0x0
+ c78:	00 0e ad 3f 		MOVE	r1,#0xc0
+ c7c:	00 0e ac ed 		MOVE	r2,#0x12
+ c80:	00 0e ab ff 		MOVE	r3,#0x0
+ c84:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ c88:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ c8c:	00 0e bb 77 		OR	r3,#0x88
+ c90:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ c94:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ c98:	00 0e bb fc 		OR	r3,#0x3
+ c9c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ ca0:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ ca4:	00 0e ae ff 		MOVE	r0,#0x0
+ ca8:	00 0e ad 3f 		MOVE	r1,#0xc0
+ cac:	00 0e ac ed 		MOVE	r2,#0x12
+ cb0:	00 0e ab ff 		MOVE	r3,#0x0
+ cb4:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ cb8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ cbc:	00 0e bb 77 		OR	r3,#0x88
+ cc0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ cc4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ cc8:	00 0e bb fd 		OR	r3,#0x2
+ ccc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ cd0:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ cd4:	00 0e ae ff 		MOVE	r0,#0x0
+ cd8:	00 0e ad 3f 		MOVE	r1,#0xc0
+ cdc:	00 0e ac ed 		MOVE	r2,#0x12
+ ce0:	00 0e ab ff 		MOVE	r3,#0x0
+ ce4:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ ce8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ cec:	00 0e bb 77 		OR	r3,#0x88
+ cf0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ cf4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ cf8:	00 0e bb fe 		OR	r3,#0x1
+ cfc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ d00:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ d04:	00 0e ae ff 		MOVE	r0,#0x0
+ d08:	00 0e ad 3f 		MOVE	r1,#0xc0
+ d0c:	00 0e ac ed 		MOVE	r2,#0x12
+ d10:	00 0e ab ff 		MOVE	r3,#0x0
+ d14:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ d18:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ d1c:	00 0e bb 77 		OR	r3,#0x88
+ d20:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ d24:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ d28:	00 0e 2b fb 		AND	r3,#0x4
+ d2c:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ d30:	00 33 fc aa 		JUMP	0x0355		; 100d54 <InitPortD+0xfff3c>
+ d34:	00 0e ae ff 		MOVE	r0,#0x0
+ d38:	00 0e ad 3f 		MOVE	r1,#0xc0
+ d3c:	00 0e ac ed 		MOVE	r2,#0x12
+ d40:	00 0e ab ff 		MOVE	r3,#0x0
+ d44:	00 3a ff c5 		CALLS	0x003a		; 1000e8 <InitPortD+0xff2d0>
+ d48:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ d4c:	00 0e bb f8 		OR	r3,#0x7
+ d50:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ d54:	00 1c af 19 		MOVE	a,(i2,25)
+ d58:	00 32 fc a4 		JZC	0x035b		; 100d6c <InitPortD+0xfff54>
+ d5c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ d60:	00 0e 2b 04 		AND	r3,#0xfb
+ d64:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ d68:	00 33 fc a1 		JUMP	0x035e		; 100d78 <InitPortD+0xfff60>
+ d6c:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ d70:	00 0e bb fb 		OR	r3,#0x4
+ d74:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ d78:	00 1c af 1a 		MOVE	a,(i2,26)
+ d7c:	00 32 fc 9b 		JZC	0x0364		; 100d90 <InitPortD+0xfff78>
+ d80:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ d84:	00 0e 2b 02 		AND	r3,#0xfd
+ d88:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ d8c:	00 33 fc 98 		JUMP	0x0367		; 100d9c <InitPortD+0xfff84>
+ d90:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ d94:	00 0e bb fd 		OR	r3,#0x2
+ d98:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ d9c:	00 1c af 18 		MOVE	a,(i2,24)
+ da0:	00 32 fc 92 		JZC	0x036d		; 100db4 <InitPortD+0xfff9c>
+ da4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ da8:	00 0e 2b 01 		AND	r3,#0xfe
+ dac:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ db0:	00 33 fc 8f 		JUMP	0x0370		; 100dc0 <InitPortD+0xfffa8>
+ db4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ db8:	00 0e bb fe 		OR	r3,#0x1
+ dbc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ dc0:	00 0e ac 80 		MOVE	r2,#0x7f
+ dc4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ dc8:	00 0c 2b cb 		AND	r3,r2,r3
+ dcc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ dd0:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ dd4:	00 0e bb bf 		OR	r3,#0x40
+ dd8:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ ddc:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ de0:	00 0e bb df 		OR	r3,#0x20
+ de4:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ de8:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ dec:	00 0e 2b 10 		AND	r3,#0xef
+ df0:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ df4:	00 04 ab 00 		MOVE	r3,0xff	; ff <InitRCOscillator+0x17>
+ df8:	00 0e 2b 08 		AND	r3,#0xf7
+ dfc:	00 01 bb 00 		MOVE	0xff,r3	; ff <InitRCOscillator+0x17>
+ e00:	00 16 af 14 		MOVE	a,(i3,20)+
+ e04:	00 16 a9 01 		MOVE	iph,(i3,1)+
+ e08:	00 16 a8 01 		MOVE	ipl,(i3,1)+
+ e0c:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ e10:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ e14:	00 23 ff ff 		JUMP	ip
+
+00000e18 <InitPortD>:
+InitPortD():
+ e18:	00 03 74 ff 		MOVE	-(i3,1),i2l
+ e1c:	00 03 75 ff 		MOVE	-(i3,1),i2h
+ e20:	00 0c af 75 		MOVE	i2h,i3h
+ e24:	00 0c af 64 		MOVE	i2l,i3l
+ e28:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+ e2c:	00 00 00 00 		MOVE	0xff,#0xff	; ff <InitRCOscillator+0x17>
+ e30:	00 00 ff 00 		MOVE	0xff,#0x00	; ff <InitRCOscillator+0x17>
+ e34:	00 16 a5 01 		MOVE	i2h,(i3,1)+
+ e38:	00 16 a4 01 		MOVE	i2l,(i3,1)+
+ e3c:	00 23 ff ff 		JUMP	ip
